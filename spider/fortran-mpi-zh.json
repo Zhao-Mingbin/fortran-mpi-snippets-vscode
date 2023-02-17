@@ -1,0 +1,3242 @@
+{
+ "mpi-comm-create-keyval-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-create-keyval-function"
+  ],
+  "description": "MPI_COMM_CREATE_KEYVAL(COMM_COPY_ATTR_FN, COMM_DELETE_ATTR_FN, COMM_KEYVAL, EXTRA_STATE, IERROR)\n创建新的属性键。\nEXTERNAL COMM_COPY_ATTR_FN, COMM_DELETE_ATTR_FN\nINTEGER COMM_KEYVAL, IERROR\nINTEGER(KIND=MPI_ADDRESS_KIND) EXTRA_STATE\n\ncomm_copy_attr_fn [in， 可选]\n复制 keyval 的回调函数。\ncomm_delete_attr_fn [in， 可选]\n删除 keyval 的回调函数。\ncomm_keyval [out]\n用于将来访问的键值。\nextra_state [in， 可选]\n回调函数的额外状态。\n",
+  "body": [
+   "MPI_COMM_CREATE_KEYVAL(COMM_COPY_ATTR_FN, COMM_DELETE_ATTR_FN, COMM_KEYVAL, EXTRA_STATE, IERROR)"
+  ]
+ },
+ "mpi-comm-delete-attr-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-delete-attr-function"
+  ],
+  "description": "MPI_COMM_DELETE_ATTR(COMM, COMM_KEYVAL, IERROR)\n删除与通信器上的键关联的属性值。\nINTEGER COMM, COMM_KEYVAL, IERROR\n\n通讯\n将属性附加到的 Communicator。\ncomm_keyval\n已删除属性的键值。\n",
+  "body": [
+   "MPI_COMM_DELETE_ATTR(COMM, COMM_KEYVAL, IERROR)"
+  ]
+ },
+ "mpi-comm-free-keyval-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-free-keyval-function"
+  ],
+  "description": "MPI_COMM_FREE_KEYVAL(COMM_KEYVAL, IERROR)\n释放一个已灭绝的属性键。\nINTEGER COMM_KEYVAL, IERROR\n\ncomm_keyval\n键值。",
+  "body": [
+   "MPI_COMM_FREE_KEYVAL(COMM_KEYVAL, IERROR)"
+  ]
+ },
+ "mpi-comm-get-attr-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-get-attr-function"
+  ],
+  "description": "MPI_COMM_GET_ATTR(COMM, COMM_KEYVAL, ATTRIBUTE_VAL, FLAG, IERROR)\n按键检索属性值。\nINTEGER COMM, COMM_KEYVAL, IERROR\nINTEGER(KIND=MPI_ADDRESS_KIND) ATTRIBUTE_VAL\nLOGICAL FLAG\n\n通讯\n附加属性的 Communicator。\ncomm_keyval\n键值。\nattribute_val [out]\n属性值，除非 标志 = false。\n标志 [out]\n如果提取了属性值，则为 True;如果没有任何属性与键关联，则为 false。\n",
+  "body": [
+   "MPI_COMM_GET_ATTR(COMM, COMM_KEYVAL, ATTRIBUTE_VAL, FLAG, IERROR)"
+  ]
+ },
+ "mpi-comm-set-attr-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-set-attr-function"
+  ],
+  "description": "MPI_COMM_SET_ATTR(COMM, COMM_KEYVAL, ATTRIBUTE_VAL, IERROR)\n存储与键关联的属性值。\nINTEGER COMM, COMM_KEYVAL, IERROR\nINTEGER(KIND=MPI_ADDRESS_KIND) ATTRIBUTE_VAL\n\n通讯\n将附加属性的 Communicator。\ncomm_keyval\n键值，如 MPI_Comm_create_keyval返回。\nattribute_val [in]\n特性值。\n",
+  "body": [
+   "MPI_COMM_SET_ATTR(COMM, COMM_KEYVAL, ATTRIBUTE_VAL, IERROR)"
+  ]
+ },
+ "mpi-comm-copy-attr-function-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-copy-attr-function-function"
+  ],
+  "description": "SUBROUTINE COMM_COPY_ATTR_FUNCTION(OLDCOMM, COMM_KEYVAL, EXTRA_STATE, ATTRIBUTE_VAL_IN, ATTRIBUTE_VAL_OUT, FLAG, IERROR)\nNone\nINTEGER OLDCOMM, COMM_KEYVAL, IERROR\nINTEGER(KIND=MPI_ADDRESS_KIND) EXTRA_STATE, ATTRIBUTE_VAL_IN, ATTRIBUTE_VAL_OUT\nLOGICAL FLAG\n\noldcomm\n原始通信器。\ncomm_keyval\n键值。\nextra_state [in， 可选]\n额外状态。\nattribute_val_in [in]\n源属性值。\nattribute_val_out [out]\n目标属性值。\n标志 [out]\n如果返回的 标志 值为 0 或 FALSE，则会在重复的 communicator 中删除该属性。 否则， (标志 = 1 或 TRUE) ，新属性值将设置为 attribute_val_out中返回的值。\n",
+  "body": [
+   "SUBROUTINE COMM_COPY_ATTR_FUNCTION(OLDCOMM, COMM_KEYVAL, EXTRA_STATE, ATTRIBUTE_VAL_IN, ATTRIBUTE_VAL_OUT, FLAG, IERROR)"
+  ]
+ },
+ "mpi-comm-delete-attr-function-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-delete-attr-function-function"
+  ],
+  "description": "SUBROUTINE COMM_DELETE_ATTR_FUNCTION(COMM, COMM_KEYVAL, ATTRIBUTE_VAL, EXTRA_STATE, IERROR)\nNone\nINTEGER COMM, COMM_KEYVAL, IERROR\nINTEGER(KIND=MPI_ADDRESS_KIND) ATTRIBUTE_VAL, EXTRA_STATE\n\n通讯\n沟通。\ncomm_keyval\n键值。\nattribute_val [in]\n指向属性值的指针。\nextra_state [in， 可选]\n额外状态。\n",
+  "body": [
+   "SUBROUTINE COMM_DELETE_ATTR_FUNCTION(COMM, COMM_KEYVAL, ATTRIBUTE_VAL, EXTRA_STATE, IERROR)"
+  ]
+ },
+ "mpi-type-copy-attr-function-callback-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-copy-attr-function-callback-function"
+  ],
+  "description": "SUBROUTINE TYPE_COPY_ATTR_FUNCTION(OLDTYPE, TYPE_KEYVAL, EXTRA_STATE, ATTRIBUTE_VAL_IN, ATTRIBUTE_VAL_OUT, FLAG, IERROR)\nNone\nINTEGER OLDTYPE, TYPE_KEYVAL, IERROR\nINTEGER(KIND=MPI_ADDRESS_KIND) EXTRA_STATE, ATTRIBUTE_VAL_IN, ATTRIBUTE_VAL_OUT\nLOGICAL FLAG\n\nolddatatype\n旧数据类型。\ndatatype_keyval\n要复制的键值。\nextra_state [in， 可选]\n额外状态。\nattribute_val_in [in]\n输入属性值。\nattribute_val_out [out]\n输出属性值。\n标志 [out]\n指示复制操作成功的值。\n",
+  "body": [
+   "SUBROUTINE TYPE_COPY_ATTR_FUNCTION(OLDTYPE, TYPE_KEYVAL, EXTRA_STATE, ATTRIBUTE_VAL_IN, ATTRIBUTE_VAL_OUT, FLAG, IERROR)"
+  ]
+ },
+ "mpi-type-delete-attr-function-callback-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-delete-attr-function-callback-function"
+  ],
+  "description": "SUBROUTINE TYPE_DELETE_ATTR_FUNCTION(DATATYPE, TYPE_KEYVAL, ATTRIBUTE_VAL, EXTRA_STATE, IERROR)\nNone\nINTEGER DATATYPE, TYPE_KEYVAL, IERROR\nINTEGER(KIND=MPI_ADDRESS_KIND) ATTRIBUTE_VAL, EXTRA_STATE\n\ndatatype\n数据类型。\ndatatype_keyval\n键值。\nattribute_val [in]\n特性值。\nextra_state [in， 可选]\n额外状态。\n",
+  "body": [
+   "SUBROUTINE TYPE_DELETE_ATTR_FUNCTION(DATATYPE, TYPE_KEYVAL, ATTRIBUTE_VAL, EXTRA_STATE, IERROR)"
+  ]
+ },
+ "mpi-win-copy-attr-function-callback-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-copy-attr-function-callback-function"
+  ],
+  "description": "SUBROUTINE WIN_COPY_ATTR_FUNCTION(OLDWIN, WIN_KEYVAL, EXTRA_STATE, ATTRIBUTE_VAL_IN, ATTRIBUTE_VAL_OUT, FLAG, IERROR)\nNone\nINTEGER OLDWIN, WIN_KEYVAL, IERROR\nINTEGER(KIND=MPI_ADDRESS_KIND) EXTRA_STATE, ATTRIBUTE_VAL_IN, ATTRIBUTE_VAL_OUT\nLOGICAL FLAG\n\noldwin\n旧 MPI 窗口。\nwin_keyval\n窗口键值。\nextra_state [in， 可选]\n额外状态。\nattribute_val_in [in]\n特性的输入值。\nattribute_val_out [out]\n属性的输出值。\n标志 [out]\n指示复制是否成功的标志值。\n",
+  "body": [
+   "SUBROUTINE WIN_COPY_ATTR_FUNCTION(OLDWIN, WIN_KEYVAL, EXTRA_STATE, ATTRIBUTE_VAL_IN, ATTRIBUTE_VAL_OUT, FLAG, IERROR)"
+  ]
+ },
+ "mpi-win-create-keyval-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-create-keyval-function"
+  ],
+  "description": "MPI_WIN_CREATE_KEYVAL(WIN_COPY_ATTR_FN, WIN_DELETE_ATTR_FN, WIN_KEYVAL, EXTRA_STATE, IERROR)\n为 MPI 窗口对象创建属性键值。\nEXTERNAL WIN_COPY_ATTR_FN, WIN_DELETE_ATTR_FN\nINTEGER WIN_KEYVAL, IERROR\nINTEGER(KIND=MPI_ADDRESS_KIND) EXTRA_STATE\n\nwin_copy_attr_fn [in]\n复制 win_keyval回调函数。\nwin_delete_attr_fn [in]\n删除 win_keyval的回调函数。\nwin_keyval [out]\n用于将来访问的键值。\nextra_state [in， 可选]\n回调函数的额外状态。\nMPI_WIN_NULL_COPY_FN - 空复制函数MPI_WIN_NULL_DELETE_FN - 空删除函数MPI_WIN_DUP_FN - 简单重复函数",
+  "body": [
+   "MPI_WIN_CREATE_KEYVAL(WIN_COPY_ATTR_FN, WIN_DELETE_ATTR_FN, WIN_KEYVAL, EXTRA_STATE, IERROR)"
+  ]
+ },
+ "mpi-win-delete-attr-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-delete-attr-function"
+  ],
+  "description": "MPI_WIN_DELETE_ATTR(WIN, WIN_KEYVAL, IERROR)\n删除与 MPI 窗口对象上的键关联的属性值。\nINTEGER WIN, WIN_KEYVAL, IERROR\n\nwin\n从中删除属性的窗口。\nwin_keyval\n键值。\n",
+  "body": [
+   "MPI_WIN_DELETE_ATTR(WIN, WIN_KEYVAL, IERROR)"
+  ]
+ },
+ "mpi-win-delete-attr-function-callback-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-delete-attr-function-callback-function"
+  ],
+  "description": "SUBROUTINE WIN_DELETE_ATTR_FUNCTION(WIN, WIN_KEYVAL, ATTRIBUTE_VAL, EXTRA_STATE, IERROR)\nNone\nINTEGER WIN, WIN_KEYVAL, IERROR\nINTEGER(KIND=MPI_ADDRESS_KIND) ATTRIBUTE_VAL, EXTRA_STATE\n\nwin\nMPI 窗口对象。\nwin_keyval\n窗口键值。\nattribute_val [in]\n特性值。\nextra_state [in， 可选]\n额外状态。\n",
+  "body": [
+   "SUBROUTINE WIN_DELETE_ATTR_FUNCTION(WIN, WIN_KEYVAL, ATTRIBUTE_VAL, EXTRA_STATE, IERROR)"
+  ]
+ },
+ "mpi-win-free-keyval-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-free-keyval-function"
+  ],
+  "description": "MPI_WIN_FREE_KEYVAL(WIN_KEYVAL, IERROR)\n释放 MPI RMA 窗口的属性密钥。\nINTEGER WIN_KEYVAL, IERROR\n\nwin_keyval [in， out]\n键值。",
+  "body": [
+   "MPI_WIN_FREE_KEYVAL(WIN_KEYVAL, IERROR)"
+  ]
+ },
+ "mpi-win-get-attr-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-get-attr-function"
+  ],
+  "description": "MPI_WIN_GET_ATTR(WIN, WIN_KEYVAL, ATTRIBUTE_VAL, FLAG, IERROR)\n获取在 MPI 窗口对象上缓存的属性。\nINTEGER WIN, WIN_KEYVAL, IERROR\nINTEGER(KIND=MPI_ADDRESS_KIND) ATTRIBUTE_VAL\nLOGICAL FLAG\n\nwin\n属性附加到的窗口。\nwin_keyval\n键值。\nattribute_val [out]\n属性值，除非 标志 为 false。\n标志 [out]\n如果没有与键关联的属性，则为 False。\nMPI_WIN_BASE - 窗口基址。MPI_WIN_SIZE - 窗口大小（以字节为单位）。MPI_WIN_DISP_UNIT - 与窗口关联的排量单位。MPI_WIN_CREATE_FLAVOR - 如何创建窗口。MPI_WIN_MODEL - 窗口的内存模型。",
+  "body": [
+   "MPI_WIN_GET_ATTR(WIN, WIN_KEYVAL, ATTRIBUTE_VAL, FLAG, IERROR)"
+  ]
+ },
+ "mpi-win-set-attr-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-set-attr-function"
+  ],
+  "description": "MPI_WIN_SET_ATTR(WIN, WIN_KEYVAL, ATTRIBUTE_VAL, IERROR)\n存储与键关联的属性值。\nINTEGER WIN, WIN_KEYVAL, IERROR\nINTEGER(KIND=MPI_ADDRESS_KIND) ATTRIBUTE_VAL\n\nwin\n将附加属性的 MPI 窗口对象。\nwin_keyval\n键值，如 MPI_Win_create_keyval返回。\nattribute_val [in]\n特性值。\n",
+  "body": [
+   "MPI_WIN_SET_ATTR(WIN, WIN_KEYVAL, ATTRIBUTE_VAL, IERROR)"
+  ]
+ },
+ "mpi-type-create-keyval-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-create-keyval-function"
+  ],
+  "description": "MPI_TYPE_CREATE_KEYVAL(TYPE_COPY_ATTR_FN, TYPE_DELETE_ATTR_FN, TYPE_KEYVAL, EXTRA_STATE, IERROR)\n为 MPI 数据类型创建属性键值。\nEXTERNAL TYPE_COPY_ATTR_FN, TYPE_DELETE_ATTR_FN\nINTEGER TYPE_KEYVAL, IERROR\nINTEGER(KIND=MPI_ADDRESS_KIND) EXTRA_STATE\n\ntype_copy_attr_fn [in]\n复制 用于type_keyval的回调函数。\ntype_delete_attr_fn [in]\n删除 type_keyval的回调函数。\ntype_keyval [out]\n用于将来访问的键值。\nextra_state [in， 可选]\n回调函数的额外状态。\nMPI_TYPE_NULL_COPY_FN - 空复制函数MPI_TYPE_NULL_DELETE_FN - 空删除函数MPI_TYPE_DUP_FN - 简单重复函数",
+  "body": [
+   "MPI_TYPE_CREATE_KEYVAL(TYPE_COPY_ATTR_FN, TYPE_DELETE_ATTR_FN, TYPE_KEYVAL, EXTRA_STATE, IERROR)"
+  ]
+ },
+ "mpi-type-delete-attr-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-delete-attr-function"
+  ],
+  "description": "MPI_TYPE_DELETE_ATTR(DATATYPE, TYPE_KEYVAL, IERROR)\n删除与数据类型上的键关联的属性值。\nINTEGER DATATYPE, TYPE_KEYVAL, IERROR\n\ndatatype\n附加属性的 MPI 数据类型。\ntype_keyval\n要删除的属性的键值。\n",
+  "body": [
+   "MPI_TYPE_DELETE_ATTR(DATATYPE, TYPE_KEYVAL, IERROR)"
+  ]
+ },
+ "mpi-type-free-keyval-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-free-keyval-function"
+  ],
+  "description": "MPI_TYPE_FREE_KEYVAL(TYPE_KEYVAL, IERROR)\n释放数据类型的属性键。\nINTEGER TYPE_KEYVAL, IERROR\n\ntype_keyval [in， out]\n键值。",
+  "body": [
+   "MPI_TYPE_FREE_KEYVAL(TYPE_KEYVAL, IERROR)"
+  ]
+ },
+ "mpi-type-get-attr-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-get-attr-function"
+  ],
+  "description": "MPI_TYPE_GET_ATTR(DATATYPE, TYPE_KEYVAL, ATTRIBUTE_VAL, FLAG, IERROR)\n按键检索属性值。\nINTEGER DATATYPE, TYPE_KEYVAL, IERROR\nINTEGER(KIND=MPI_ADDRESS_KIND) ATTRIBUTE_VAL\n\ntype\n属性附加到的数据类型。\ntype_keyval\n键值。\nattribute_val [out]\n属性值，除非 标志 为 false。\n标志 [out]\n如果没有与键关联的属性，则为 False。\n",
+  "body": [
+   "MPI_TYPE_GET_ATTR(DATATYPE, TYPE_KEYVAL, ATTRIBUTE_VAL, FLAG, IERROR)"
+  ]
+ },
+ "mpi-type-set-attr-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-set-attr-function"
+  ],
+  "description": "MPI_TYPE_SET_ATTR(DATATYPE, TYPE_KEYVAL, ATTRIBUTE_VAL, IERROR)\n存储与键关联的属性值。\nINTEGER DATATYPE, TYPE_KEYVAL, IERROR\nINTEGER(KIND=MPI_ADDRESS_KIND) ATTRIBUTE_VAL\n\ntype\n将附加属性的 MPI 数据类型。\ntype_keyval\n键值，如 MPI_Type_create_keyval返回。\nattribute_val [in]\n特性值。\n",
+  "body": [
+   "MPI_TYPE_SET_ATTR(DATATYPE, TYPE_KEYVAL, ATTRIBUTE_VAL, IERROR)"
+  ]
+ },
+ "mpi-allgather-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-allgather-function"
+  ],
+  "description": "MPI_ALLGATHER(SENDBUF, SENDCOUNT, SENDTYPE, RECVBUF, RECVCOUNT, RECVTYPE, COMM, IERROR)\n从组的所有成员收集数据，并将数据发送到组的所有成员。 \n<type> SENDBUF(*), RECVBUF(*)\nINTEGER SENDCOUNT, SENDTYPE, RECVCOUNT, RECVTYPE, COMM, IERROR\n\nsendbuf [in]\n指向要发送到组中所有进程的数据的指针。 缓冲区中元素的数量和数据类型在 sendcount 和 sendtype 参数中指定。 缓冲区中的每个元素对应于组中的一个进程。\n如果 comm 参数引用内部通信器，可以通过在所有进程中指定 MPI_IN_PLACE 来指定就地选项。 忽略 sendcount 和 sendtype 参数。 每个进程都会在相应的接收缓冲区元素中输入数据。 第 n个进程将数据发送到接收缓冲区的第 n个元素。\nsendcount [in]\nsendbuf 参数中指定的缓冲区中的元素数。 如果 sendcount 为零，则消息的数据部分为空。\nsendtype [in]\n发送缓冲区中元素的 MPI 数据类型。\nrecvbuf [out]\n指向包含从每个进程接收的数据的缓冲区的指针。 缓冲区中元素的数量和数据类型在 recvcount 和 recvtype 参数中指定。\nrecvcount\n接收缓冲区中的元素数。 如果计数为零，则消息的数据部分为空。\nrecvtype\n接收缓冲区中元素的 MPI 数据类型。\n通讯\nMPI_Comm通信器句柄。\n",
+  "body": [
+   "MPI_ALLGATHER(SENDBUF, SENDCOUNT, SENDTYPE, RECVBUF, RECVCOUNT, RECVTYPE, COMM, IERROR)"
+  ]
+ },
+ "mpi-allgatherv-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-allgatherv-function"
+  ],
+  "description": "MPI_ALLGATHERV(SENDBUF, SENDCOUNT, SENDTYPE, RECVBUF, RECVCOUNTS,DISPLS, RECVTYPE,COMM, IERROR)\n从组的每个成员收集可变数据量，并将数据发送到组的所有成员。 \n<type> SENDBUF(*), R.ECVBUF(*)\nINTEGER SENDCOUNT, SENDTYPE, RECVCOUNTS(*), DISPLS(*), RECVTYPE, COMM, IERROR\n\nsendbuf [in]\n指向要发送到组中所有进程的数据的指针。 缓冲区中元素的数量和数据类型在 sendcount 和 sendtype 参数中指定。 缓冲区中的每个元素对应于组中的一个进程。\n如果 comm 参数引用内部通信器，可以通过在所有进程中指定 MPI_IN_PLACE 来指定就地选项。 忽略 sendcount 和 sendtype 参数。 每个进程在相应的接收缓冲区元素中输入数据。 第 n个进程将数据发送到接收缓冲区的 n个元素。\nsendcount\n此过程在 sendbuf 参数中指定的缓冲区中发送的数据元素数。 如果 sendcount 中的元素为零，则来自该进程的消息的数据部分为空。\nsendtype\n发送缓冲区中元素的 MPI 数据类型。\nrecvbuf [out]\n指向包含从每个进程接收的数据的缓冲区的指针。 缓冲区中元素的数量和数据类型在 recvcount 和 recvtype 参数中指定。\nrecvcounts [in]\n接收缓冲区中每个通信器进程的数据元素数。\ndispls [in]\n相对于每个通信器进程的数据 的 recvbuf 参数的位置。\n在 recvbuf、 recvcounts 和 displs 参数数组中，每个数组的第 n个元素是指从 n个通信器进程接收的数据。\nrecvtype\n缓冲区中每个元素的 MPI 数据类型。\n通讯\nMPI_Comm通信器句柄。\n",
+  "body": [
+   "MPI_ALLGATHERV(SENDBUF, SENDCOUNT, SENDTYPE, RECVBUF, RECVCOUNTS,DISPLS, RECVTYPE,COMM, IERROR)"
+  ]
+ },
+ "mpi-allreduce-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-allreduce-function"
+  ],
+  "description": "MPI_ALLREDUCE(SENDBUF, RECVBUF, COUNT, DATATYPE, OP, COMM, IERROR)\n将所有进程的值合并在一起，并将结果分发回所有进程。\n<type> SENDBUF(*), RECVBUF(*)\nINTEGER COUNT, DATATYPE, OP, COMM, IERROR\n\nsendbuf [in， 可选]\n指向要发送到组中所有进程的数据的指针。 缓冲区中元素的数量和数据类型在计数和数据类型参数中指定。\n如果 comm 参数引用内部通信器，可以通过在所有进程中指定 MPI_IN_PLACE 来指定就地选项。 在这种情况下，输入数据从接收缓冲区获取每个进程，其中将替换为输出数据。\nrecvbuf [out， optional]\n指向缓冲区的指针，用于接收缩减操作的结果。 此参数仅在根进程中非常重要。\ncount [in]\n要从此过程发送的元素数。\n数据类型 [in]\n缓冲区中每个元素 的MPI_Datatype 。 此参数必须与 操作 参数中指定的操作兼容。\nop [in]\n指示要执行的全局缩减操作 的MPI_Op 句柄。 句柄可以指示内置或应用程序定义的操作。 有关预定义操作的列表，请参阅 MPI_Op。\ncomm [in]\nMPI_Comm通信器句柄。\n",
+  "body": [
+   "MPI_ALLREDUCE(SENDBUF, RECVBUF, COUNT, DATATYPE, OP, COMM, IERROR)"
+  ]
+ },
+ "mpi-alltoall-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-alltoall-function"
+  ],
+  "description": "MPI_ALLTOALL(SENDBUF, SENDCOUNT, SENDTYPE, RECVBUF, RECVCOUNT, RECVTYPE, COMM, IERROR)\n将数据从组收集并分散到组的所有成员。 \n<type> SENDBUF(*), R.ECVBUF(*)\nINTEGER SENDCOUNT, SENDTYPE, RECVCOUNT, RECVTYPE, COMM, IERROR\n\nsendbuf [in]\n指向要发送到组中所有进程的数据的指针。 缓冲区中元素的数量和数据类型在 sendcount 和 sendtype 参数中指定。\n如果 comm 参数引用内部通信器，可以通过在所有进程中指定 MPI_IN_PLACE 来指定就地选项。 忽略 sendcount 和 sendtype 参数。 每个进程在相应的接收缓冲区元素中输入数据。 第 n个进程将数据发送到接收缓冲区的 n个元素。\nsendcount\n在 sendbuf 参数中指定的缓冲区中的元素数。 如果 sendcount 为零，则消息的数据部分为空。\nsendtype\n发送缓冲区中元素的 MPI 数据类型。\nrecvbuf [out]\n指向包含从每个进程接收的数据的缓冲区的指针。 缓冲区中元素的数量和数据类型在 recvcount 和 recvtype 参数中指定。\nrecvcount\n接收缓冲区中的元素数。 如果计数为零，则消息的数据部分为空。\nrecvtype\n接收缓冲区中元素的 MPI 数据类型。\n通讯\nMPI_Comm通信器句柄。\n",
+  "body": [
+   "MPI_ALLTOALL(SENDBUF, SENDCOUNT, SENDTYPE, RECVBUF, RECVCOUNT, RECVTYPE, COMM, IERROR)"
+  ]
+ },
+ "mpi-alltoallv-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-alltoallv-function"
+  ],
+  "description": "MPI_ALLTOALL(SENDBUF, SENDCOUNT, SENDTYPE, RECVBUF, RECVCOUNT, RECVTYPE, COMM, IERROR)\n从组中的所有成员收集数据并将数据分散到一个组的所有成员。 \n<type> SENDBUF(*), R.ECVBUF(*)\nINTEGER SENDCOUNT, SENDTYPE, RECVCOUNT, RECVTYPE, COMM, IERROR\n\nsendbuf [in]\n指向要发送到组中所有进程的数据的指针。 缓冲区中元素的数量和数据类型在 sendcount 和 sendtype 参数中指定。 缓冲区中的每个元素对应于组中的一个进程。\n如果 comm 参数引用内部通信器，可以通过在所有进程中指定 MPI_IN_PLACE 来指定就地选项。 忽略 sendcount、 sdispls 和 sendtype 参数。 每个进程都会在相应的接收缓冲区元素中输入数据。\n发送和接收的数据必须与 recvcounts 数组和 recvtype 参数指定的类型映射相同。 从 rdispls 参数指定的接收缓冲区的位置读取数据。\nsendcounts [in]\n此过程在 sendbuf 参数中指定的缓冲区中发送的数据元素数。 如果sendcount 中的元素为零，则来自该进程的消息的数据部分为空。\nsdispls [in]\n每个通信器进程的数据相对于 sendbuf 参数的位置。\nEntry j 指定相对于 sendbuf 参数的位移，从中获取发往进程 j 的传出数据。\nsendtype\n发送缓冲区中元素的 MPI 数据类型。\nrecvbuf [out]\n指向包含从每个进程接收的数据的缓冲区的指针。 缓冲区中元素的数量和数据类型在 recvcount 和 recvtype 参数中指定。\nrecvcounts [in]\n接收缓冲区中每个通信器进程的数据元素数。\nrdispls [in]\n相对于每个通信器进程的数据的 recvbuf 参数的位置。\n在 recvbuf、 recvcount 和 rdispls 参数数组中，每个数组的第 n个元素引用从 n个通信器进程接收的数据。\nrecvtype\n缓冲区中每个元素的 MPI 数据类型。\n通讯\n指定 MPI_Comm 通信器句柄。\n",
+  "body": [
+   "MPI_ALLTOALL(SENDBUF, SENDCOUNT, SENDTYPE, RECVBUF, RECVCOUNT, RECVTYPE, COMM, IERROR)"
+  ]
+ },
+ "mpi-alltoallw-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-alltoallw-function"
+  ],
+  "description": "MPI_ALLTOALLW(SENDBUF, SENDCOUNT, SDISPLS, SENDTYPE, RECVBUF, RECVCOUNTS, RDISPLS, RECVTYPE,COMM, IERROR)\n从组中的所有成员收集数据并将数据分散到一个组的所有成员。 \n<type> SENDBUF(*), R.ECVBUF(*)\nINTEGER SENDCOUNT, SENDTYPES(*), SDISPLS(*), RECVCOUNTS(*), RDISPLS(*), RECVTYPE, COMM, IERROR\n\nsendbuf [in]\n指向要发送到组中所有进程的数据的指针。 缓冲区中元素的数量和数据类型在 sendcount 和 sendtype 参数中指定。 缓冲区中的每个元素对应于组中的一个进程。\n如果 comm 参数引用内部通信器，可以通过在所有进程中指定 MPI_IN_PLACE 来指定就地选项。 忽略 sendcount、 sdispls 和 sendtype 参数。 每个进程都会在相应的接收缓冲区元素中输入数据。\n发送和接收的数据必须具有相同的类型映射，由 recvcounts 数组和 recvtype 参数指定，并且从接收缓冲区的位置读取，由 rdispls 参数指定。\nsendcounts [in]\n此过程在缓冲区中发送的数据元素数，如 sendbuf 参数中指定的。 如果 sendcount 中的元素为零，则来自该进程的消息的数据部分为空。\nsdispls [in]\n相对于每个通信器进程的数据的 sendbuf 参数的位置（以字节为单位）。\nEntry j 指定相对于 sendbuf 参数的位移，从中获取发往进程 j 的传出数据。\nsendtypes [in]\n发送缓冲区中每个元素的数据类型。 Entry j 指定发送到组中处理 j 的数据的类型。\nrecvbuf [out]\n指向包含从每个进程接收的数据的缓冲区的指针。 缓冲区中元素的数量和数据类型在 recvcount 和 recvtype 参数中指定。\nrecvcounts [in]\n接收缓冲区中每个通信器进程的数据元素数。\nrdispls [in]\n每个通信器进程中的数据相对于 recvbuf 参数的位置（以字节为单位）。 输入 i 指定相对于 recvbuf 参数的位移，从进程 i 中放置传入数据。\n在 recvbuf、 recvcount 和 rdispls 参数数组中，每个数组的第 n个元素引用从 n个通信器进程接收的数据。\nrecvtypes [in]\n缓冲区中每个元素的数据类型。 输入 i 指定从进程 i 接收的数据的类型。\n通讯\nMPI_Comm通信器句柄。\n",
+  "body": [
+   "MPI_ALLTOALLW(SENDBUF, SENDCOUNT, SDISPLS, SENDTYPE, RECVBUF, RECVCOUNTS, RDISPLS, RECVTYPE,COMM, IERROR)"
+  ]
+ },
+ "mpi-barrier-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-barrier-function"
+  ],
+  "description": "MPI_BARRIER(COMM, IERROR)\n跨组的所有成员启动屏障同步。\nINTEGER COMM, IERROR\n\ncomm [in]\n要同步的通信器。\n如果这是内部通信器， 则MPI_Barrier 函数会阻止调用方，直到所有组成员都调用它。 在调用函数的所有组进程之前，该函数不会返回任何进程。\n如果这是一个交传器， 则MPI_Barrier 函数涉及两个组。 该函数返回一个组中的进程（组 A）仅在其他组（组 B）的所有成员调用该函数之后，反之亦然。 该函数可以在其自己的组中的所有进程调用该函数之前返回该进程。\n",
+  "body": [
+   "MPI_BARRIER(COMM, IERROR)"
+  ]
+ },
+ "mpi-bcast-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-bcast-function"
+  ],
+  "description": "MPI_BCAST(BUFFER, COUNT, DATATYPE, ROOT, COMM, IERROR)\n将数据从组的一个成员广播到组的所有成员。\n<type> BUFFER(*)\nINTEGER COUNT, DATATYPE, ROOT, COMM, IERROR\n\nbuffer [in， out]\n指向数据缓冲区的指针。 在 根 参数指定的进程中，缓冲区包含要广播的数据。 在通信器中由 comm 参数指定的所有其他进程上，缓冲区接收根进程广播的数据。\ncount [in]\n缓冲区中的数据元素数。 如果 count 参数为零，则消息的数据部分为空。\n数据类型 [in]\n发送缓冲区中元素的 MPI 数据类型。\nroot [in]\n正在发送数据的进程的排名。\ncomm [in]\nMPI_Comm通信器句柄。\n",
+  "body": [
+   "MPI_BCAST(BUFFER, COUNT, DATATYPE, ROOT, COMM, IERROR)"
+  ]
+ },
+ "mpi-gather-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-gather-function"
+  ],
+  "description": "MPI_GATHER(SENDBUF, SENDCOUNT, SENDTYPE, RECVBUF, RECVCOUNT, RECVTYPE, ROOT, COMM, IERROR)\n将数据从组的所有成员收集到一个成员。\n<type> SENDBUF(*), RECVBUF(*)\nINTEGER SENDCOUNT, SENDTYPE, RECVCOUNT, RECVTYPE, ROOT, COMM, IERROR\n\nsendbuf [in]\n指向包含要发送到根进程的数据的缓冲区的指针。\n如果 comm 参数引用内部通信器，可以通过在所有进程中指定 MPI_IN_PLACE 来指定就地选项。 忽略 sendcount 和 sendtype 参数。 每个进程都会在相应的接收缓冲区元素中输入数据。 第 n个进程将数据发送到接收缓冲区的第 n个元素。 假定根进程发送的数据位于接收缓冲区中的正确位置。\nsendcount\n发送缓冲区中的元素数。 如果 sendcount 为零，则消息的数据部分为空。\nsendtype\n缓冲区中每个元素的数据类型。\nrecvbuf [out， 可选]\n指向根进程的缓冲区的指针，其中包含从每个进程接收的数据。 它包括根进程发送的数据。 此参数仅在根进程中非常重要。 对于所有非根进程， 将忽略 recvbuf 参数。\nrecvcount\n从每个进程接收的元素数。 此数字不是缓冲区中的项总数。 如果计数为零，则消息的数据部分为空。 此参数仅在根进程中非常重要。\nrecvtype\n缓冲区中每个元素的 MPI 数据类型。 此参数仅在根进程中非常重要。\nroot\n指定通信器内的接收进程的排名。\n通讯\nMPI_Comm通信器句柄。\n",
+  "body": [
+   "MPI_GATHER(SENDBUF, SENDCOUNT, SENDTYPE, RECVBUF, RECVCOUNT, RECVTYPE, ROOT, COMM, IERROR)"
+  ]
+ },
+ "mpi-gatherv-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-gatherv-function"
+  ],
+  "description": "MPI_GATHERV(SENDBUF, SENDCOUNT, SENDTYPE, RECVBUF, RECVCOUNTS, DISPLS, RECVTYPE, ROOT, COMM, IERROR)\n将组的所有成员的变量数据收集到一个成员。 \n<type> SENDBUF(*), RECVBUF(*)\nINTEGER SENDCOUNT, SENDTYPE, RECVCOUNTS(*), DISPLS(*), RECVTYPE, ROOT, COMM, IERROR\n\nsendbuf [in]\n包含要发送到根进程的数据的缓冲区的句柄。\n如果 comm 参数引用内部通信器，可以通过在所有进程中指定 MPI_IN_PLACE 来指定就地选项。 忽略 sendcount 和 sendtype 参数。 每个进程在相应的接收缓冲区元素中输入数据。 第 n个进程将数据发送到接收缓冲区的 n个元素。 假定根进程发送的数据位于接收缓冲区中的正确位置。\nsendcount\n发送缓冲区中的元素数。 如果 sendcount 为零，则消息的数据部分为空。\nsendtype\n缓冲区中每个元素的数据类型。\nrecvbuf [out， optional]\n根进程上缓冲区的句柄，其中包含从每个进程接收的数据，包括根进程发送的数据。 此参数仅在根进程中非常重要。 所有非根进程都会忽略 recvbuf 参数。\nrecvcounts[] [in， 可选]\n从每个进程接收的元素数。 数组中的每个元素对应于发送进程的排名。 如果计数为零，则消息的数据部分为空。 此参数仅在根进程中非常重要。\ndispls[] [in， optional]\n相对于每个通信器进程的数据 的 recvbuf 参数的位置。 从 process j 接收的数据将放入根进程偏移量的接收缓冲区中，从 sendbuf 指针分解 [j] 元素。\n在 recvbuf、 recvcounts 和 displs 参数数组中，每个数组的第 n个元素是指从 n个通信器进程接收的数据。\n此参数仅在根进程中非常重要。\nrecvtype\n缓冲区中每个元素的数据类型。 此参数仅在根进程中非常重要。\nroot\n指定通信器中的接收进程的排名。\n通讯\nMPI_Comm通信器句柄。\n",
+  "body": [
+   "MPI_GATHERV(SENDBUF, SENDCOUNT, SENDTYPE, RECVBUF, RECVCOUNTS, DISPLS, RECVTYPE, ROOT, COMM, IERROR)"
+  ]
+ },
+ "mpi-iallgather-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-iallgather-function"
+  ],
+  "description": "MPI_IALLGATHER(SENDBUF, SENDCOUNT, SENDTYPE, RECVBUF, RECVCOUNT, RECVTYPE, COMM, REQUEST, IERROR)\n从组的所有成员收集数据，并通过非阻止方式将数据发送到组的所有成员。\n<type> SENDBUF(*), RECVBUF(*)\nINTEGER SENDCOUNT, SENDTYPE, RECVCOUNT, RECVTYPE, COMM, REQUEST, IERROR\n\nsendbuf [in， 可选]\n指向要发送到组中所有进程的数据的指针。 缓冲区中元素的数量和数据类型在 sendcount 和 sendtype 参数中指定。 缓冲区中的每个元素对应于组中的一个进程。\n如果 comm 参数引用内部通信器，可以通过在所有进程中指定 MPI_IN_PLACE 来指定就地选项。 忽略 sendcount 和 sendtype 参数。 每个进程都会在相应的接收缓冲区元素中输入数据。 第 n个进程将数据发送到接收缓冲区的第 n个元素。\nsendcount [in]\nsendbuf 参数中指定的缓冲区中的元素数。 如果 sendcount 为零，则消息的数据部分为空。\nsendtype [in]\n发送缓冲区中元素的 MPI 数据类型。\nrecvbuf [out， 可选]\n指向包含从每个进程接收的数据的缓冲区的指针。 缓冲区中元素的数量和数据类型在 recvcount 和 recvtype 参数中指定。\nrecvcount [in]\n接收缓冲区中的元素数。 如果计数为零，则消息的数据部分为空。\nrecvtype [in]\n接收缓冲区中元素的 MPI 数据类型。\ncomm [in]\nMPI_Comm通信器句柄。\n请求 [out]\n表示通信操作 的MPI_Request 句柄。\n",
+  "body": [
+   "MPI_IALLGATHER(SENDBUF, SENDCOUNT, SENDTYPE, RECVBUF, RECVCOUNT, RECVTYPE, COMM, REQUEST, IERROR)"
+  ]
+ },
+ "mpi-iallreduce-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-iallreduce-function"
+  ],
+  "description": "MPI_IALLREDUCE(SENDBUF, RECVBUF, COUNT, DATATYPE, OP, COMM, REQUEST, IERROR)\n将所有进程中的值组合在一起，并将结果以非阻塞方式分发回所有进程。\n<type> SENDBUF(*), RECVBUF(*)\nINTEGER COUNT, DATATYPE, OP, COMM, REQUEST, IERROR\n\nsendbuf [in， 可选]\n指向要发送到组中所有进程的数据的指针。 缓冲区中元素的数量和数据类型在 计数 和 数据类型 参数中指定。\n如果 comm 参数引用内部通信器，可以通过在所有进程中指定 MPI_IN_PLACE 来指定就地选项。 在这种情况下，将从接收缓冲区的每个进程获取输入数据，其中将替换为输出数据。\nrecvbuf [out， 可选]\n指向用于接收缩减操作结果的缓冲区的指针。\ncount [in]\n从此过程发送的元素数。\n数据类型 [in]\n缓冲区中每个元素的数据类型。 此参数必须与 操作 参数中指定的操作兼容。\nop [in]\n要执行的全局缩减操作。 句柄可以指示内置或应用程序定义的操作。 有关预定义操作的列表，请参阅 MPI_Op。\ncomm [in]\nMPI_Comm通信器句柄。\n请求 [out]\n表示通信操作 的MPI_Request 句柄。\n",
+  "body": [
+   "MPI_IALLREDUCE(SENDBUF, RECVBUF, COUNT, DATATYPE, OP, COMM, REQUEST, IERROR)"
+  ]
+ },
+ "mpi-ibarrier-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-ibarrier-function"
+  ],
+  "description": "MPI_IBARRIER(COMM, REQUEST, IERROR)\n以非阻塞方式跨组的所有成员执行屏障同步。\nINTEGER COMM, REQUEST, IERROR\n\ncomm [in]\nMPI_COMM communicator 句柄。\n请求 [out]\nMPI_Request 表示通信操作的句柄。\n",
+  "body": [
+   "MPI_IBARRIER(COMM, REQUEST, IERROR)"
+  ]
+ },
+ "mpi-ibcast-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-ibcast-function"
+  ],
+  "description": "MPI_IBCAST(BUFFER, COUNT, DATATYPE, ROOT, COMM, REQUEST, IERROR)\n以非阻塞方式将消息从进程（排名为“root”）广播到通信器所有其他进程。\n<type> BUFFER(*)\nINTEGER COUNT, DATATYPE, ROOT, COMM, REQUEST, IERROR\n\nbuffer [in， out]\n指向数据缓冲区的指针。 在 根 参数指定的进程中，缓冲区包含要广播的数据。 在通信器中由 comm 参数指定的所有其他进程上，缓冲区接收根进程广播的数据。 buffer 由数据类型句柄指示的MPI_Datatype连续元素组成。 消息长度以元素数而不是字节数来指定。\ncount [in]\n缓冲区中的数据元素数。 如果 count 参数为零，则消息的数据部分为空。\n数据类型 [in]\n表示缓冲区中每个元素的数据类型的MPI_Datatype句柄。\nroot [in]\nMPI_Comm命令发送缓冲区中的进程的排名。\ncomm [in]\nMPI_Comm通信器句柄。\n请求 [out]\nMPI_Request 表示通信操作的句柄。\n",
+  "body": [
+   "MPI_IBCAST(BUFFER, COUNT, DATATYPE, ROOT, COMM, REQUEST, IERROR)"
+  ]
+ },
+ "mpi-igather-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-igather-function"
+  ],
+  "description": "MPI_IGATHER(SENDBUF, SENDCOUNT, SENDTYPE, RECVBUF, RECVCOUNT, RECVTYPE, ROOT, COMM, REQUEST, IERROR)\n以非阻止方式将数据从组的所有成员收集到一个成员。\n<type> SENDBUF(*), RECVBUF(*)\nINTEGER SENDCOUNT, SENDTYPE, RECVCOUNT, RECVTYPE, ROOT, COMM, REQUEST, IERROR\n\nsendbuf [in]\n指向包含要发送到根的数据的缓冲区的指针。 缓冲区由 sendtype 句柄指示 的MPI_Datatype 的 sendcount 连续元素组成。 消息长度以元素数而不是字节数来指定。\nsendcount\nsendbuf 中的 sendtype 元素数。 如果值为零，则消息的数据部分为空。\nsendtype\n表示 sendbuf 中每个元素的数据类型的MPI_Datatype句柄。\nrecvbuf [out， 可选]\n指向包含根上每个进程接收的数据的缓冲区的指针，包括根进程发送的数据 (仅在根) 显著。 对于所有非根进程，接收缓冲区 recvbuf 将被忽略。 在根进程中，recvbuf 由 recvtype 句柄指示的MPI_Datatype连续元素组成。 消息长度以元素数而不是字节数来指定。\nrecvcount [in]\nrecvbuf 中的 recvtype 元素数。 如果值为零，则消息的数据部分为空， (仅在根) 中有效。\nrecvtype [in]\n表示 recvbuf 中每个元素的数据类型的MPI_Datatype句柄 (仅在根) 上有效。\nroot [in]\nMPI_Commcomm 中的接收进程的排名。\ncomm [in]\nMPI_Comm通信器句柄。\n请求 [out]\n表示通信操作 的MPI_Request 句柄。\n",
+  "body": [
+   "MPI_IGATHER(SENDBUF, SENDCOUNT, SENDTYPE, RECVBUF, RECVCOUNT, RECVTYPE, ROOT, COMM, REQUEST, IERROR)"
+  ]
+ },
+ "mpi-igatherv-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-igatherv-function"
+  ],
+  "description": "MPI_IGATHERV(SENDBUF, SENDCOUNT, SENDTYPE, RECVBUF, RECVCOUNTS, DISPLS, RECVTYPE, ROOT, COMM, REQUEST, IERROR)\n以非阻塞方式将组的所有成员中的变量数据收集到一个成员。\n<type> SENDBUF(*), RECVBUF(*)\nINTEGER SENDCOUNT, SENDTYPE, RECVCOUNTS(*), DISPLS(*), RECVTYPE, ROOT, COMM, REQUEST, IERROR\n\nsendbuf [in， 可选]\n包含要发送到根进程的数据的缓冲区的句柄。\n如果 comm 参数引用内部通信器，可以通过在所有进程中指定 MPI_IN_PLACE 来指定就地选项。 忽略 sendcount 和 sendtype 参数。 每个进程在相应的接收缓冲区元素中输入数据。 第 n个进程将数据发送到接收缓冲区的 n个元素。 假定根进程发送的数据位于接收缓冲区中的正确位置。\nsendcount [in]\n发送缓冲区中的元素数。 如果 sendcount 为零，则消息的数据部分为空。\nsendtype [in]\n缓冲区中每个元素的数据类型。\nrecvbuf [out， optional]\n根进程上缓冲区的句柄，其中包含从每个进程接收的数据，包括根进程发送的数据。 此参数仅在根进程中非常重要。 所有非根进程都会忽略 recvbuf 参数。\nrecvcounts[] [in， 可选]\n从每个进程接收的元素数。 数组中的每个元素对应于发送进程的排名。 如果计数为零，则消息的数据部分为空。 此参数仅在根进程中非常重要。\ndispls[] [in， optional]\n相对于每个通信器进程的数据 的 recvbuf 参数的位置。 从 process j 接收的数据将放入根进程偏移量的接收缓冲区中，从 sendbuf 指针分解 [j] 元素。\n在 recvbuf、 recvcounts 和 displs 参数数组中，每个数组的第 n个元素是指从 n个通信器进程接收的数据。\n此参数仅在根进程中非常重要。\nrecvtype [in]\n缓冲区中每个元素的数据类型。 此参数仅在根进程中非常重要。\nroot [in]\n指定通信器中的接收进程的排名。\ncomm [in]\nMPI_Comm通信器句柄。\n请求 [out]\n表示通信操作 的MPI_Request 句柄。\n",
+  "body": [
+   "MPI_IGATHERV(SENDBUF, SENDCOUNT, SENDTYPE, RECVBUF, RECVCOUNTS, DISPLS, RECVTYPE, ROOT, COMM, REQUEST, IERROR)"
+  ]
+ },
+ "mpi-ireduce-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-ireduce-function"
+  ],
+  "description": "MPI_IREDUCE(SENDBUF, RECVBUF, COUNT, DATATYPE, OP, ROOT, COMM, REQUEST, IERROR)\n (执行全局化简操作，例如，非阻塞方式跨组的所有成员执行总和、最大值或逻辑和) 。\n<type> SENDBUF(*), RECVBUF(*)\nINTEGER COUNT, DATATYPE, OP, ROOT, COMM, REQUEST, IERROR\n\nsendbuf [in]\n指向一个缓冲区的指针，该缓冲区包含要用于缩减的此排名中的数据。 缓冲区由数据类型句柄指示的MPI_Datatype的连续元素组成。 消息长度以元素数而不是字节数来指定。\nrecvbuf [out， 可选]\n指向用于接收缩减操作结果的缓冲区的指针。 此参数仅在根进程中非常重要。\ncount [in]\n从此过程发送的元素数。\n数据类型 [in]\n表示 sendbuf 中每个元素的数据类型的MPI_Datatype句柄。\nop [in]\n指示要执行的全局缩减操作 的MPI_Op 句柄。 句柄可以指示内置或应用程序定义的操作。 有关预定义操作的列表，请参阅 MPI_Op 主题。\nroot [in]\nMPI_Commcomm 中的接收进程的排名。\ncomm [in]\nMPI_Comm通信器句柄。\n请求 [out]\n表示通信操作的 MPI_Request 句柄。\n",
+  "body": [
+   "MPI_IREDUCE(SENDBUF, RECVBUF, COUNT, DATATYPE, OP, ROOT, COMM, REQUEST, IERROR)"
+  ]
+ },
+ "mpi-iscatter-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-iscatter-function"
+  ],
+  "description": "MPI_ISCATTER(SENDBUF, SENDCOUNT, SENDTYPE, RECVBUF, RECVCOUNT, RECVTYPE, ROOT, COMM, REQUEST, IERROR)\n以非阻塞方式将一个成员中的数据分散在组的所有成员中。 此函数执行 \n<type> SENDBUF(*), RECVBUF(*)\nINTEGER SENDCOUNT, SENDTYPE, RECVCOUNT, RECVTYPE, ROOT, COMM, REQUEST, IERROR\n\nsendbuf [in， 可选]\n指向包含要发送到根进程的数据的缓冲区的指针。\n对于所有非根进程，此参数将被忽略。\n如果 comm 参数引用内部通信器，可以通过在根进程中指定 MPI_IN_PLACE 来指定就地选项。 将忽略 recvcount 和 recvtype 参数。 散点向量仍被视为包含 n 段，其中 n 是组大小;与根进程对应的段不会移动。\nsendcount [in]\n发送缓冲区中的元素数。 如果 sendcount 为零，则消息的数据部分为空。\n对于所有非根进程，此参数将被忽略。\nsendtype [in]\n缓冲区中每个元素的数据类型。\n对于所有非根进程，此参数将被忽略。\nrecvbuf [out， optional]\n缓冲区的句柄，该缓冲区包含每个进程上收到的数据。 缓冲区中元素的数量和数据类型在 recvcount 和 recvtype 参数中指定。\nrecvcount [in]\n接收缓冲区中的元素数。 如果计数为零，则消息的数据部分为空。\nrecvtype [in]\n接收缓冲区中元素的 MPI 数据类型。\nroot [in]\n指定通信器中的接收进程的排名。\ncomm [in]\nMPI_Comm通信器句柄。\n请求 [out]\n表示通信操作 的MPI_Request 句柄。\n",
+  "body": [
+   "MPI_ISCATTER(SENDBUF, SENDCOUNT, SENDTYPE, RECVBUF, RECVCOUNT, RECVTYPE, ROOT, COMM, REQUEST, IERROR)"
+  ]
+ },
+ "mpi-iscatterv-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-iscatterv-function"
+  ],
+  "description": "MPI_ISCATTERV(SENDBUF, SENDCOUNTS, DISPLS, SENDTYPE, RECVBUF, RECVCOUNT, RECVTYPE, ROOT, COMM, REQUEST, IERROR)\n返回 \n<type> SENDBUF(*), RECVBUF(*)\nINTEGER SENDCOUNTS(*), DISPLS(*), SENDTYPE, RECVCOUNT, RECVTYPE, ROOT, COMM, REQUEST, IERROR\n\nsendbuf [in， 可选]\n指向包含根进程要发送的数据的缓冲区的指针。\n对于所有非根进程，此参数将被忽略。\n如果 comm 参数引用内部通信器，可以通过在根进程中指定 MPI_IN_PLACE 来指定就地选项。 将忽略 recvcount 和 recvtype 参数。 散点向量仍被视为包含 n 段，其中 n 是组大小;与根进程相对应的段不会移动。\nsendcounts[] [in， 可选]\n要发送到每个进程的元素数。 如果 sendcounts[i] 为零，则该过程的消息的数据部分为空。\n对于所有非根进程，此参数将被忽略。\ndispls[] [in， optional]\n要发送到每个通信器进程的数据的位置。 数组中的每个位置都相对于 sendbuf 数组的相应元素。\n在 sendbuf、 sendcounts 和 displs 参数数组中，每个数组的第 n个元素引用要发送到 n个通信器进程的数据。\n此参数仅在根进程中非常重要。\nsendtype [in]\n缓冲区中每个元素的数据类型。\n对于所有非根进程，此参数将被忽略。\nrecvbuf [out， 可选]\n指向包含每个进程上接收的数据的缓冲区的指针。 缓冲区中元素的数量和数据类型在 recvcount 和 recvtype 参数中指定。\nrecvcount [in]\n接收缓冲区中的元素数。 如果计数为零，则消息的数据部分为空。\nrecvtype [in]\n接收缓冲区中元素的数据类型。\nroot [in]\n指定通信器内发送过程中的排名。\ncomm [in]\nMPI_Comm通信器句柄。\n请求 [out]\n表示通信操作 的MPI_Request 句柄。\n",
+  "body": [
+   "MPI_ISCATTERV(SENDBUF, SENDCOUNTS, DISPLS, SENDTYPE, RECVBUF, RECVCOUNT, RECVTYPE, ROOT, COMM, REQUEST, IERROR)"
+  ]
+ },
+ "mpi-reduce-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-reduce-function"
+  ],
+  "description": "MPI_REDUCE(SENDBUF, RECVBUF, COUNT, DATATYPE, OP, ROOT, COMM, IERROR)\n跨组的所有成员执行全局化简操作。 可以指定预定义的数学或逻辑运算或应用程序定义的操作。\n<type> SENDBUF(*), RECVBUF(*)\nINTEGER COUNT, DATATYPE, OP, ROOT, COMM, IERROR\n\nsendbuf [in]\n包含要发送到根进程的数据的缓冲区的句柄。\n如果 comm 参数引用内部通信器，可以通过在所有进程中指定 MPI_IN_PLACE 来指定就地选项。 忽略 sendcount 和 sendtype 参数。 每个进程都会在相应的接收缓冲区元素中输入数据。 第 n个进程将数据发送到接收缓冲区的第 n个元素。 根进程从接收缓冲区的相应元素获取其输入数据，并将其替换为输出数据。\nrecvbuf [out， 可选]\n用于接收缩减操作结果的缓冲区的句柄。 此参数仅在根进程中非常重要。\n计数\n从此过程发送的元素数。\ndatatype\n缓冲区中每个元素的数据类型。 此参数必须与 操作 参数中指定的操作兼容。\n              op\n要执行的全局缩减操作。 句柄可以指示内置或应用程序定义的操作。 有关预定义操作的列表，请参阅 MPI_Op 主题。\nroot\n指定通信器内的接收进程的排名。\n通讯\nMPI_Comm通信器句柄。\n",
+  "body": [
+   "MPI_REDUCE(SENDBUF, RECVBUF, COUNT, DATATYPE, OP, ROOT, COMM, IERROR)"
+  ]
+ },
+ "mpi-scatter-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-scatter-function"
+  ],
+  "description": "MPI_SCATTER(SENDBUF, SENDCOUNT, SENDTYPE, RECVBUF, RECVCOUNT, RECVTYPE, ROOT, COMM, IERROR)\n将一个成员中的数据分散到组的所有成员中。 \n<type> SENDBUF(*), RECVBUF(*)\nINTEGER SENDCOUNT, SENDTYPE, RECVCOUNT, RECVTYPE, ROOT, COMM, IERROR\n\nsendbuf [in]\n包含根进程要发送的数据的缓冲区的句柄。\n对于所有非根进程， 将忽略 sendbuf 参数。\n如果 comm 参数引用内部通信器，可以通过在根进程中指定 MPI_IN_PLACE 来指定就地选项。 将忽略 recvcount 和 recvtype 参数。 散点向量仍被视为包含 n 段，其中 n 是组大小;与根进程相对应的段不会移动。\nsendcount\n发送缓冲区中的元素数。 如果 sendcount 为零，则消息的数据部分为空。\n对于所有非根进程， 将忽略 sendcount 参数。\nsendtype\n缓冲区中每个元素的数据类型。\n对于所有非根进程， 将忽略 sendcount 参数。\nrecvbuf [out]\n缓冲区的句柄，其中包含在每个进程中接收的数据。 缓冲区中元素的数量和数据类型在 recvcount 和 recvtype 参数中指定。\nrecvcount\n接收缓冲区中的元素数。 如果计数为零，则消息的数据部分为空。\nrecvtype\n接收缓冲区中元素的数据类型。\nroot\n指定通信器内的发送进程的排名。\n通讯\nMPI_Comm通信器句柄。\n",
+  "body": [
+   "MPI_SCATTER(SENDBUF, SENDCOUNT, SENDTYPE, RECVBUF, RECVCOUNT, RECVTYPE, ROOT, COMM, IERROR)"
+  ]
+ },
+ "mpi-scatterv-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-scatterv-function"
+  ],
+  "description": "MPI_SCATTERV(SENDBUF, SENDCOUNT, DISPLS, SENDTYPE, RECVBUF, RECVCOUNT, RECVTYPE, ROOT, COMM, IERROR)\n将一个成员中的数据分散到组的所有成员中。 \n<type> SENDBUF(*), RECVBUF(*)\nINTEGER SENDCOUNT, SENDTYPE, DISPLS(*), RECVCOUNT(*), RECVTYPE, ROOT, COMM, IERROR\n\nsendbuf [in]\n指向包含根进程要发送的数据的缓冲区的指针。\n所有非根进程都会忽略 sendbuf 参数。\n如果 comm 参数引用内部通信器，可以通过在根进程中指定 MPI_IN_PLACE 来指定就地选项。 将忽略 recvcount 和 recvtype 参数。 散点向量仍被视为包含 n 段，其中 n 是组大小;与根进程对应的段不会移动。\nsendcounts [in]\n要发送到每个进程的元素数。 如果 sendcount[i] 为零，则该过程的消息的数据部分为空。\n所有非根进程都会忽略 sendcount 参数。\ndispls [in]\n要发送到每个通信器进程的数据的位置。 数组中的每个位置都相对于 sendbuf 数组的相应元素。\n在 sendbuf、 sendcounts 和 displs 参数数组中，每个数组的第 n个元素是指要发送到 n个通信器进程的数据。\n此参数仅在根进程中非常重要。\nsendtype\n缓冲区中每个元素的 MPI 数据类型。\n所有非根进程都会忽略 sendcount 参数。\nrecvbuf [out]\n指向包含每个进程上收到的数据的缓冲区的指针。 缓冲区中元素的数量和数据类型在 recvcount 和 recvtype 参数中指定。\nrecvcount\n接收缓冲区中的元素数。 如果计数为零，则消息的数据部分为空。\nrecvtype\n接收缓冲区中元素的数据类型。\nroot\n指定通信器内发送过程中的排名。\n通讯\nMPI_Comm通信器句柄。\n",
+  "body": [
+   "MPI_SCATTERV(SENDBUF, SENDCOUNT, DISPLS, SENDTYPE, RECVBUF, RECVCOUNT, RECVTYPE, ROOT, COMM, IERROR)"
+  ]
+ },
+ "mpi-exscan-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-exscan-function"
+  ],
+  "description": "MPI_EXSCAN(SENDBUF, RECVBUF, COUNT, DATATYPE, OP, COMM, IERROR)\n计算独占扫描 (部分减少) 进程集合中的数据。\n<type> SENDBUF(*), RECVBUF(*)\nINTEGER COUNT, DATATYPE, OP, COMM, IERROR\n\nsendbuf [in]\n发送缓冲区的起始地址。\nrecvbuf [out]\n接收缓冲区的起始地址。\n计数\n输入缓冲区中的元素数。\ndatatype\n输入缓冲区元素的数据类型。\n              op\n操作。\n通讯\n沟通。\n",
+  "body": [
+   "MPI_EXSCAN(SENDBUF, RECVBUF, COUNT, DATATYPE, OP, COMM, IERROR)"
+  ]
+ },
+ "mpi-op-create-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-op-create-function"
+  ],
+  "description": "MPI_OP_CREATE( USER_FN, COMMUTE, OP, IERROR)\n创建用户定义的组合函数句柄。\nEXTERNAL USER_FN\nLOGICAL COMMUTE\nINTEGER OP, IERROR\n\n函数 [in]\n用户定义的函数。\n通勤\n如果通勤，则为 true;否则为 false。\nop [out]\n操作对象。\n",
+  "body": [
+   "MPI_OP_CREATE( USER_FN, COMMUTE, OP, IERROR)"
+  ]
+ },
+ "mpi-op-free-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-op-free-function"
+  ],
+  "description": "MPI_OP_FREE(OP, IERROR)\n释放用户定义的组合函数句柄。\nINTEGER OP, IERROR\n\n              op\n操作。",
+  "body": [
+   "MPI_OP_FREE(OP, IERROR)"
+  ]
+ },
+ "mpi-reduce-local-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-reduce-local-function"
+  ],
+  "description": "MPI_REDUCE_LOCAL(INBUF, INOUTBUF, COUNT, DATATYPE, OP, IERROR)\n将缩减运算符应用于本地参数。\n<type> INBUF(*), INOUTBUF(*)\nINTEGER COUNT, DATATYPE, OP, IERROR\n\ninbuf [in]\n输入缓冲区的地址。\ninoutbuf\n输入输出缓冲区的地址。\n计数\n每个缓冲区中的元素数。\ndatatype\n缓冲区中元素的数据类型。\n              op\n缩减操作。\n",
+  "body": [
+   "MPI_REDUCE_LOCAL(INBUF, INOUTBUF, COUNT, DATATYPE, OP, IERROR)"
+  ]
+ },
+ "mpi-reduce-scatter-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-reduce-scatter-function"
+  ],
+  "description": "MPI_REDUCE_SCATTER(SENDBUF, RECVBUF, RECVCOUNTS, DATATYPE, OP, COMM, IERROR)\n合并值并散点结果。\n<type> SENDBUF(*), RECVBUF(*)\nINTEGER RECVCOUNTS(*), DATATYPE, OP, COMM, IERROR\n\nsendbuf [in]\n发送缓冲区的起始地址。\nrecvbuf [out]\n接收缓冲区的起始地址。\nrecvcounts [in]\n整数数组，指定结果分布到每个进程的元素数。\ndatatype\n输入缓冲区元素的数据类型。\n              op\n操作。\n通讯\n沟通。\n",
+  "body": [
+   "MPI_REDUCE_SCATTER(SENDBUF, RECVBUF, RECVCOUNTS, DATATYPE, OP, COMM, IERROR)"
+  ]
+ },
+ "mpi-scan-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-scan-function"
+  ],
+  "description": "MPI_SCAN(SENDBUF, RECVBUF, COUNT, DATATYPE, OP, COMM, IERROR)\n计算扫描 (部分减少) 进程集合中的数据。\n<type> SENDBUF(*), RECVBUF(*)\nINTEGER COUNT, DATATYPE, OP, COMM, IERROR\n\nsendbuf [in]\n发送缓冲区的起始地址。\nrecvbuf [out]\n接收缓冲区的起始地址。\n计数\n输入缓冲区中的元素数。\ndatatype\n输入缓冲区元素的数据类型。\n              op\n操作。\n通讯\n沟通。\n",
+  "body": [
+   "MPI_SCAN(SENDBUF, RECVBUF, COUNT, DATATYPE, OP, COMM, IERROR)"
+  ]
+ },
+ "mpi-user-function-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-user-function-function"
+  ],
+  "description": "SUBROUTINE USER_FUNCTION(INVEC, INOUTVEC, LEN, DATATYPE)\nNone\n<type> INVEC(LEN), INOUTVEC(LEN)\nINTEGER LEN, DATATYPE\n\ninvec\n用户函数正在组合的元素数组。\ninoutvec\n用户函数正在组合的元素数组。\nlen [in]\ninvec 和 inoutvec 的长度。\n数据类型 [in]\n传递到调用 MPI_Reduce的数据类型的句柄。\n",
+  "body": [
+   "SUBROUTINE USER_FUNCTION(INVEC, INOUTVEC, LEN, DATATYPE)"
+  ]
+ },
+ "mpi-comm-compare-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-compare-function"
+  ],
+  "description": "MPI_COMM_COMPARE(COMM1,COMM2,RESULT,IERROR)\n比较两个通信器句柄。\nINTEGER COMM1, COMM1, RESULT, IERROR\n\n",
+  "body": [
+   "MPI_COMM_COMPARE(COMM1,COMM2,RESULT,IERROR)"
+  ]
+ },
+ "mpi-comm-create-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-create-function"
+  ],
+  "description": "MPI_COMM_CREATE(COMM,GROUP,NEWCOMM,IERROR)\n提取一组进程子集，以便在单独的通信器中分离多个指令多个数据 (MIMD) 计算。\nINTEGER COMM, GROUP, NEWCOMM, IERROR\n\n通讯\n源通信器。\ngroup\n定义源通信器中进程请求的子集的组。\nnewcomm [out]\n返回时，包含新通信器的句柄。\n它允许实现将 MPI_Comm_create 函数分层到常规集体通信之上。它提供额外的安全性，尤其是在使用部分重叠组创建新的通信器的情况下。它允许实现避免与上下文创建相关的一些通信。",
+  "body": [
+   "MPI_COMM_CREATE(COMM,GROUP,NEWCOMM,IERROR)"
+  ]
+ },
+ "mpi-comm-dup-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-dup-function"
+  ],
+  "description": "MPI_COMM_DUP(COMM,NEWCOMM,IERROR)\n复制具有关联键值的现有通信器。 对于每个键值，相应的复制回调函数确定在新通信器中与此键关联的属性值。 例如，复制回调可以从新通信器中删除该属性。\nINTEGER COMM, NEWCOMM, IERROR\n\n通讯\n要复制的通信器。\nnewcomm [out]\n返回时，包含新通信器的句柄。 新通信器具有相同的组或组以及源中复制的任何缓存信息，但它包含新的上下文信息。\n",
+  "body": [
+   "MPI_COMM_DUP(COMM,NEWCOMM,IERROR)"
+  ]
+ },
+ "mpi-comm-free-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-free-function"
+  ],
+  "description": "MPI_COMM_FREE(COMM,IERROR)\n释放使用 \nINTEGER COMM, IERROR\n\n通讯\n指向可释放的 Communicator 句柄的指针。",
+  "body": [
+   "MPI_COMM_FREE(COMM,IERROR)"
+  ]
+ },
+ "mpi-comm-rank-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-rank-function"
+  ],
+  "description": "MPI_COMM_RANK(COMM,RANK,IERROR)\n检索指定通信器组中调用进程的排名。\nINTEGER COMM, RANK, IERROR\n\n通讯\n通信器。\n排名 [out]\n返回时，指向通信器组中调用进程的标识符的指针。\n",
+  "body": [
+   "MPI_COMM_RANK(COMM,RANK,IERROR)"
+  ]
+ },
+ "mpi-comm-size-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-size-function"
+  ],
+  "description": "MPI_COMM_SIZE(COMM,SIZE,IERROR)\n检索通信器中涉及的进程数或可用的进程总数。\nINTEGER COMM, SIZE, IERROR\n\n通讯\n要评估的通信器。 指定 MPI_COMM_WORLD 常量以检索可用的进程总数。\n大小 [out]\n返回时，指示通信器组中的进程数。\n",
+  "body": [
+   "MPI_COMM_SIZE(COMM,SIZE,IERROR)"
+  ]
+ },
+ "mpi-comm-split-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-split-function"
+  ],
+  "description": "MPI_COMM_SPLIT(COMM,COLOR,KEY,NEWCOMM,IERROR)\n将与指定通信器关联的组分区为指定数量的不连续子组。\nINTEGER COMM, COLOR, KEY, NEWCOMM, IERROR\n\n通讯\n要拆分的通信器。\ncolor\n要向其分配调用进程的新通信器。 颜色的值必须是非负值。\n如果进程指定颜色值MPI_UNDEFINED，函数会将 newcomm 参数中的MPI_COMM_NULL返回到调用进程。\nkey \n新通信器组中调用进程的相对排名。 有关使用 键 和 颜色 参数的详细信息，请参阅“备注”。\nnewcomm [out]\n返回时，包含新通信器的句柄。\n",
+  "body": [
+   "MPI_COMM_SPLIT(COMM,COLOR,KEY,NEWCOMM,IERROR)"
+  ]
+ },
+ "mpi-comm-remote-group-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-remote-group-function"
+  ],
+  "description": "MPI_COMM_REMOTE_GROUP(COMM, GROUP, IERROR)\n访问与给定的通信器关联的远程组。\nINTEGER COMM, GROUP, IERROR\n\n通讯\nCommunicator (必须是一个交传者) 。\n组 [out]\n远程通信器组。\n",
+  "body": [
+   "MPI_COMM_REMOTE_GROUP(COMM, GROUP, IERROR)"
+  ]
+ },
+ "mpi-comm-remote-size-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-remote-size-function"
+  ],
+  "description": "MPI_COMM_REMOTE_SIZE(COMM, SIZE, IERROR)\n确定与通信程序关联的远程组的大小。\nINTEGER COMM, SIZE, IERROR\n\n通讯\n沟通。\n大小 [out]\n远程 通信组中的进程数。\n",
+  "body": [
+   "MPI_COMM_REMOTE_SIZE(COMM, SIZE, IERROR)"
+  ]
+ },
+ "mpi-comm-test-inter-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-test-inter-function"
+  ],
+  "description": "MPI_COMM_TEST_INTER(COMM, FLAG, IERROR)\n测试，以确定通信是否是通信器。\nINTEGER COMM, IERROR\nLOGICAL FLAG\n\n通讯\n要测试的 Communicator。\n标志 [out]\n如果这是一个相互通信器，则为 True。\n",
+  "body": [
+   "MPI_COMM_TEST_INTER(COMM, FLAG, IERROR)"
+  ]
+ },
+ "mpi-intercomm-create-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-intercomm-create-function"
+  ],
+  "description": "MPI_INTERCOMM_CREATE(LOCAL_COMM, LOCAL_LEADER, PEER_COMM, REMOTE_LEADER,\n从两个内部通信器创建一个互通器。\nTAG, NEWINTERCOMM, IERROR)\nINTEGER LOCAL_COMM, LOCAL_LEADER, PEER_COMM, REMOTE_LEADER, TAG, NEWINTERCOMM, IERROR\n\nlocal_comm\n本地 () 通信器内部。\nlocal_leader\n在领导 (local_comm排名通常为 0) 。\npeer_comm\n用于在其他通信器中的指定进程之间进行通信的 Communicator。 仅在排名为local_leader的local_comm进程中具有显著意义。\nremote_leader\n在远程领导者peer_comm排名 (通常为 0) 。\n标签\n用于构造通信器的消息标记;如果要进行多个 MPI_Intercomm_create ，则应更准确地使用不同的标记 (，确保本地和远程领导为每个 MPI_Intercomm_create) 使用不同的标记。\nnewintercomm [out]\n创建了通信器。\n",
+  "body": [
+   "MPI_INTERCOMM_CREATE(LOCAL_COMM, LOCAL_LEADER, PEER_COMM, REMOTE_LEADER,"
+  ]
+ },
+ "mpi-intercomm-merge-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-intercomm-merge-function"
+  ],
+  "description": "MPI_INTERCOMM_MERGE(INTERCOMM, HIGH, NEWINTRACOMM, IERROR)\n从通信器创建一个内部通信器。\nINTEGER INTERCOMM, NEWINTRACOMM, IERROR\nLOGICAL HIGH\n\nintercomm\n通讯员。\nhigh\n用于在创建新通信器时对comm 中的组进行排序。  这是一个布尔值;设置高 true 的组在其进程 排序后 ，将此值设置为 false 的组。  如果通信器中的所有进程都提供相同的值，则首先对哪个组进行排序的选择是任意的。\nnewintracomm [out]\n创建了内部通信器。\n",
+  "body": [
+   "MPI_INTERCOMM_MERGE(INTERCOMM, HIGH, NEWINTRACOMM, IERROR)"
+  ]
+ },
+ "mpi-get-address-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-get-address-function"
+  ],
+  "description": "MPI_GET_ADDRESS(LOCATION, ADDRESS, IERROR)\n获取内存中某个位置的地址。\n<type> LOCATION(*)\nINTEGER IERROR\nINTEGER(KIND=MPI_ADDRESS_KIND) ADDRESS\n\n位置 [in]\n调用方内存中的位置。\n地址 [out]\n位置地址。\n",
+  "body": [
+   "MPI_GET_ADDRESS(LOCATION, ADDRESS, IERROR)"
+  ]
+ },
+ "mpi-get-elements-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-get-elements-function"
+  ],
+  "description": "MPI_GET_ELEMENTS(STATUS, DATATYPE, COUNT, IERROR)\n返回数据类型中的基本元素数。\nINTEGER STATUS(MPI_STATUS_SIZE), DATATYPE, COUNT, IERROR\n\n状态 [in]\n返回接收操作的状态。\ndatatype\n接收操作使用的数据类型。\ncount [out]\n收到的基本元素数。\n",
+  "body": [
+   "MPI_GET_ELEMENTS(STATUS, DATATYPE, COUNT, IERROR)"
+  ]
+ },
+ "mpi-pack-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-pack-function"
+  ],
+  "description": "MPI_PACK(INBUF, INCOUNT, DATATYPE, OUTBUF, OUTSIZE, POSITION, COMM, IERROR)\n将数据类型打包为连续内存。\n<type> INBUF(*), OUTBUF(*)\nINTEGER INCOUNT, DATATYPE, OUTSIZE, POSITION, COMM, IERROR\n\ninbuf [in]\n输入缓冲区的起始地址。\nincount\n输入数据项的数目。\ndatatype\n每个输入数据项的数据类型。\noutbuf 输出缓冲区的起始地址。\n特大\n输出缓冲区大小（以字节为单位）。\nposition\n缓冲区中的当前位置（以字节为单位）。\n通讯\n用于打包消息的 Communicator。\n",
+  "body": [
+   "MPI_PACK(INBUF, INCOUNT, DATATYPE, OUTBUF, OUTSIZE, POSITION, COMM, IERROR)"
+  ]
+ },
+ "mpi-pack-external-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-pack-external-function"
+  ],
+  "description": "MPI_PACK_EXTERNAL(DATAREP, INBUF, INCOUNT, DATATYPE, OUTBUF, OUTSIZE, POSITION, IERROR)\n使用 external32 格式将数据类型打包为连续内存。\nINTEGER INCOUNT, DATATYPE, IERROR\nINTEGER(KIND=MPI_ADDRESS_KIND) OUTSIZE, POSITION\nCHARACTER*(*) DATAREP\n<type> INBUF(*), OUTBUF(*)\n\ndatarep\n数据表示形式。\ninbuf [in]\n输入缓冲区的起始地址。\nincount\n输入数据项的数目。\ndatatype\n每个输入数据项的数据类型。\noutbuf\n输出缓冲区的起始地址。\n特大\n输出缓冲区大小（以字节为单位）。\nposition\n缓冲区中的当前位置（以字节为单位）。\n",
+  "body": [
+   "MPI_PACK_EXTERNAL(DATAREP, INBUF, INCOUNT, DATATYPE, OUTBUF, OUTSIZE, POSITION, IERROR)"
+  ]
+ },
+ "mpi-pack-external-size-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-pack-external-size-function"
+  ],
+  "description": "MPI_PACK_EXTERNAL_SIZE(DATAREP, INCOUNT, DATATYPE, SIZE, IERROR)\n返回使用 \nINTEGER INCOUNT, DATATYPE, IERROR\nINTEGER(KIND=MPI_ADDRESS_KIND) SIZE\nCHARACTER*(*) DATAREP\n\ndatarep\n数据表示形式。\nincount\n输入数据项数。\ndatatype\n每个输入数据项的数据类型。\n大小 [out]\n输出缓冲区大小（以字节为单位）。\n",
+  "body": [
+   "MPI_PACK_EXTERNAL_SIZE(DATAREP, INCOUNT, DATATYPE, SIZE, IERROR)"
+  ]
+ },
+ "mpi-pack-size-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-pack-size-function"
+  ],
+  "description": "MPI_PACK_SIZE(INCOUNT, DATATYPE, COMM, SIZE, IERROR)\n返回打包消息所需的空间量上限。\nINTEGER INCOUNT, DATATYPE, COMM, SIZE, IERROR\n\nincount\n用于打包调用的计数参数。\ndatatype\n用于打包调用的数据类型参数。\n通讯\n用于打包呼叫的 Communicator 参数。\n大小 [out]\n打包消息的大小上限（以字节为单位）。\n",
+  "body": [
+   "MPI_PACK_SIZE(INCOUNT, DATATYPE, COMM, SIZE, IERROR)"
+  ]
+ },
+ "mpi-type-commit-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-commit-function"
+  ],
+  "description": "MPI_TYPE_COMMIT(DATATYPE, IERROR)\n提交数据类型。\nINTEGER DATATYPE, IERROR\n\n数据类型 [in]\n要提交的数据类型。",
+  "body": [
+   "MPI_TYPE_COMMIT(DATATYPE, IERROR)"
+  ]
+ },
+ "mpi-type-contiguous-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-contiguous-function"
+  ],
+  "description": "MPI_TYPE_CONTIGUOUS(COUNT, OLDTYPE, NEWTYPE, IERROR)\n定义一个新的数据类型，该数据类型是现有数据类型的多个元素的串联。\nINTEGER COUNT, OLDTYPE, NEWTYPE, IERROR\n\n计数\n新数据类型中的元素数。\noldtype\n每个元素的 MPI 数据类型。\nnewtype [out]\n返回时，包含表示新数据类型 的MPI_Datatype 句柄。\n",
+  "body": [
+   "MPI_TYPE_CONTIGUOUS(COUNT, OLDTYPE, NEWTYPE, IERROR)"
+  ]
+ },
+ "mpi-type-create-darray-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-create-darray-function"
+  ],
+  "description": "MPI_TYPE_CREATE_DARRAY(SIZE, RANK, NDIMS, ARRAY_OF_GSIZES, ARRAY_OF_DISTRIBS, ARRAY_OF_DARGS, ARRAY_OF_PSIZES, ORDER, OLDTYPE, NEWTYPE, IERROR)\n创建表示分布式数组的数据类型。\nINTEGER SIZE, RANK, NDIMS, ARRAY_OF_GSIZES(*), ARRAY_OF_DISTRIBS(*), ARRAY_OF_DARGS(*), ARRAY_OF_PSIZES(*), ORDER, OLDTYPE, NEWTYPE, IERROR\n\n大小\n进程组的大小。\nrank\n在进程组中排名。\nndims\n数组维度以及处理网格维度的数量。\narray_of_gszies\n全局数组的每个维度中 旧类型的 元素数。\narray_of_distribs\n每个维度中的数组分布。\narray_of_dargs\n每个维度中的分布参数。\narray_of_psizes\n每个维度中的进程网格大小。\norder\n数组存储顺序标志。\noldtype\n旧数据类型。\nnewtype [out]\n新数据类型。\n",
+  "body": [
+   "MPI_TYPE_CREATE_DARRAY(SIZE, RANK, NDIMS, ARRAY_OF_GSIZES, ARRAY_OF_DISTRIBS, ARRAY_OF_DARGS, ARRAY_OF_PSIZES, ORDER, OLDTYPE, NEWTYPE, IERROR)"
+  ]
+ },
+ "mpi-type-create-hindexed-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-create-hindexed-function"
+  ],
+  "description": "MPI_TYPE_CREATE_HINDEXED(COUNT, ARRAY_OF_BLOCKLENGTHS, ARRAY_OF_DISPLACEMENTS, OLDTYPE, NEWTYPE, IERROR)\n定义由任意大小的指定数量的块组成的新数据类型。 每个块是现有数据类型的元素的串联。 每个块可以包含不同数量的元素，并且具有不同的偏移量。\nCOUNT, ARRAY_OF_BLOCKLENGTHS, ARRAY_OF_DISPLACEMENTS, OLDTYPE, NEWTYPE, IERROR\n\n计数\n块数和 array_of_blocklengths 和 array_of_displacements 参数中的条目数。\narray_of_blocklengths\n每个块的元素数。\narray_of_displacements\n每个块的偏移量（以字节为单位）。\noldtype\n每个元素的 MPI 数据类型。\nnewtype [out]\n返回时，包含表示新数据类型 的MPI_Datatype 句柄。\n",
+  "body": [
+   "MPI_TYPE_CREATE_HINDEXED(COUNT, ARRAY_OF_BLOCKLENGTHS, ARRAY_OF_DISPLACEMENTS, OLDTYPE, NEWTYPE, IERROR)"
+  ]
+ },
+ "mpi-type-create-hindexed-block-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-create-hindexed-block-function"
+  ],
+  "description": "MPI_TYPE_CREATE_HINDEXED_BLOCK(COUNT, BLOCKLENGTH, ARRAY_OF_DISPLACEMENTS, OLDTYPE, NEWTYPE, IERROR)\n允许将旧数据类型复制到一系列块， (每个块是旧数据类型) 的串联，其中所有块具有相同块长度，但可以具有不同的块位移（以字节为单位）。\nINTEGER COUNT, BLOCKLENGTH, OLDTYPE, NEWTYPE, IERROR\nINTEGER(KIND=MPI_ADDRESS_KIND) ARRAY_OF_DISPLACEMENTS(*)\n\ncount [in]\n块数和 array_of_displacements 参数中的条目数。\nblocklength [in]\n每个块中的元素数。\narray_of_displacements [in]\n包含每个块的位移的数组（以字节为单位）。\noldtype [in]\n表示每个元素的数据类型的 MPI_Datatype 句柄。\nnewtype [out]\n返回时，包含表示包含元素块计数副本的数据类型的MPI_Datatype句柄。 每个块都有 块元素 。 每个块的位移在 array_of_displacements中指定。\n",
+  "body": [
+   "MPI_TYPE_CREATE_HINDEXED_BLOCK(COUNT, BLOCKLENGTH, ARRAY_OF_DISPLACEMENTS, OLDTYPE, NEWTYPE, IERROR)"
+  ]
+ },
+ "mpi-type-create-hvector-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-create-hvector-function"
+  ],
+  "description": "MPI_TYPE_CREATE_HVECTOR(COUNT, BLOCKLENGTH, STRIDE, OLDTYPE, NEWTYPE, IERROR)\n定义由指定数量的块组成的新数据类型。 每个块是现有数据类型的相同数量的元素的串联。 此函数类似于函数 \nINTEGER COUNT, BLOCKLENGTH, STRIDE, OLDTYPE, NEWTYPE, IERROR\n\n计数\n新数据类型中的块数。\nblocklength\n每个块中的元素数。\n大步\n一个块的开头和下一个块之间的字节数。 该步幅是旧数据类型 范围的倍数 。\noldtype\n每个元素的 MPI 数据类型。\nnewtype [out]\n返回时，包含表示新数据类型 的MPI_Datatype 句柄。\n",
+  "body": [
+   "MPI_TYPE_CREATE_HVECTOR(COUNT, BLOCKLENGTH, STRIDE, OLDTYPE, NEWTYPE, IERROR)"
+  ]
+ },
+ "mpi-type-create-indexed-block-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-create-indexed-block-function"
+  ],
+  "description": "MPI_TYPE_CREATE_INDEXED_BLOCK(COUNT, BLOCKLENGTH, ARRAY_OF_DISPLACEMENTS, OLDTYPE, NEWTYPE, IERROR)\n定义由指定数量的块组成的新数据类型。 每个块是相同的块长度，但每个块可以有不同的块位移。\nCOUNT, BLOCKLENGTH, ARRAY_OF_DISPLACEMENTS, OLDTYPE, NEWTYPE, IERROR\n\n计数\n块数和 array_of_displacements 参数中的条目数。\nblocklength\n每个块中的元素数。\narray_of_displacements\n每个单独的块的偏移量（以字节为单位）。 所有块位移必须是旧类型参数中指定的数据类型范围的倍数。\noldtype\n每个元素的 MPI 数据类型。\nnewtype [out]\n返回时，包含表示新数据类型 的MPI_Datatype 句柄。\n",
+  "body": [
+   "MPI_TYPE_CREATE_INDEXED_BLOCK(COUNT, BLOCKLENGTH, ARRAY_OF_DISPLACEMENTS, OLDTYPE, NEWTYPE, IERROR)"
+  ]
+ },
+ "mpi-type-create-resized-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-create-resized-function"
+  ],
+  "description": "MPI_TYPE_CREATE_RESIZED(OLDTYPE, LB, EXTENT, NEWTYPE, IERROR)\n使用现有数据类型使用新的下限和盘区创建数据类型。\nINTEGER OLDTYPE, NEWTYPE, IERROR\nINTEGER(KIND=MPI_ADDRESS_KIND) LB, EXTENT\n\noldtype\n输入数据类型。\n磅\n数据类型的新下限。\nextent\n数据类型的新范围。\nnewtype [out]\n输出数据类型。\n",
+  "body": [
+   "MPI_TYPE_CREATE_RESIZED(OLDTYPE, LB, EXTENT, NEWTYPE, IERROR)"
+  ]
+ },
+ "mpi-type-create-struct-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-create-struct-function"
+  ],
+  "description": "MPI_TYPE_CREATE_STRUCT(COUNT, ARRAY_OF_BLOCKLENGTHS, ARRAY_OF_DISPLACEMENTS, ARRAY_OF_TYPES, NEWTYPE, IERROR)\n为每个数据块定义具有指定数据类型、偏移量和大小的新数据类型。\nCOUNT, ARRAY_OF_BLOCKLENGTHS, ARRAY_OF_DISPLACEMENTS, ARRAY_OF_TYPES, NEWTYPE, IERROR\n\n计数\n块数和 array_of_blocklengths、 array_of_displacements 和 array_of_types 参数中的条目数。\narray_of_blocklengths\n每个块的元素数。\narray_of_displacements\n每个单独的块的偏移量（以字节为单位）。\narray_of_types\n每个块的数据类型。\nnewtype [out]\n返回时，包含表示新数据类型 的MPI_Datatype 句柄。\n",
+  "body": [
+   "MPI_TYPE_CREATE_STRUCT(COUNT, ARRAY_OF_BLOCKLENGTHS, ARRAY_OF_DISPLACEMENTS, ARRAY_OF_TYPES, NEWTYPE, IERROR)"
+  ]
+ },
+ "mpi-type-create-subarray-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-create-subarray-function"
+  ],
+  "description": "MPI_TYPE_CREATE_SUBARRAY(NDIMS, ARRAY_OF_SIZES, ARRAY_OF_SUBSIZES, ARRAY_OF_STARTS, ORDER, OLDTYPE, NEWTYPE, IERROR)\n定义一个新的数据类型，该数据类型由 n 维数组的 n 维子数组组成。 子数组可以位于完整数组中的任意位置。 只要它完全包含在数组中，它就可以是任何非零大小。\nNDIMS, ARRAY_OF_SIZES, ARRAY_OF_SUBSIZES, ARRAY_OF_STARTS, ORDER, OLDTYPE, NEWTYPE, IERROR\n\n",
+  "body": [
+   "MPI_TYPE_CREATE_SUBARRAY(NDIMS, ARRAY_OF_SIZES, ARRAY_OF_SUBSIZES, ARRAY_OF_STARTS, ORDER, OLDTYPE, NEWTYPE, IERROR)"
+  ]
+ },
+ "mpi-type-dup-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-dup-function"
+  ],
+  "description": "MPI_TYPE_DUP(OLDTYPE, NEWTYPE, IERROR)\n复制数据类型。\nINTEGER OLDTYPE, NEWTYPE, IERROR\n\ntype\n要复制的数据类型。\nnewtype [out]\n类型的副本。\n",
+  "body": [
+   "MPI_TYPE_DUP(OLDTYPE, NEWTYPE, IERROR)"
+  ]
+ },
+ "mpi-type-free-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-free-function"
+  ],
+  "description": "MPI_TYPE_FREE(DATATYPE, IERROR)\n释放数据类型。\nINTEGER DATATYPE, IERROR\n\ndatatype\n释放的数据类型。",
+  "body": [
+   "MPI_TYPE_FREE(DATATYPE, IERROR)"
+  ]
+ },
+ "mpi-type-get-contents-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-get-contents-function"
+  ],
+  "description": "MPI_TYPE_GET_CONTENTS(DATATYPE, MAX_INTEGERS, MAX_ADDRESSES, MAX_DATATYPES, ARRAY_OF_INTEGERS, ARRAY_OF_ADDRESSES, ARRAY_OF_DATATYPES, IERROR)\n获取类型的内容。\nINTEGER DATATYPE, MAX_INTEGERS, MAX_ADDRESSES, MAX_DATATYPES, ARRAY_OF_INTEGERS(*), ARRAY_OF_DATATYPES(*), IERROR\nINTEGER(KIND=MPI_ADDRESS_KIND) ARRAY_OF_ADDRESSES(*)\n\ndatatype\n要访问的数据类型。\nmax_integers\narray_of_integers中的元素数。\nmax_addresses\narray_of_addresses中的元素数。\nmax_datatypes\narray_of_datatypes中的元素数。\narray_of_integers\n包含用于构造数据类型的整数参数。\narray_of_addresses\n包含用于构造数据类型的地址参数。\narray_of_datatypes\n包含用于构造数据类型的数据类型参数。\n",
+  "body": [
+   "MPI_TYPE_GET_CONTENTS(DATATYPE, MAX_INTEGERS, MAX_ADDRESSES, MAX_DATATYPES, ARRAY_OF_INTEGERS, ARRAY_OF_ADDRESSES, ARRAY_OF_DATATYPES, IERROR)"
+  ]
+ },
+ "mpi-type-get-envelope-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-get-envelope-function"
+  ],
+  "description": "MPI_TYPE_GET_ENVELOPE(DATATYPE, NUM_INTEGERS, NUM_ADDRESSES, NUM_DATATYPES, COMBINER, IERROR)\n返回有关在创建数据类型的调用中使用的输入参数的数量和类型的信息。\nINTEGER DATATYPE, NUM_INTEGERS, NUM_ADDRESSES, NUM_DATATYPES, COMBINER, IERROR\n\ndatatype\n要访问的数据类型。\nnum_integers [out]\n调用构造 组合器中使用的输入整数数。\nnum_addresses [out]\n调用构造 组合器中使用的输入地址数。\nnum_datatypes [out]\n调用构造 组合器中使用的输入数据类型数。\ncombiner [out]\n组合器。\n",
+  "body": [
+   "MPI_TYPE_GET_ENVELOPE(DATATYPE, NUM_INTEGERS, NUM_ADDRESSES, NUM_DATATYPES, COMBINER, IERROR)"
+  ]
+ },
+ "mpi-type-get-extent-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-get-extent-function"
+  ],
+  "description": "MPI_TYPE_GET_EXTENT(DATATYPE, LB, EXTENT, IERROR)\n获取数据类型的下限和范围。\nINTEGER DATATYPE, IERROR\nINTEGER(KIND = MPI_ADDRESS_KIND) LB, EXTENT\n\ndatatype\n要获取相关信息的数据类型。\nlb [out]\n数据类型的下限。\n盘区 [out]\n数据类型的范围。\n",
+  "body": [
+   "MPI_TYPE_GET_EXTENT(DATATYPE, LB, EXTENT, IERROR)"
+  ]
+ },
+ "mpi-type-get-true-extent-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-get-true-extent-function"
+  ],
+  "description": "MPI_TYPE_GET_TRUE_EXTENT(DATATYPE, TRUE_LB, TRUE_EXTENT, IERROR)\n获取数据类型的真正下限和范围。\nINTEGER DATATYPE, IERROR\nINTEGER(KIND = MPI_ADDRESS_KIND) TRUE_LB, TRUE_EXTENT\n\ndatatype\n要获取相关信息的数据类型。\ntrue_lb [out]\n数据类型的真实下限。\ntrue_extent [out]\n数据类型的真实大小。\n",
+  "body": [
+   "MPI_TYPE_GET_TRUE_EXTENT(DATATYPE, TRUE_LB, TRUE_EXTENT, IERROR)"
+  ]
+ },
+ "mpi-type-indexed-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-indexed-function"
+  ],
+  "description": "MPI_TYPE_INDEXED(COUNT, ARRAY_OF_BLOCKLENGTHS, ARRAY_OF_DISPLACEMENTS, OLDTYPE, NEWTYPE, IERROR)\n定义由指定数量的任意大小的块组成的新数据类型。 每个块都是现有数据类型的元素的串联。 每个块可以包含不同数量的元素，并且具有不同的位移。\nCOUNT, ARRAY_OF_BLOCKLENGTHS, ARRAY_OF_DISPLACEMENTS, OLDTYPE, NEWTYPE, IERROR\n\n计数\n块数和 array_of_blocklengths 和 array_of_displacements 参数中的元素数。\narray_of_blocklengths\n每个块的元素数。\narray_of_displacements\n每个单个块的位移（以字节为单位）。 所有块位移必须是旧类型参数中指定的数据类型范围的倍数。\noldtype\n每个元素的 MPI 数据类型。\nnewtype [out]\n返回时，包含表示新数据类型 的MPI_Datatype 句柄。\n",
+  "body": [
+   "MPI_TYPE_INDEXED(COUNT, ARRAY_OF_BLOCKLENGTHS, ARRAY_OF_DISPLACEMENTS, OLDTYPE, NEWTYPE, IERROR)"
+  ]
+ },
+ "mpi-type-size-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-size-function"
+  ],
+  "description": "MPI_TYPE_SIZE(DATATYPE, SIZE, IERROR)\n返回数据类型中的条目占用的字节数。\nINTEGER DATATYPE, SIZE, IERROR\n\ndatatype\n数据类型。\n大小 [out]\n数据类型的大小。\n",
+  "body": [
+   "MPI_TYPE_SIZE(DATATYPE, SIZE, IERROR)"
+  ]
+ },
+ "mpi-type-vector-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-vector-function"
+  ],
+  "description": "MPI_TYPE_VECTOR(COUNT, BLOCKLENGTH, STRIDE, OLDTYPE, NEWTYPE, IERROR)\n定义一个新的数据类型，该数据类型由指定大小的指定数量的块组成。 每个块是现有数据类型的相同数量的元素的串联。\nINTEGER COUNT, BLOCKLENGTH, STRIDE, OLDTYPE, NEWTYPE, IERROR\n\n计数\n所创建的向量中的块数。\nblocklength\n每个块中的元素数。\n大步\n一个块的开头和下一个块的开头之间的元素数。\noldtype\n每个元素的数据类型。\nnewtype [out]\n返回时，包含表示新数据类型 的MPI_Datatype 句柄。\n",
+  "body": [
+   "MPI_TYPE_VECTOR(COUNT, BLOCKLENGTH, STRIDE, OLDTYPE, NEWTYPE, IERROR)"
+  ]
+ },
+ "mpi-unpack-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-unpack-function"
+  ],
+  "description": "MPI_UNPACK(INBUF, INSIZE, POSITION, OUTBUF, OUTCOUNT, DATATYPE, COMM, IERROR)\n根据数据类型将缓冲区解压缩到连续内存中。\n<type> INBUF(*), OUTBUF(*)\nINTEGER INSIZE, POSITION, OUTCOUNT, DATATYPE, COMM, IERROR\n\ninbuf\n输入缓冲区的起始地址。\ninsize\n输入缓冲区的大小（以字节为单位）。\nposition\n当前位置（以字节为单位）。\noutbuf [out ]\n输出缓冲区的起始地址。\noutcount\n要解压缩的项目数。\ndatatype\n每个输出数据项的数据类型。\n通讯\n已打包消息的 Communicator。\n",
+  "body": [
+   "MPI_UNPACK(INBUF, INSIZE, POSITION, OUTBUF, OUTCOUNT, DATATYPE, COMM, IERROR)"
+  ]
+ },
+ "mpi-unpack-external-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-unpack-external-function"
+  ],
+  "description": "MPI_UNPACK_EXTERNAL(DATAREP, INBUF, INSIZE, POSITION, OUTBUF, OUTCOUNT, DATATYPE, IERROR)\n根据数据类型将MPI_Pack_external) 打包为连续内存的\nINTEGER OUTCOUNT, DATATYPE, IERROR\nINTEGER(KIND=MPI_ADDRESS_KIND) INSIZE, POSITION\nCHARACTER*(*) DATAREP\n<type> INBUF(*), OUTBUF(*)\n\ndatarep\n数据表示形式。\ninbuf\n输入缓冲区的起始地址。\ninsize\n输入缓冲区大小（以字节为单位）。\nposition\n缓冲区中的当前位置（以字节为单位）。\noutbuf [out ]\n输出缓冲区的起始地址。\noutcount\n输出数据项数。\ndatatype\n输出数据项的数据类型。\n",
+  "body": [
+   "MPI_UNPACK_EXTERNAL(DATAREP, INBUF, INSIZE, POSITION, OUTBUF, OUTCOUNT, DATATYPE, IERROR)"
+  ]
+ },
+ "mpi-comm-group-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-group-function"
+  ],
+  "description": "MPI_COMM_GROUP(COMM, GROUP, IERROR)\n检索与通信器关联的组。\nINTEGER COMM, GROUP, IERROR\n\n通讯\n要基于组的通信器。\n组 [out]\n返回时，包含与指定通信器关联的组的句柄。\n",
+  "body": [
+   "MPI_COMM_GROUP(COMM, GROUP, IERROR)"
+  ]
+ },
+ "mpi-group-compare-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-group-compare-function"
+  ],
+  "description": "MPI_GROUP_COMPARE(GROUP1, GROUP2, RESULT, IERROR)\n比较两个组的成员相等性。\nINTEGER GROUP1, GROUP2, RESULT, IERROR\n\n",
+  "body": [
+   "MPI_GROUP_COMPARE(GROUP1, GROUP2, RESULT, IERROR)"
+  ]
+ },
+ "mpi-group-difference-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-group-difference-function"
+  ],
+  "description": "MPI_GROUP_DIFFERENCE(GROUP1, GROUP2, NEWGROUP, IERROR)\n根据两个现有组之间的差异创建新组。\nINTEGER GROUP1, GROUP2, NEWGROUP, IERROR\n\ngroup1\n第一个组。\ngroup2\n第二个组。\nnewgroup [out]\n指向表示新组的句柄的指针，该句柄包含第一个组中不存在的第一个组中的所有元素。 如果新组为空，该函数将返回 MPI_GROUP_EMPTY 。\n",
+  "body": [
+   "MPI_GROUP_DIFFERENCE(GROUP1, GROUP2, NEWGROUP, IERROR)"
+  ]
+ },
+ "mpi-group-excl-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-group-excl-function"
+  ],
+  "description": "MPI_GROUP_EXCL(GROUP, N, RANKS, NEWGROUP, IERROR)\n用于通过从现有组中删除排名来定义新组的组构造函数。\nINTEGER GROUP, N, RANKS(*), NEWGROUP, IERROR\n\ngroup\n现有组。\nn\nranks 参数中的元素数。\n行列\n组中不显示在新组中的进程数组。 指定的排名必须在现有组中有效。 数组中的每个元素都必须是不同的。 如果数组为空，则新组将与现有组相同。\nnewgroup [out]\n指向表示从现有组派生的新组的句柄的指针。 新组中保留现有组的顺序。\n",
+  "body": [
+   "MPI_GROUP_EXCL(GROUP, N, RANKS, NEWGROUP, IERROR)"
+  ]
+ },
+ "mpi-group-free-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-group-free-function"
+  ],
+  "description": "MPI_GROUP_FREE(GROUP, IERROR)\n释放组。\nINTEGER GROUP, IERROR\n\ngroup\n要释放的组。",
+  "body": [
+   "MPI_GROUP_FREE(GROUP, IERROR)"
+  ]
+ },
+ "mpi-group-incl-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-group-incl-function"
+  ],
+  "description": "MPI_GROUP_INCL(GROUP, N, RANKS, NEWGROUP, IERROR)\n创建一个新组，其中包含现有组中进程的子集。\nINTEGER GROUP, N, RANKS(*), NEWGROUP, IERROR\n\ngroup\n现有组。\nn\n排名参数中的元素数和新组的大小。\n行列\n要包含在新组中的进程。\nnewgroup [out]\n指向表示新组的句柄的指针，该句柄包含包含在 排名 参数中指定的进程顺序。\n",
+  "body": [
+   "MPI_GROUP_INCL(GROUP, N, RANKS, NEWGROUP, IERROR)"
+  ]
+ },
+ "mpi-group-intersection-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-group-intersection-function"
+  ],
+  "description": "MPI_GROUP_INTERSECTION(GROUP1, GROUP2, NEWGROUP, IERROR)\n从两个现有组的交集创建新组。\nINTEGER GROUP1, GROUP2, NEWGROUP, IERROR\n\ngroup1\n第一个组。\ngroup2\n第二个组。\nnewgroup [out]\n指向表示具有这两个组中存在的元素的新组的句柄的指针。 如果新组为空，该函数将返回 MPI_GROUP_EMPTY 。\n",
+  "body": [
+   "MPI_GROUP_INTERSECTION(GROUP1, GROUP2, NEWGROUP, IERROR)"
+  ]
+ },
+ "mpi-group-range-excl-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-group-range-excl-function"
+  ],
+  "description": "MPI_GROUP_RANGE_EXCL(GROUP, N, RANGES, NEWGROUP, IERROR)\n通过从现有组中删除进程来创建一个新组。\nINTEGER GROUP, N, RANGES(3,*), NEWGROUP, IERROR\n\ngroup\n现有组。\nn\n要从新组中排除的进程范围数。\n范围\n要从现有组中排除的进程规范数组。 数组的每个元素以三个整数的形式指定一个进程范围，用于第一个排名、最后一个排名和步长。\nnewgroup [out]\n指向表示包含未排除的进程的新组的句柄的指针。 保留组的顺序。\n",
+  "body": [
+   "MPI_GROUP_RANGE_EXCL(GROUP, N, RANGES, NEWGROUP, IERROR)"
+  ]
+ },
+ "mpi-group-range-incl-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-group-range-incl-function"
+  ],
+  "description": "MPI_GROUP_RANGE_INCL(GROUP, N, RANGES, NEWGROUP, IERROR)\n一个组构造函数，该构造函数用于通过将其他排名集添加到现有组来定义新组。\nINTEGER GROUP, N, RANGES(3,*), NEWGROUP, IERROR\n\ngroup\n现有组。\nn\n数组范围中的三倍数。\n范围\n要包含在新组中的进程规范数组。 数组的每个元素以三个整数的形式指定一个进程范围，用于第一个排名、最后一个排名和步长。\nnewgroup [out]\n指向表示新组的句柄的指针。 新组包含其他排名集。 顺序由 范围定义。\n",
+  "body": [
+   "MPI_GROUP_RANGE_INCL(GROUP, N, RANGES, NEWGROUP, IERROR)"
+  ]
+ },
+ "mpi-group-rank-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-group-rank-function"
+  ],
+  "description": "MPI_GROUP_RANK(GROUP, RANK, IERROR)\n返回指定组中调用进程的排名。\nINTEGER GROUP, RANK, IERROR\n\ngroup\n指定要查询的组。\n排名 [out]\n指向返回的整数的指针包含指定组中调用进程的排名。 调用进程不是指定组的成员 MPI_UNDEFINED 的值。\n",
+  "body": [
+   "MPI_GROUP_RANK(GROUP, RANK, IERROR)"
+  ]
+ },
+ "mpi-group-size-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-group-size-function"
+  ],
+  "description": "MPI_GROUP_SIZE(GROUP, SIZE, IERROR)\n检索指定组的大小。\nINTEGER GROUP, SIZE, IERROR\n\ngroup\n要评估的组。\n大小 [out]\n指向返回的整数的指针包含指定组的大小。\n",
+  "body": [
+   "MPI_GROUP_SIZE(GROUP, SIZE, IERROR)"
+  ]
+ },
+ "mpi-group-translate-ranks-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-group-translate-ranks-function"
+  ],
+  "description": "MPI_GROUP_TRANSLATE_RANKS( GROUP1, N, RANKS1, GROUP2, RANKS2, IERROR)\n确定两个不同组中相同进程的相对编号。\nINTEGER GROUP1, N, RANKS1(*), GROUP2, RANKS2(*), IERROR\n\ngroup1\n第一个组。\nn\nranks1 和 ranks2 参数数组中的数字或排名。\nranks1\n第一个组中的零个或多个有效排名。\n\n备注\nMPI_PROC_NULL常量对此参数有效。 ranks2 参数中返回的相应排名也MPI_PROC_NULL。\n\n \ngroup2\n第二个组。\nranks2 [out]\n返回时，指向第二个组中的相应排名。 值 MPI_UNDEFINED 指示进程在第一个组中，而不是第二个组。\n",
+  "body": [
+   "MPI_GROUP_TRANSLATE_RANKS( GROUP1, N, RANKS1, GROUP2, RANKS2, IERROR)"
+  ]
+ },
+ "mpi-group-union-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-group-union-function"
+  ],
+  "description": "MPI_GROUP_UNION(GROUP1, GROUP2, NEWGROUP, IERROR)\n从两个现有组的联合创建一个新组。\nINTEGER GROUP1, GROUP2, NEWGROUP, IERROR\n\ngroup1\n第一个组。\ngroup2\n第二个组。\nnewgroup [out]\n返回时，包含指向表示任一组中所有元素的新组的指针。\n",
+  "body": [
+   "MPI_GROUP_UNION(GROUP1, GROUP2, NEWGROUP, IERROR)"
+  ]
+ },
+ "mpi-bsend-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-bsend-function"
+  ],
+  "description": "MPI_BSEND(BUF, COUNT, DATATYPE, DEST, TAG, COMM, IERROR)\n将数据发送到缓冲模式下的指定进程。 当可以安全地重复使用发送缓冲区时，此函数将返回。\n<type> BUF(*)\nINTEGER COUNT, DATATYPE, DEST, TAG, COMM, IERROR\n\nbuf [in， 可选]\n指向包含要发送数据的缓冲区的指针。\n计数\n缓冲区数组中的元素数。 如果消息的数据部分为空，请将 count 参数设置为 0。\ndatatype\n缓冲区中元素的数据类型。\ndest\n通信器中由 comm 参数指定的目标进程的排名。\n标签\n可用于区分不同类型的消息的消息标记。\n通讯\n通信器的句柄。\n",
+  "body": [
+   "MPI_BSEND(BUF, COUNT, DATATYPE, DEST, TAG, COMM, IERROR)"
+  ]
+ },
+ "mpi-bsend-init-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-bsend-init-function"
+  ],
+  "description": "MPI_BSEND_INIT(BUF, COUNT, DATATYPE, DEST, TAG, COMM, REQUEST, IERROR)\n生成缓冲发送的句柄。\n<type> BUF(*)\nINTEGER COUNT, DATATYPE, DEST, TAG, COMM, REQUEST, IERROR\n\nbuf [in]\n发送缓冲区的初始地址。\n计数\n发送的元素数。\ndatatype\n每个元素的类型。\ndest\n目标排名。\n标签\n消息标记。\n通讯\n沟通。\n请求 [out]\n通信请求。\n",
+  "body": [
+   "MPI_BSEND_INIT(BUF, COUNT, DATATYPE, DEST, TAG, COMM, REQUEST, IERROR)"
+  ]
+ },
+ "mpi-cancel-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-cancel-function"
+  ],
+  "description": "MPI_CANCEL(REQUEST, IERROR)\n取消通信请求。\nINTEGER REQUEST, IERROR\n\n请求 [in]\n通信请求。",
+  "body": [
+   "MPI_CANCEL(REQUEST, IERROR)"
+  ]
+ },
+ "mpi-get-count-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-get-count-function"
+  ],
+  "description": "MPI_GET_COUNT(STATUS, DATATYPE, COUNT, IERROR)\n获取“顶级”元素的数目。\nINTEGER STATUS(MPI_STATUS_SIZE), DATATYPE, COUNT, IERROR\n\nstatus [in]\n返回接收操作的状态。\ndatatype\n每个接收缓冲区元素的数据类型。\ncount [out]\n接收的元素数。\n",
+  "body": [
+   "MPI_GET_COUNT(STATUS, DATATYPE, COUNT, IERROR)"
+  ]
+ },
+ "mpi-ibsend-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-ibsend-function"
+  ],
+  "description": "MPI_IBSEND(BUF, COUNT, DATATYPE, DEST, TAG, COMM, REQUEST, IERROR)\n启动缓冲模式发送操作，并将句柄返回到通信操作。\n<type> BUF(*)\nINTEGER COUNT, DATATYPE, DEST, TAG, COMM, REQUEST, IERROR\n\nbuf [in， 可选]\n指向包含要发送数据的缓冲区的指针。\n计数\n缓冲区中元素的数目。 如果消息的数据部分为空，请将 count 参数设置为 0。\ndatatype\n缓冲区中元素的数据类型。\ndest\n通信器中由 comm 参数指定的目标进程的排名。\n标签\n可用于区分不同类型的消息的消息标记。\n通讯\n通信器的句柄。\n请求 [out]\n返回时，包含所请求通信操作的句柄。\n",
+  "body": [
+   "MPI_IBSEND(BUF, COUNT, DATATYPE, DEST, TAG, COMM, REQUEST, IERROR)"
+  ]
+ },
+ "mpi-iprobe-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-iprobe-function"
+  ],
+  "description": "MPI_IPROBE(SOURCE, TAG, COMM, FLAG, STATUS, IERROR)\n消息的非阻止测试。\nLOGICAL FLAG\nINTEGER SOURCE, TAG, COMM, STATUS(MPI_STATUS_SIZE), IERROR\n\nsource\n源排名或 MPI_ANY_SOURCE。\n标签\n标记值或 MPI_ANY_TAG。\n通讯\n沟通。\n标志 [out]\n如此 如果具有指定源、标记和通信器的消息可用。\n状态 [out]\nStatus 对象。\n",
+  "body": [
+   "MPI_IPROBE(SOURCE, TAG, COMM, FLAG, STATUS, IERROR)"
+  ]
+ },
+ "mpi-improbe-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-improbe-function"
+  ],
+  "description": "MPI_IMPROBE(SOURCE, TAG, COMM, FLAG, MESSAGE, STATUS, IERROR)\n以非阻塞方式探测消息。 提供一种机制，用于接收与探测/接收操作无关的特定消息。 匹配的消息已从接收队列中取消排队，使应用程序有机会根据非阻塞匹配探测操作返回的信息来决定如何接收消息。 然后使用 \nINTEGER SOURCE, TAG, COMM, FLAG, MESSAGE, STATUS(MPI_STATUS_SIZE), IERROR\n\nsource [in]\n源排名或 MPI_ANY_SOURCE。\n标记 [in]\n消息标记或 MPI_ANY_TAG。\ncomm [in]\nMPI 通信器句柄。\n标志 [out]\n返回时，包含指向一个整数的指针，指示是否匹配指定的 源、 标记和 comm 。 非零值指示参数已匹配。\n消息 [out]\n返回时，包含指向匹配消息的指针。\nstatus [out]\n返回时，包含指向存储消息信息的 MPI_Status 结构的指针。\n",
+  "body": [
+   "MPI_IMPROBE(SOURCE, TAG, COMM, FLAG, MESSAGE, STATUS, IERROR)"
+  ]
+ },
+ "mpi-imrecv-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-imrecv-function"
+  ],
+  "description": "MPI_IMRECV(BUF, COUNT, DATATYPE, MESSAGE, REQUEST, IERROR)\n对MPI_Mprobe或\n<type> BUF(*)\nINTEGER COUNT, DATATYPE, MESSAGE, REQUEST, IERROR\n\nbuf [out]\n指向接收缓冲区地址的指针。\ncount [in]\nbuf 中的数据类型元素数。\n数据类型 [in]\nbuf 中元素的 MPI 数据类型。\n消息 [in， out]\n包含指向消息的指针。\n请求 [out]\n返回时，包含指向表示通信操作 的MPI_REQUEST 句柄的指针。\n",
+  "body": [
+   "MPI_IMRECV(BUF, COUNT, DATATYPE, MESSAGE, REQUEST, IERROR)"
+  ]
+ },
+ "mpi-irecv-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-irecv-function"
+  ],
+  "description": "MPI_IRECV(BUF, COUNT, DATATYPE, SOURCE, TAG, COMM, REQUEST, IERROR)\n启动接收操作，并向请求的通信操作返回句柄。\n<type> BUF(*)\nINTEGER COUNT, DATATYPE, SOURCE, TAG, COMM, REQUEST, IERROR\n\nbuf [in， 可选]\n指向包含要发送的数据的缓冲区的指针。\n计数\n缓冲区数组中的元素数。 如果消息的数据部分为空，请将 count 参数设置为 0。\ndatatype\n缓冲区中元素的数据类型。\nsource\n指定通信器内的发送进程的排名。 指定 MPI_ANY_SOURCE 常量以指定任何源是可接受的。\n标签\n可用于区分不同类型的消息的消息标记。 指定 MPI_ANY_TAG 常量以指示任何标记是可接受的。\n通讯\n通信器的句柄。\n请求 [out]\n返回时，包含所请求通信操作的句柄。\n",
+  "body": [
+   "MPI_IRECV(BUF, COUNT, DATATYPE, SOURCE, TAG, COMM, REQUEST, IERROR)"
+  ]
+ },
+ "mpi-irsend-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-irsend-function"
+  ],
+  "description": "MPI_IRSEND(BUF, COUNT, DATATYPE, DEST, TAG, COMM, REQUEST, IERROR)\n启动就绪模式发送操作，并返回表示通信操作的请求句柄。\n<type> BUF(*)\nINTEGER COUNT, DATATYPE, DEST, TAG, COMM, REQUEST, IERROR\n\nbuf [in， 可选]\n指向包含要发送数据的缓冲区的指针。 缓冲区由 数据类型句柄 指示的 MPI_Datatype 对象的连续元素组成。 消息长度以元素数而不是字节数来指定。 在通信操作完成之前，调用方不应修改发送缓冲区的任何部分。\n计数\n缓冲区数组中的元素数。 如果计数为零，则消息的数据部分为空。\ndatatype\n表示缓冲区中元素的数据类型的句柄。\ndest\ncommunicator comm 参数中目标进程的排名。\n标签\n用于区分不同类型的消息的消息标记。\n通讯\n通信器的句柄。\n请求 [out]\n返回时，指向表示通信操作的句柄的指针。\n",
+  "body": [
+   "MPI_IRSEND(BUF, COUNT, DATATYPE, DEST, TAG, COMM, REQUEST, IERROR)"
+  ]
+ },
+ "mpi-isend-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-isend-function"
+  ],
+  "description": "MPI_ISEND(BUF, COUNT, DATATYPE, DEST, TAG, COMM, REQUEST, IERROR)\n启动标准模式发送操作，并将句柄返回到请求的通信操作。\n<type> BUF(*)\nINTEGER COUNT, DATATYPE, DEST, TAG, COMM, REQUEST, IERROR\n\nbuf [in， 可选]\n指向包含要发送数据的缓冲区的指针。\n计数\n缓冲区中元素的数目。 如果消息的数据部分为空，请将 count 参数设置为 0。\ndatatype\n缓冲区中元素的数据类型。\ndest\n通信器中由 comm 参数指定的目标进程的排名。\n标签\n消息标记，可用于区分不同类型的消息。\n通讯\n通信器的句柄。\n请求 [out]\n返回时，包含所请求通信操作的句柄。\n",
+  "body": [
+   "MPI_ISEND(BUF, COUNT, DATATYPE, DEST, TAG, COMM, REQUEST, IERROR)"
+  ]
+ },
+ "mpi-issend-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-issend-function"
+  ],
+  "description": "MPI_ISSEND(BUF, COUNT, DATATYPE, DEST, TAG, COMM, REQUEST, IERROR)\n启动同步模式发送操作，并将句柄返回到请求的通信操作。\n<type> BUF(*)\nINTEGER COUNT, DATATYPE, DEST, TAG, COMM, REQUEST, IERROR\n\nbuf [in， 可选]\n指向包含要发送数据的缓冲区的指针。\n计数\n缓冲区中元素的数目。 如果消息的数据部分为空，请将 count 参数设置为 0。\ndatatype\n缓冲区中元素的数据类型。\ndest\n通信器中由 comm 参数指定的目标进程的排名。\n标签\n可用于区分不同类型的消息的消息标记。\n通讯\n通信器的句柄。\n请求 [out]\n返回时，包含所请求通信操作的句柄。\n",
+  "body": [
+   "MPI_ISSEND(BUF, COUNT, DATATYPE, DEST, TAG, COMM, REQUEST, IERROR)"
+  ]
+ },
+ "mpi-mprobe-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-mprobe-function"
+  ],
+  "description": "MPI_MPROBE(SOURCE, TAG, COMM, MESSAGE, STATUS, IERROR)\n阻止消息的探测。 提供一种机制，用于接收与探测/接收操作无关的特定消息。 匹配的消息已取消排队，使应用程序有机会根据匹配探测操作返回的信息来决定如何接收消息。 然后使用 \nINTEGER SOURCE, TAG, COMM, MESSAGE, STATUS(MPI_STATUS_SIZE), IERROR\n\nsource [in]\n源排名或 MPI_ANY_SOURCE。\n标记 [in]\n消息标记或 MPI_ANY_TAG。\ncomm [in]\nMPI 通信器句柄。\n消息 [out]\n返回时，包含指向匹配消息的指针。\nstatus [out]\n返回时，包含指向存储消息信息的 MPI_Status 结构的指针。\n",
+  "body": [
+   "MPI_MPROBE(SOURCE, TAG, COMM, MESSAGE, STATUS, IERROR)"
+  ]
+ },
+ "mpi-mrecv-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-mrecv-function"
+  ],
+  "description": "MPI_MRECV(BUF, COUNT, DATATYPE, MESSAGE, STATUS, IERROR)\n对 \n<type> BUF(*)\nINTEGER COUNT, DATATYPE, MESSAGE, STATUS(MPI_STATUS_SIZE), IERROR\n\nbuf [out]\n指向接收缓冲区地址的指针。\ncount [in]\nbuf 中的数据类型元素数。\n数据类型 [in]\n缓冲区数组中元素的 MPI 数据类型。\n消息 [in， out]\n包含指向消息的指针。\nstatus [out]\n返回时，包含指向存储消息信息的 MPI_Status 结构的指针。\n",
+  "body": [
+   "MPI_MRECV(BUF, COUNT, DATATYPE, MESSAGE, STATUS, IERROR)"
+  ]
+ },
+ "mpi-probe-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-probe-function"
+  ],
+  "description": "MPI_PROBE(SOURCE, TAG, COMM, STATUS, IERROR)\n阻止对消息进行测试。\nINTEGER SOURCE, TAG, COMM, STATUS(MPI_STATUS_SIZE), IERROR\n\nsource\n源排名或 MPI_ANY_SOURCE。\n标签\n标记值或 MPI_ANY_TAG。\n通讯\n沟通。\nstatus [out]\nStatus 对象。\n",
+  "body": [
+   "MPI_PROBE(SOURCE, TAG, COMM, STATUS, IERROR)"
+  ]
+ },
+ "mpi-recv-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-recv-function"
+  ],
+  "description": "MPI_RECV(BUF, COUNT, DATATYPE, SOURCE, TAG, COMM, STATUS, IERROR)\n执行接收操作，在收到匹配消息之前不会返回。\n<type> BUF(*)\nINTEGER COUNT, DATATYPE, SOURCE, TAG, COMM, STATUS(MPI_STATUS_SIZE), IERROR\n\nbuf [in， 可选]\n指向包含要发送数据的缓冲区的指针。\n计数\n缓冲区中元素的数目。 如果消息的数据部分为空，请将 count 参数设置为 0。\ndatatype\n缓冲区数组中元素的数据类型。\nsource\n指定通信器内的发送进程的排名。 指定 MPI_ANY_SOURCE 常量以指定任何源是可接受的。\n标签\n用于区分不同类型的消息的消息标记。 指定 MPI_ANY_TAG 常量，以指示任何标记都是可接受的。\n通讯\n通信器的句柄。\nstatus [out]\n返回时，包含指向存储所接收消息信息的 MPI_Status 结构的指针。\n",
+  "body": [
+   "MPI_RECV(BUF, COUNT, DATATYPE, SOURCE, TAG, COMM, STATUS, IERROR)"
+  ]
+ },
+ "mpi-recv-init-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-recv-init-function"
+  ],
+  "description": "MPI_RECV_INIT(BUF, COUNT, DATATYPE, SOURCE, TAG, COMM, REQUEST, IERROR)\n为接收创建永久性请求。\n<type> BUF(*)\nINTEGER COUNT, DATATYPE, SOURCE, TAG, COMM, REQUEST, IERROR\n\nbuf [out]\n接收缓冲区的初始地址。\n计数\n收到的元素数。\ndatatype\n每个元素的类型。\nsource\n源或 MPI_ANY_SOURCE的排名。\n标签\n消息标记或 MPI_ANY_TAG。\n通讯\n沟通。\n请求 [out]\n通信请求。\n",
+  "body": [
+   "MPI_RECV_INIT(BUF, COUNT, DATATYPE, SOURCE, TAG, COMM, REQUEST, IERROR)"
+  ]
+ },
+ "mpi-request-free-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-request-free-function"
+  ],
+  "description": "MPI_REQUEST_FREE(REQUEST, IERROR)\n释放通信请求对象。\nINTEGER REQUEST, IERROR\n\n请求\n通信请求。",
+  "body": [
+   "MPI_REQUEST_FREE(REQUEST, IERROR)"
+  ]
+ },
+ "mpi-request-get-status-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-request-get-status-function"
+  ],
+  "description": "MPI_REQUEST_GET_STATUS( REQUEST, FLAG, STATUS, IERROR)\n请求完成的非破坏性测试。\nINTEGER REQUEST, STATUS(MPI_STATUS_SIZE), IERROR\nLOGICAL FLAG\n\n请求\n通信请求。\n标志 [out]\n如此 如果操作已完成。\nstatus [out]\nStatus 对象或 MPI_STATUS_IGNORE。\n",
+  "body": [
+   "MPI_REQUEST_GET_STATUS( REQUEST, FLAG, STATUS, IERROR)"
+  ]
+ },
+ "mpi-rsend-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-rsend-function"
+  ],
+  "description": "MPI_RSEND(BUF, COUNT, DATATYPE, DEST, TAG, COMM, IERROR)\n执行就绪模式发送操作，并在可以安全地重复使用发送缓冲区时返回。\n<type> BUF(*)\nINTEGER COUNT, DATATYPE, DEST, TAG, COMM, IERROR\n\nbuf [in， 可选]\n指向包含要发送数据的缓冲区的指针。\n计数\n缓冲区中元素的数目。 如果消息的数据部分为空，请将 count 参数设置为 0。\ndatatype\n缓冲区中元素的数据类型。\ndest\n通信器中由 comm 参数指定的目标进程的排名。\n标签\n可用于区分不同类型的消息的消息标记。\n通讯\n通信器的句柄。\n",
+  "body": [
+   "MPI_RSEND(BUF, COUNT, DATATYPE, DEST, TAG, COMM, IERROR)"
+  ]
+ },
+ "mpi-rsend-init-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-rsend-init-function"
+  ],
+  "description": "MPI_RSEND_INIT(BUF, COUNT, DATATYPE, DEST, TAG, COMM, REQUEST, IERROR)\n为就绪发送创建永久性请求。\n<type> BUF(*)\nINTEGER COUNT, DATATYPE, DEST, TAG, COMM, REQUEST, IERROR\n\nbuf [in]\n发送缓冲区的初始地址。\n计数\n发送的元素数。\ndatatype\n每个元素的类型。\ndest\n目标排名。\n标签\n消息标记。\n通讯\n沟通。\n请求 [out]\n通信请求。\n",
+  "body": [
+   "MPI_RSEND_INIT(BUF, COUNT, DATATYPE, DEST, TAG, COMM, REQUEST, IERROR)"
+  ]
+ },
+ "mpi-send-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-send-function"
+  ],
+  "description": "MPI_SEND(BUF, COUNT, DATATYPE, DEST, TAG, COMM, IERROR)\n执行标准模式发送操作，并在可以安全地重复使用发送缓冲区时返回。\n<type> BUF(*)\nINTEGER COUNT, DATATYPE, DEST, TAG, COMM, IERROR\n\nbuf [in， 可选]\n指向包含要发送的数据的缓冲区的指针。\n计数\n缓冲区中元素的数目。 如果消息的数据部分为空，请将 count 参数设置为 0。\ndatatype\n缓冲区中元素的数据类型。\ndest\n通信器中由 comm 参数指定的目标进程的排名。\n标签\n可用于区分不同类型的消息的消息标记。\n通讯\n通信器的句柄。\n",
+  "body": [
+   "MPI_SEND(BUF, COUNT, DATATYPE, DEST, TAG, COMM, IERROR)"
+  ]
+ },
+ "mpi-send-init-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-send-init-function"
+  ],
+  "description": "MPI_SEND_INIT(BUF, COUNT, DATATYPE, DEST, TAG, COMM, REQUEST, IERROR)\n为标准发送创建永久性请求。\n<type> BUF(*)\nINTEGER COUNT, DATATYPE, DEST, TAG, COMM, REQUEST, IERROR\n\nbuf [in]\n发送缓冲区的初始地址。\n计数\n发送的元素数。\ndatatype\n每个元素的类型。\ndest\n目标排名。\n标签\n消息标记。\n通讯\n沟通。\n请求 [out]\n通信请求。\n",
+  "body": [
+   "MPI_SEND_INIT(BUF, COUNT, DATATYPE, DEST, TAG, COMM, REQUEST, IERROR)"
+  ]
+ },
+ "mpi-sendrecv-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-sendrecv-function"
+  ],
+  "description": "MPI_SENDRECV(SENDBUF, SENDCOUNT, SENDTYPE, DEST, SENDTAG, RECVBUF, RECVCOUNT, RECVTYPE, SOURCE, RECVTAG, COMM, STATUS, IERROR)\n发送和接收消息。\n<type> SENDBUF(*), RECVBUF(*)\nINTEGER SENDCOUNT, SENDTYPE, DEST, SENDTAG, RECVCOUNT, RECVTYPE, SOURCE, RECVTAG, COMM, STATUS(MPI_STATUS_SIZE), IERROR\n\nsendbuf [in]\n发送缓冲区的初始地址。\nsendcount\n发送缓冲区中的元素数。\nsendtype\n发送缓冲区中的元素类型。\ndest\n目标排名。\nsendtag\n发送标记。\nrecvbuf [out]\n接收缓冲区的初始地址。\nrecvcount\n接收缓冲区中的元素数。\nrecvtype\n接收缓冲区中的元素的类型。\nsource\n源的排名。\nrecvtag\n接收标记。\n通讯\n沟通。\nstatus [out]\n引用接收操作的状态对象。\n",
+  "body": [
+   "MPI_SENDRECV(SENDBUF, SENDCOUNT, SENDTYPE, DEST, SENDTAG, RECVBUF, RECVCOUNT, RECVTYPE, SOURCE, RECVTAG, COMM, STATUS, IERROR)"
+  ]
+ },
+ "mpi-sendrecv-replace-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-sendrecv-replace-function"
+  ],
+  "description": "MPI_SENDRECV_REPLACE(BUF, COUNT, DATATYPE, DEST, SENDTAG, SOURCE, RECVTAG, COMM, STATUS, IERROR)\n使用单个缓冲区发送和接收。\n<type> BUF(*)\nINTEGER COUNT, DATATYPE, DEST, SENDTAG, SOURCE, RECVTAG, COMM, STATUS(MPI_STATUS_SIZE), IERROR\n\nbuf\n发送和接收缓冲区的初始地址。\n计数\n发送和接收缓冲区中的元素数。\ndatatype\n发送和接收缓冲区中的元素类型。\ndest\n目标排名。\nsendtag\n发送消息标记。\nsource\n源的排名。\nrecvtag\n接收消息标记。\n通讯\n沟通。\nstatus [out]\nStatus 对象。\n",
+  "body": [
+   "MPI_SENDRECV_REPLACE(BUF, COUNT, DATATYPE, DEST, SENDTAG, SOURCE, RECVTAG, COMM, STATUS, IERROR)"
+  ]
+ },
+ "mpi-ssend-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-ssend-function"
+  ],
+  "description": "MPI_SSEND(BUF, COUNT, DATATYPE, DEST, TAG, COMM, IERROR)\n执行同步模式发送操作，并在可以安全地重复使用发送缓冲区时返回。\n<type> BUF(*)\nINTEGER COUNT, DATATYPE, DEST, TAG, COMM, IERROR\n\nbuf [in， 可选]\n指向包含要发送数据的缓冲区的指针。\n计数\n缓冲区中元素的数目。 如果消息的数据部分为空，请将 count 参数设置为 0。\ndatatype\n缓冲区中元素的数据类型。\ndest\n通信器中由 comm 参数指定的目标进程的排名。\n标签\n可用于区分不同类型的消息的消息标记。\n通讯\n通信器的句柄。\n",
+  "body": [
+   "MPI_SSEND(BUF, COUNT, DATATYPE, DEST, TAG, COMM, IERROR)"
+  ]
+ },
+ "mpi-ssend-init-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-ssend-init-function"
+  ],
+  "description": "MPI_SSEND_INIT(BUF, COUNT, DATATYPE, DEST, TAG, COMM, REQUEST, IERROR)\n为同步发送创建永久性请求。\n<type> BUF(*)\nINTEGER COUNT, DATATYPE, DEST, TAG, COMM, REQUEST, IERROR\n\nbuf [in]\n发送缓冲区的初始地址。\n计数\n发送的元素数。\ndatatype\n每个元素的类型。\ndest\n目标排名。\n标签\n消息标记。\n通讯\n沟通。\n请求 [out]\n通信请求。\n",
+  "body": [
+   "MPI_SSEND_INIT(BUF, COUNT, DATATYPE, DEST, TAG, COMM, REQUEST, IERROR)"
+  ]
+ },
+ "mpi-start-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-start-function"
+  ],
+  "description": "MPI_START(REQUEST, IERROR)\n启动与持久请求句柄的通信。\nINTEGER REQUEST, IERROR\n\n请求\n通信请求。",
+  "body": [
+   "MPI_START(REQUEST, IERROR)"
+  ]
+ },
+ "mpi-startall-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-startall-function"
+  ],
+  "description": "MPI_STARTALL(COUNT, ARRAY_OF_REQUESTS, IERROR)\n启动永久性请求的集合。\nINTEGER COUNT, ARRAY_OF_REQUESTS(*), IERROR\n\n计数\n请求数组的大小。\narray_of_requests\n请求数组。\n",
+  "body": [
+   "MPI_STARTALL(COUNT, ARRAY_OF_REQUESTS, IERROR)"
+  ]
+ },
+ "mpi-test-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-test-function"
+  ],
+  "description": "MPI_WAIT(REQUEST, FLAG, STATUS, IERROR)\n测试未完成的操作。\nLOGICAL FLAG\nINTEGER REQUEST, STATUS(MPI_STATUS_SIZE), IERROR\n\n请求 [in， out]\n指向未完成操作 的MPI_Request 句柄的指针。\n标志 [out]\n返回时，包含指向指示请求是否已完成的整数的指针。 非零值指示请求已完成。\nstatus [out]\n返回时，包含指向描述指定操作（如果已完成） 的MPI_Status 对象的指针。\n",
+  "body": [
+   "MPI_WAIT(REQUEST, FLAG, STATUS, IERROR)"
+  ]
+ },
+ "mpi-test-cancelled-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-test-cancelled-function"
+  ],
+  "description": "MPI_TEST_CANCELLED(STATUS, FLAG, IERROR)\n测试以查看请求是否已取消。\nLOGICAL FLAG\nINTEGER STATUS(MPI_STATUS_SIZE), IERROR\n\nstatus [in]\nStatus 对象。\n标志 [out]\n如果请求被取消，则为 True，否则为 false。\n",
+  "body": [
+   "MPI_TEST_CANCELLED(STATUS, FLAG, IERROR)"
+  ]
+ },
+ "mpi-testall-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-testall-function"
+  ],
+  "description": "MPI_TESTALL(COUNT, ARRAY_OF_REQUESTS, FLAG, ARRAY_OF_STATUSES, IERROR)\n测试完成以前启动的所有请求。\nLOGICAL FLAG\nINTEGER COUNT, ARRAY_OF_REQUESTS(*), ARRAY_OF_STATUSES(MPI_STATUS_SIZE,*), IERROR\n\n计数\narray_of_requests 参数中的条目数。\narray_of_requests\nMPI_Request处理未完成操作的句柄数组。\narray_of_statuses\n描述已完成操作 的MPI_Status 对象的数组。 如果不需要状态信息，则可能 MPI_STATUSES_IGNORE 。\n",
+  "body": [
+   "MPI_TESTALL(COUNT, ARRAY_OF_REQUESTS, FLAG, ARRAY_OF_STATUSES, IERROR)"
+  ]
+ },
+ "mpi-testany-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-testany-function"
+  ],
+  "description": "MPI_TESTANY(COUNT, ARRAY_OF_REQUESTS, INDEX, FLAG, STATUS, IERROR) LOGICAL FLAG\n测试完成任何预先启动的请求。\nINTEGER COUNT, ARRAY_OF_REQUESTS(*), INDEX, STATUS(MPI_STATUS_SIZE), IERROR\n\n计数\narray_of_requests 参数中的条目数。\narray_of_requests\nMPI_Request处理未完成操作的句柄数组。\nindex [out]\n指向指示已完成操作 array_of_requests 参数中的索引的整数的指针。 数组从 C 中的零开始编制索引，从 Fortran 中的一个编制索引。\nstatus [out]\n指向描述已完成操作 的MPI_Status 对象的指针。\n",
+  "body": [
+   "MPI_TESTANY(COUNT, ARRAY_OF_REQUESTS, INDEX, FLAG, STATUS, IERROR) LOGICAL FLAG"
+  ]
+ },
+ "mpi-testsome-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-testsome-function"
+  ],
+  "description": "MPI_TESTSOME(INCOUNT, ARRAY_OF_REQUESTS, OUTCOUNT, ARRAY_OF_INDICES, ARRAY_OF_STATUSES, IERROR)\n测试要完成的某些给定请求。\nINTEGER INCOUNT, ARRAY_OF_REQUESTS(*), OUTCOUNT, ARRAY_OF_INDICES(*), ARRAY_OF_STATUSES(MPI_STATUS_SIZE,*), IERROR\n\nincount\narray_of_requests 参数中的条目数。\narray_of_requests\nMPI_Request处理未完成操作的句柄数组。\noutcount [out ]\n已完成的请求数。\narray_of_indices\n已完成的操作 array_of_requests 中的索引数组。 array_of_requests从 C 中的零开始编制索引，从 Fortran 中的一个编制索引。\narray_of_statuses\n已完成或 MPI_STATUSES_IGNORE的操作的状态对象的数组。\n",
+  "body": [
+   "MPI_TESTSOME(INCOUNT, ARRAY_OF_REQUESTS, OUTCOUNT, ARRAY_OF_INDICES, ARRAY_OF_STATUSES, IERROR)"
+  ]
+ },
+ "mpi-wait-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-wait-function"
+  ],
+  "description": "MPI_WAIT(REQUEST, STATUS, IERROR)\n完成未完成的操作。\nINTEGER REQUEST, STATUS(MPI_STATUS_SIZE), IERROR\n\n请求 [in， out]\n指向未完成操作 的MPI_Request 句柄的指针。\n状态 [out]\n指向描述指定请求 的MPI_Status 对象的指针。\n",
+  "body": [
+   "MPI_WAIT(REQUEST, STATUS, IERROR)"
+  ]
+ },
+ "mpi-waitall-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-waitall-function"
+  ],
+  "description": "MPI_WAITALL(COUNT, ARRAY_OF_REQUESTS, INDEX, STATUS, IERROR)\n完成多个未完成的操作。\nINTEGER COUNT, ARRAY_OF_REQUESTS, INDEX, STATUS(MPI_STATUS_SIZE), IERROR\n\n计数\narray_of_requests 参数中的条目数。\narray_of_requests\n未完成操作的 MPI_Request 句柄数组。\narray_of_statuses\n描述已完成操作 的MPI_Status 对象的数组。 如果未请求任何状态信息，则可能 MPI_STATUSES_IGNORE 。\n",
+  "body": [
+   "MPI_WAITALL(COUNT, ARRAY_OF_REQUESTS, INDEX, STATUS, IERROR)"
+  ]
+ },
+ "mpi-waitany-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-waitany-function"
+  ],
+  "description": "MPI_WAITANY(COUNT, ARRAY_OF_REQUESTS, INDEX, STATUS, IERROR)\n完成多个未完成的操作中的一个。\nINTEGER COUNT, ARRAY_OF_REQUESTS, INDEX, STATUS(MPI_STATUS_SIZE), IERROR\n\n计数\narray_of_requests 参数中的条目数。\narray_of_requests\nMPI_Request处理未完成操作的句柄数组。\nindex [out]\n指向指示已完成操作 array_of_requests 参数中的索引的整数的指针。 数组从 C 中的零开始编制索引，从 Fortran 中的一个编制索引。\nstatus [out]\n指向描述已完成操作 的MPI_Status 对象的指针。\n",
+  "body": [
+   "MPI_WAITANY(COUNT, ARRAY_OF_REQUESTS, INDEX, STATUS, IERROR)"
+  ]
+ },
+ "mpi-waitsome-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-waitsome-function"
+  ],
+  "description": "MPI_WAITSOME(INCOUNT, ARRAY_OF_REQUESTS, OUTCOUNT, ARRAY_OF_INDICES, ARRAY_OF_STATUSES, IERROR)\n完成一些未完成的操作。\nINTEGER INCOUNT, ARRAY_OF_REQUESTS(*), OUTCOUNT, ARRAY_OF_INDICES(*), ARRAY_OF_STATUSES(MPI_STATUS_SIZE,*), IERROR\n\nincount\narray_of_requests 参数中的条目数。\narray_of_requests\nMPI_Request处理未完成操作的句柄数组。\noutcount [out ]\n已完成的请求数。\narray_of_indices\n已完成的操作 array_of_requests 中的索引数组。 array_of_requests从 C 中的零开始编制索引，从 Fortran 中的一个编制索引。\narray_of_statuses\n已完成或 MPI_STATUSES_IGNORE的操作的状态对象的数组。\n",
+  "body": [
+   "MPI_WAITSOME(INCOUNT, ARRAY_OF_REQUESTS, OUTCOUNT, ARRAY_OF_INDICES, ARRAY_OF_STATUSES, IERROR)"
+  ]
+ },
+ "mpi-cart-coords-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-cart-coords-function"
+  ],
+  "description": "MPI_CART_COORDS(COMM, RANK, MAXDIMS, COORDS, IERROR)\n确定在组中给定排名的笛卡尔拓扑中的进程共同点。\nINTEGER COMM, RANK, MAXDIMS, COORDS(*), IERROR\n\n通讯\n具有笛卡尔结构的 Communicator。\nrank\n在 一组命令内的进程排名。\nmaxdims\n调用程序中矢量 共同点 的长度。\ncoords\n包含指定进程的笛卡尔坐标的整数数组 (大小最大值) 。\n",
+  "body": [
+   "MPI_CART_COORDS(COMM, RANK, MAXDIMS, COORDS, IERROR)"
+  ]
+ },
+ "mpi-cart-create-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-cart-create-function"
+  ],
+  "description": "MPI_CART_CREATE(COMM_OLD, NDIMS, DIMS, PERIODS, REORDER, COMM_CART, IERROR)\n使拓扑信息已附加到的新通信器。\nINTEGER COMM_OLD, NDIMS, DIMS(*), COMM_CART, IERROR\nLOGICAL PERIODS(*), REORDER\n\ncomm_old\n输入通信器。\nndims\n笛卡尔网格的维度数。\ndims\n指定每个维度中的进程数的大小 ndims 的整数数组。\n时期\n大小 ndims 的逻辑数组，用于指定网格是否在每个维度中定期 (true)  (false) 。\n排序\n排名可能会重新排序， (true) 或 (false) 。\ncomm_cart [out]\n具有新笛卡尔拓扑的 Communicator。\n",
+  "body": [
+   "MPI_CART_CREATE(COMM_OLD, NDIMS, DIMS, PERIODS, REORDER, COMM_CART, IERROR)"
+  ]
+ },
+ "mpi-cart-get-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-cart-get-function"
+  ],
+  "description": "MPI_CART_GET(COMM, MAXDIMS, DIMS, PERIODS, COORDS, IERROR)\n检索与通信器关联的笛卡尔拓扑信息。\nINTEGER COMM, MAXDIMS, DIMS(*), COORDS(*), IERROR\nLOGICAL PERIODS(*)\n\n通讯\n具有笛卡尔结构的 Communicator。\nmaxdims\n调用程序中向量 变暗、 句点和 共同点 的长度。\ndims\n每个笛卡尔维度的进程数。\n时期\n每个笛卡尔维度的周期性 (true/false) 。\ncoords\n以笛卡尔结构调用进程的坐标。\n",
+  "body": [
+   "MPI_CART_GET(COMM, MAXDIMS, DIMS, PERIODS, COORDS, IERROR)"
+  ]
+ },
+ "mpi-cart-map-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-cart-map-function"
+  ],
+  "description": "MPI_CART_MAP(COMM, NDIMS, DIMS, PERIODS, NEWRANK, IERROR)\n将进程映射到笛卡尔拓扑信息。\nINTEGER COMM, NDIMS, DIMS(*), NEWRANK, IERROR\nLOGICAL PERIODS(*)\n\n通讯\n输入通信器。\nndims\n笛卡尔结构的维度数。\ndims\n指定每个坐标方向的进程数的大小 ndims 的整数数组。\n时期\n大小 ndims 的逻辑数组，指定每个坐标方向的周期性规范。\nnewrank [out]\n重新排序调用进程的排名;如果调用进程不属于网格，MPI_UNDEFINED\n",
+  "body": [
+   "MPI_CART_MAP(COMM, NDIMS, DIMS, PERIODS, NEWRANK, IERROR)"
+  ]
+ },
+ "mpi-cart-rank-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-cart-rank-function"
+  ],
+  "description": "MPI_CART_RANK(COMM, COORDS, RANK, IERROR)\n确定给定笛卡尔位置的通信器中的进程排名。\nINTEGER COMM, COORDS(*), RANK, IERROR\n\n通讯\n具有笛卡尔结构的 Communicator。\ncoords [in]\n整数数组 (大小 ndims、与 comm 关联的笛卡尔拓扑的维度数) 指定进程的笛卡尔坐标。\n排名 [out]\n指定进程的排名。\n",
+  "body": [
+   "MPI_CART_RANK(COMM, COORDS, RANK, IERROR)"
+  ]
+ },
+ "mpi-cart-shift-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-cart-shift-function"
+  ],
+  "description": "MPI_CART_SHIFT(COMM, DIRECTION, DISP, RANK_SOURCE, RANK_DEST, IERROR)\n返回移动的源和目标排名，给定移动方向和量。\nINTEGER COMM, DIRECTION, DISP, RANK_SOURCE, RANK_DEST, IERROR\n\n通讯\n具有笛卡尔结构的 Communicator。\ndirection\nShift 的坐标维度。\ndisp\n排量 (> 0：向上班次， < 0：下移) 。\nrank_source [out]\n源进程的排名。\nrank_dest [out]\n目标进程的排名。\n",
+  "body": [
+   "MPI_CART_SHIFT(COMM, DIRECTION, DISP, RANK_SOURCE, RANK_DEST, IERROR)"
+  ]
+ },
+ "mpi-cart-sub-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-cart-sub-function"
+  ],
+  "description": "MPI_CART_SUB(COMM, REMAIN_DIMS, NEWCOMM, IERROR)\n将通信器分区为构成下维笛卡尔子网格的子组。\nINTEGER COMM, NEWCOMM, IERROR\nLOGICAL REMAIN_DIMS(*)\n\n通讯\n具有笛卡尔结构的 Communicator。\nremain_dims [in]\nremain_dims的第 i 个条目指定 i-th 维度是保留在子网格 (true) 中还是 (false) 中删除。\nnewcomm [out]\n包含包含调用进程的子网格的 Communicator。\n",
+  "body": [
+   "MPI_CART_SUB(COMM, REMAIN_DIMS, NEWCOMM, IERROR)"
+  ]
+ },
+ "mpi-cartdim-get-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-cartdim-get-function"
+  ],
+  "description": "MPI_CARTDIM_GET(COMM, NDIMS, IERROR)\n检索与通信器关联的笛卡尔拓扑信息。\nINTEGER COMM, NDIMS, IERROR\n\n通讯\n具有笛卡尔结构的 Communicator。\nndims [out]\n笛卡尔结构的维度数。\n",
+  "body": [
+   "MPI_CARTDIM_GET(COMM, NDIMS, IERROR)"
+  ]
+ },
+ "mpi-dims-create-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-dims-create-function"
+  ],
+  "description": "MPI_DIMS_CREATE(NNODES, NDIMS, DIMS, IERROR)\n在笛卡尔网格中创建处理器的除法。\nINTEGER NNODES, NDIMS, DIMS(*), IERROR\n\nnnodes\n网格中的节点数。\nndims\n笛卡尔维度数。\ndims\n指定每个维度中的节点数的大小 ndims 的整数数组。  值为 0 表示 MPI_Dims_create 应填充合适的值。\n",
+  "body": [
+   "MPI_DIMS_CREATE(NNODES, NDIMS, DIMS, IERROR)"
+  ]
+ },
+ "mpi-dist-graph-create-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-dist-graph-create-function"
+  ],
+  "description": "MPI_DIST_GRAPH_CREATE (COMM_OLD, N, SOURCES, DEGREES, DESTINATIONS, WEIGHTS, INFO, REORDER, COMM_DIST_GRAPH, IERROR)\n向附加分布式图形拓扑信息的新通信器返回句柄。\nINTEGER COMM_OLD, N, SOURCES (*), DEGREES (*), DESTINATIONS (*), WEIGHTS (*), INFO, COMM_DIST_GRAPH, IERROR\nLOGICAL REORDER\n\ncomm_old [in]\n没有拓扑信息的通信器的句柄 (处理) 。\nn\n此过程指定传出边缘 (非负整数) 的源数。\nsources[]\n包含此源指定) 非负整数数组 (传出边缘的 n 源的数组。\ndegrees[]\n指定源节点数组中每个源节点的目标数的数组 (非负整数数组) 。\ndestinations[]\n源数组中源节点的目标节点 (非负整数数组) 。\nweights[]\n目标数组中对应边缘的权重 (非负整数数组) 。\ninfo [in]\n有关优化或解释权重的提示 (句柄) 。 当前使用 MPI_INFO_NULL ，因为此变量未在内部使用。\n排序\n (true) 重新排序排名，或者不 (false)  (逻辑) 。 目前，这在内部未使用。\ncomm_dist_graph [out]\n使用附加的分布式图形拓扑信息的通信器句柄 (处理) 。\n",
+  "body": [
+   "MPI_DIST_GRAPH_CREATE (COMM_OLD, N, SOURCES, DEGREES, DESTINATIONS, WEIGHTS, INFO, REORDER, COMM_DIST_GRAPH, IERROR)"
+  ]
+ },
+ "mpi-dist-graph-create-adjacent-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-dist-graph-create-adjacent-function"
+  ],
+  "description": "MPI_DIST_GRAPH_CREATE_ADJACENT (COMM_OLD, INDEGREE, SOURCES, SOURCEWEIGHTS, OUTDEGREE, DESTINATIONS, DESTWEIGHTS, INFO, REORDER, COMM_DIST_GRAPH, IERROR)\n向附加分布式图形拓扑信息的新通信器返回句柄。\nINTEGER COMM_OLD, INDEGREE, SOURCES (*), SOURCEWEIGHTS (*), OUTDEGREE, DESTINATIONS (*), DESTWEIGHTS (*), INFO, COMM_DIST_GRAPH, IERROR\nLOGICAL REORDER\n\ncomm_old [in]\n没有拓扑信息的通信器的句柄 (处理) 。\nindegree\n源和源重量数组的大小 (非负整数) 。\nsources[]\n调用进程是非负整数数组的目标 (数组) 的行列。\nsourceweights[]\n将相应边缘的权重 (非负整数数组) 调用进程。\noutdegree\n目标数组和减量数组的大小 (非负整数) 。\ndestinations[]\n调用进程是非负整数) 的源 (数组的进程排名。\ndestweights[]\n调用进程 (非负整数数组中相应边缘的权重) 。\ninfo [in]\n有关优化或解释权重的提示 (句柄) 。 当前使用 MPI_INFO_NULL ，因为此变量未在内部使用。\n排序\n (true) 重新排序排名，或者不 (false)  (逻辑) 。 目前，这在内部未使用。\ncomm_dist_graph [out]\n使用附加的分布式图形拓扑信息的通信器句柄 (处理) 。\n",
+  "body": [
+   "MPI_DIST_GRAPH_CREATE_ADJACENT (COMM_OLD, INDEGREE, SOURCES, SOURCEWEIGHTS, OUTDEGREE, DESTINATIONS, DESTWEIGHTS, INFO, REORDER, COMM_DIST_GRAPH, IERROR)"
+  ]
+ },
+ "mpi-dist-graph-neighbors-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-dist-graph-neighbors-function"
+  ],
+  "description": "MPI_DIST_GRAPH_NEIGHBORS (COMM, MAXINDEGREE, SOURCES, SOURCEWEIGHTS, MAXOUTDEGREE, DESTINATIONS, DESTWEIGHTS, IERROR)\n返回在调用过程中具有边缘的邻居列表，以及分布式图形拓扑中传入和传出边缘的相应权重。\nINTEGER COMM, MAXINDEGREE, SOURCES (*), SOURCEWEIGHTS (*), MAXOUTDEGREE, DESTINATIONS (*), DESTWEIGHTS (*), IERROR\n\ncomm [in]\n具有分布式图形拓扑的通信器的句柄。\nmaxindegree\n源和源重量数组的大小 (非负整数) 。\nsources[]\n通信器中的进程排名，调用进程是分布式图形拓扑中的目标 (非负整数数组) 。\nsourceweights[]\n将相应边缘的权重 (非负整数数组) 调用进程。\nmaxoutdegree\n目标数组和减量数组的大小 (非负整数) 。\ndestinations[]\n调用进程是分布式图形拓扑中的源 (非负整数数组) 的通信器中的进程排名。\ndestweights[]\n调用进程 (非负整数数组中相应边缘的权重) 。\n",
+  "body": [
+   "MPI_DIST_GRAPH_NEIGHBORS (COMM, MAXINDEGREE, SOURCES, SOURCEWEIGHTS, MAXOUTDEGREE, DESTINATIONS, DESTWEIGHTS, IERROR)"
+  ]
+ },
+ "mpi-dist-graph-neighbors-count-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-dist-graph-neighbors-count-function"
+  ],
+  "description": "MPI_DIST_GRAPH_NEIGHBORS_COUNT (COMM, INDEGREE, OUTDEGREE, WEIGHTED, IERROR)\n获取分布式图形拓扑中调用进程的相邻信息。 此函数获取的信息，在传入边缘数、传出边缘以及指示分布式图形是否加权的标志上，与调用过程中\nINTEGER COMM, INDEGREE, OUTDEGREE, IERROR\nLOGICAL WEIGHTED\n\ncomm [in]\n具有分布式图形拓扑的通信器的句柄。\nindegree [out]\n此过程中的边缘数 (非负整数) 。\noutdegree [out]\n此过程中的边缘数 (非负整数) 。\n加权 [out]\n如果在创建过程中提供了 MPI_UNWEIGHTED ，则为 false，否则为 true。\n",
+  "body": [
+   "MPI_DIST_GRAPH_NEIGHBORS_COUNT (COMM, INDEGREE, OUTDEGREE, WEIGHTED, IERROR)"
+  ]
+ },
+ "mpi-graph-create-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-graph-create-function"
+  ],
+  "description": "MPI_GRAPH_CREATE(COMM_OLD, NNODES, INDEX, EDGES, REORDER, COMM_GRAPH, IERROR)\n使拓扑信息已附加到的新通信器。\nINTEGER COMM_OLD, NNODES, INDEX(*), EDGES(*), COMM_GRAPH, IERROR\nLOGICAL REORDER\n\ncomm_old\n没有拓扑的输入通信器。\nnnodes\n图形中的节点数。\nindex\n描述节点度的整数数组。\n边缘 [in]\n描述图形边缘的整数数组。\n排序\n排名可能会重新排序， (true) 或 (false) 。\ncomm_cart [out]\n添加了图形拓扑的 Communicator。\n",
+  "body": [
+   "MPI_GRAPH_CREATE(COMM_OLD, NNODES, INDEX, EDGES, REORDER, COMM_GRAPH, IERROR)"
+  ]
+ },
+ "mpi-graph-get-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-graph-get-function"
+  ],
+  "description": "MPI_GRAPH_GET(COMM, MAXINDEX, MAXEDGES, INDEX, EDGES, IERROR)\n检索与通信器关联的图形拓扑信息。\nINTEGER COMM, MAXINDEX, MAXEDGES, INDEX(*), EDGES(*), IERROR\n\n通讯\n具有图形结构的 Communicator。\nmaxindex\n调用程序中 索引 向量的长度。\nmaxedges\n调用程序中 边缘向量的 长度。\nindex\n包含图形结构的整数数组。\n边缘\n包含图形结构的整数数组。\n",
+  "body": [
+   "MPI_GRAPH_GET(COMM, MAXINDEX, MAXEDGES, INDEX, EDGES, IERROR)"
+  ]
+ },
+ "mpi-graph-map-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-graph-map-function"
+  ],
+  "description": "MPI_GRAPH_MAP(COMM, NNODES, INDEX, EDGES, NEWRANK, IERROR)\n将进程映射到图形拓扑信息。\nINTEGER COMM, NNODES, INDEX(*), EDGES(*), NEWRANK, IERROR\n\n通讯\n输入通信器。\nnnodes\n图形节点数。\nindex\n指定图形结构的整数数组。\nedges [in]\n指定图形结构的整数数组。\nnewrank [out]\n重新排序调用过程的排名;如果调用进程不属于图形， 则MPI_UNDEFINED 。\n",
+  "body": [
+   "MPI_GRAPH_MAP(COMM, NNODES, INDEX, EDGES, NEWRANK, IERROR)"
+  ]
+ },
+ "mpi-graph-neighbors-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-graph-neighbors-function"
+  ],
+  "description": "MPI_GRAPH_NEIGHBORS(COMM, RANK, MAXNEIGHBORS, NEIGHBORS, IERROR)\n返回与图形拓扑关联的节点的邻居。\nINTEGER COMM, RANK, MAXNEIGHBORS, NEIGHBORS(*), IERROR\n\n通讯\n具有图形拓扑的 Communicator。\nrank\n进程组的排名。\nmaxneighbors\n数组邻居的大小。\nneighbors\n与指定进程相邻的进程排名。\n",
+  "body": [
+   "MPI_GRAPH_NEIGHBORS(COMM, RANK, MAXNEIGHBORS, NEIGHBORS, IERROR)"
+  ]
+ },
+ "mpi-graph-neighbors-count-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-graph-neighbors-count-function"
+  ],
+  "description": "MPI_GRAPH_NEIGHBORS_COUNT(COMM, RANK, NNEIGHBORS, IERROR)\n返回与图形拓扑关联的节点的邻居数。\nINTEGER COMM, RANK, NNEIGHBORS, IERROR\n\n通讯\n具有图形拓扑的 Communicator。\nrank\n进程组的排名。\nnneighbors [out]\n指定进程的邻居数。\n",
+  "body": [
+   "MPI_GRAPH_NEIGHBORS_COUNT(COMM, RANK, NNEIGHBORS, IERROR)"
+  ]
+ },
+ "mpi-graphdims-get-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-graphdims-get-function"
+  ],
+  "description": "MPI_GRAPHDIMS_GET(COMM, NNODES, NEDGES, IERROR)\n检索与通信器关联的图形拓扑信息。\nINTEGER COMM, NNODES, NEDGES, IERROR\n\n通讯\n具有图形结构的组的 Communicator。\nnnodes [out]\n图形中的节点数。\nnedges [out]\n图形中的边缘数。\n",
+  "body": [
+   "MPI_GRAPHDIMS_GET(COMM, NNODES, NEDGES, IERROR)"
+  ]
+ },
+ "mpi-abort-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-abort-function"
+  ],
+  "description": "MPI_ABORT(COMM, ERRORCODE, IERROR)\n终止 MPI 执行环境\nINTEGER COMM, ERRORCODE, IERROR\n\n通讯\n要中止的任务的通信器\nerrorcode\n返回调用环境的错误代码\n",
+  "body": [
+   "MPI_ABORT(COMM, ERRORCODE, IERROR)"
+  ]
+ },
+ "mpi-add-error-class-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-add-error-class-function"
+  ],
+  "description": "MPI_ADD_ERROR_CLASS(ERRORCLASS, IERROR)\n将 MPI 错误类添加到已知类\nINTEGER ERRORCLASS, IERROR\n\nerrorclass [out]\n新错误类",
+  "body": [
+   "MPI_ADD_ERROR_CLASS(ERRORCLASS, IERROR)"
+  ]
+ },
+ "mpi-add-error-code-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-add-error-code-function"
+  ],
+  "description": "MPI_ADD_ERROR_CODE(ERRORCLASS, ERRORCODE, IERROR)\n将 MPI 错误代码添加到 MPI 错误类\nINTEGER ERRORCLASS, ERRORCODE, IERROR\n\nerrorclass\n用于添加错误代码的错误类。\nerrorcode [out]\n此错误类的新错误代码。\n",
+  "body": [
+   "MPI_ADD_ERROR_CODE(ERRORCLASS, ERRORCODE, IERROR)"
+  ]
+ },
+ "mpi-add-error-string-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-add-error-string-function"
+  ],
+  "description": "MPI_ADD_ERROR_STRING(ERRORCODE, STRING, IERROR)\n将错误字符串与 MPI 错误代码或类相关联\nINTEGER ERRORCODE, IERROR\nCHARACTER*(*) STRING\n\nerrorcode\n错误代码或类。\nstring\n对应于错误代码的文本。\n",
+  "body": [
+   "MPI_ADD_ERROR_STRING(ERRORCODE, STRING, IERROR)"
+  ]
+ },
+ "mpi-alloc-mem-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-alloc-mem-function"
+  ],
+  "description": "MPI_ALLOC_MEM(SIZE, INFO, BASEPTR, IERROR)\n为消息传递和 RMA 分配内存\nINTEGER INFO, IERROR\nINTEGER(KIND=MPI_ADDRESS_KIND) SIZE, BASEPTR\n\n大小\n内存段的大小（以字节为单位）。\ninfo\n信息参数。\nbaseptr [out]\n指向分配的内存段开头的指针。\n",
+  "body": [
+   "MPI_ALLOC_MEM(SIZE, INFO, BASEPTR, IERROR)"
+  ]
+ },
+ "mpi-comm-call-errhandler-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-call-errhandler-function"
+  ],
+  "description": "MPI_COMM_CALL_ERRHANDLER(COMM, ERRORCODE, IERROR)\n调用在 communicator 上安装的错误处理程序。\nINTEGER COMM, ERRORCODE, IERROR\n\n通讯\n具有错误处理程序的 Communicator。\nerrorcode\n错误代码。\n",
+  "body": [
+   "MPI_COMM_CALL_ERRHANDLER(COMM, ERRORCODE, IERROR)"
+  ]
+ },
+ "mpi-comm-create-errhandler-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-create-errhandler-function"
+  ],
+  "description": "MPI_COMM_CREATE_ERRHANDLER(COMM_ERRHANDLER_FN, ERRHANDLER, IERROR)\n创建 communicator 错误处理程序。\nEXTERNAL COMM_ERRHANDLER_FN\nINTEGER ERRHANDLER, IERROR\n\n函数 [in]\n用户定义的错误处理过程。\nerrhandler [out]\nMPI 错误处理程序。\n",
+  "body": [
+   "MPI_COMM_CREATE_ERRHANDLER(COMM_ERRHANDLER_FN, ERRHANDLER, IERROR)"
+  ]
+ },
+ "mpi-comm-errhandler-fn-callback-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-errhandler-fn-callback-function"
+  ],
+  "description": "SUBROUTINE COMM_ERRHANDLER_FUNCTION(COMM, ERROR_CODE)\nNone\nINTEGER COMM, ERROR_CODE\n\ncomm [in]\n正在使用的 Communicator。\nerrcode [in， out]\n由引发错误的 MPI 例程返回的错误代码。 如果例程将 返回MPI_ERR_IN_STATUS，则它是导致调用错误处理程序的请求的状态中返回的错误代码。\n...\n其余参数是“varargs”参数，其数字和含义依赖于实现。\n",
+  "body": [
+   "SUBROUTINE COMM_ERRHANDLER_FUNCTION(COMM, ERROR_CODE)"
+  ]
+ },
+ "mpi-comm-get-errhandler-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-get-errhandler-function"
+  ],
+  "description": "MPI_COMM_GET_ERRHANDLER(COMM, ERRHANDLER, IERROR)\n获取附加到 communicator 的错误处理程序。\nINTEGER COMM, ERRHANDLER, IERROR\n\n通讯\n沟通。\nerrhandler [out]\n当前与 communicator 关联的处理程序。\n",
+  "body": [
+   "MPI_COMM_GET_ERRHANDLER(COMM, ERRHANDLER, IERROR)"
+  ]
+ },
+ "mpi-comm-set-errhandler-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-set-errhandler-function"
+  ],
+  "description": "MPI_COMM_SET_ERRHANDLER(COMM, ERRHANDLER, IERROR)\n设置 communicator 的错误处理程序。\nINTEGER COMM, ERRHANDLER, IERROR\n\n通讯\n沟通。\nerrhandler\ncommunicator 的新错误处理程序。\n",
+  "body": [
+   "MPI_COMM_SET_ERRHANDLER(COMM, ERRHANDLER, IERROR)"
+  ]
+ },
+ "mpi-errhandler-free-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-errhandler-free-function"
+  ],
+  "description": "MPI_ERRHANDLER_FREE(ERRHANDLER, IERROR)\n释放 MPI 样式的错误处理程序。\nINTEGER ERRHANDLER, IERROR\n\nerrhandler\nMPI 错误处理程序。",
+  "body": [
+   "MPI_ERRHANDLER_FREE(ERRHANDLER, IERROR)"
+  ]
+ },
+ "mpi-error-class-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-error-class-function"
+  ],
+  "description": "MPI_ERROR_CLASS(ERRORCODE, ERRORCLASS, IERROR)\n将错误代码转换为错误类。\nINTEGER ERRORCODE, ERRORCLASS, IERROR\n\nerrorcode\nMPI 例程返回的错误代码。\nerrorclass [out]\n与 errorcode 关联的错误类。\n",
+  "body": [
+   "MPI_ERROR_CLASS(ERRORCODE, ERRORCLASS, IERROR)"
+  ]
+ },
+ "mpi-error-string-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-error-string-function"
+  ],
+  "description": "MPI_ERROR_STRING(ERRORCODE, STRING, RESULTLEN, IERROR)\n返回给定错误代码的字符串。\nINTEGER ERRORCODE, RESULTLEN, IERROR\nCHARACTER*(*) STRING\n\nerrorcode\nMPI 例程或 MPI 错误类返回的错误代码。\nstring\n对应于错误代码的文本。\nresultlen [out]\n字符串的长度。\n",
+  "body": [
+   "MPI_ERROR_STRING(ERRORCODE, STRING, RESULTLEN, IERROR)"
+  ]
+ },
+ "mpi-file-call-errhandler-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-call-errhandler-function"
+  ],
+  "description": "MPI_FILE_CALL_ERRHANDLER(FH, ERRORCODE, IERROR)\n调用文件上安装的错误处理程序。\nINTEGER FH, ERRORCODE, IERROR\n\nfile\n具有错误处理程序的 MPI 文件。\nerrorcode\n错误代码。\n",
+  "body": [
+   "MPI_FILE_CALL_ERRHANDLER(FH, ERRORCODE, IERROR)"
+  ]
+ },
+ "mpi-file-create-errhandler-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-create-errhandler-function"
+  ],
+  "description": "MPI_FILE_CREATE_ERRHANDLER(FILE_ERRHANDLER_FN, ERRHANDLER, IERROR)\n创建文件错误处理程序。\nEXTERNAL FILE_ERRHANDLER_FN\nINTEGER ERRHANDLER, IERROR\n\n函数 [in]\n用户定义的错误处理过程。\nerrhandler [out]\nMPI 错误处理程序。\n",
+  "body": [
+   "MPI_FILE_CREATE_ERRHANDLER(FILE_ERRHANDLER_FN, ERRHANDLER, IERROR)"
+  ]
+ },
+ "mpi-file-errhandler-fn-callback-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-errhandler-fn-callback-function"
+  ],
+  "description": "SUBROUTINE FILE_ERRHANDLER_FUNCTION(FILE, ERROR_CODE)\nNone\nINTEGER FILE, ERROR_CODE\n\n文件 [in]\n正在使用的文件。\nerrcode [in， out]\n要返回的错误代码。\n...\n",
+  "body": [
+   "SUBROUTINE FILE_ERRHANDLER_FUNCTION(FILE, ERROR_CODE)"
+  ]
+ },
+ "mpi-file-get-errhandler-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-get-errhandler-function"
+  ],
+  "description": "MPI_FILE_GET_ERRHANDLER(FILE, ERRHANDLER, IERROR)\n获取附加到文件的错误处理程序。\nINTEGER FILE, ERRHANDLER, IERROR\n\nfile\nMPI 文件。\nerrhandler [out]\n当前与文件关联的处理程序。\n",
+  "body": [
+   "MPI_FILE_GET_ERRHANDLER(FILE, ERRHANDLER, IERROR)"
+  ]
+ },
+ "mpi-file-set-errhandler-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-set-errhandler-function"
+  ],
+  "description": "MPI_FILE_SET_ERRHANDLER(FILE, ERRHANDLER, IERROR)\n设置 MPI 文件的错误处理程序。\nINTEGER FILE, ERRHANDLER, IERROR\n\nfile\nMPI 文件。\nerrhandler\n文件的新错误处理程序。\n",
+  "body": [
+   "MPI_FILE_SET_ERRHANDLER(FILE, ERRHANDLER, IERROR)"
+  ]
+ },
+ "mpi-finalize-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-finalize-function"
+  ],
+  "description": "MPI_FINALIZE(IERROR)\n终止调用 MPI 进程的执行环境。\nINTEGER IERROR\n\n",
+  "body": [
+   "MPI_FINALIZE(IERROR)"
+  ]
+ },
+ "mpi-finalized-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-finalized-function"
+  ],
+  "description": "MPI_FINALIZED(FLAG, IERROR)\n指示是否已调用 \nLOGICAL FLAG\nINTEGER IERROR\n\n标志 [out]\n如果 已调用 MPI_Finalize ，则标志为 true;否则为 false。",
+  "body": [
+   "MPI_FINALIZED(FLAG, IERROR)"
+  ]
+ },
+ "mpi-free-mem-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-free-mem-function"
+  ],
+  "description": "MPI_FREE_MEM(BASE, IERROR)\n释放使用 \n<type> BASE(*)\nINTEGER IERROR\n\nbase [in]\nMPI_Alloc_mem分配的内存段的初始地址。",
+  "body": [
+   "MPI_FREE_MEM(BASE, IERROR)"
+  ]
+ },
+ "mpi-get-processor-name-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-get-processor-name-function"
+  ],
+  "description": "MPI_GET_PROCESSOR_NAME( NAME, RESULTLEN, IERROR)\n获取处理器的名称。\nCHARACTER*(*) NAME\nINTEGER RESULTLEN,IERROR\n\nname\n实际 (的唯一说明符，而不是虚拟) 节点。 这必须是至少 MPI_MAX_PROCESSOR_NAME大小的数组。\nresultlen [out]\n名称) 字符的长度 (。\n",
+  "body": [
+   "MPI_GET_PROCESSOR_NAME( NAME, RESULTLEN, IERROR)"
+  ]
+ },
+ "mpi-get-version-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-get-version-function"
+  ],
+  "description": "MPI_GET_VERSION(VERSION, SUBVERSION, IERROR)\n返回 MPI 的版本号。\nINTEGER VERSION, SUBVERSION, IERROR\n\n版本 [out]\nMPI 的版本。\nsubversion [out]\nMPI 的颠覆。\n",
+  "body": [
+   "MPI_GET_VERSION(VERSION, SUBVERSION, IERROR)"
+  ]
+ },
+ "mpi-init-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-init-function"
+  ],
+  "description": "MPI_INIT(IERROR)\n初始化调用 MPI 进程的执行环境以执行单线程执行。\nINTEGER IERROR\n\nargc [in， 可选]\n指向程序参数数的指针。 此值可以为 NULL。\n              argv\n指向程序的参数列表的指针。 此值可以为 NULL。\n",
+  "body": [
+   "MPI_INIT(IERROR)"
+  ]
+ },
+ "mpi-initialized-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-initialized-function"
+  ],
+  "description": "MPI_INITIALIZED(FLAG, IERROR)\n指示是否已调用 \nLOGICAL FLAG\nINTEGER IERROR\n\n标志 [out]\n如果 已调用MPI_Init 或 MPI_Init_thread ，则标志为 true;否则为 false。",
+  "body": [
+   "MPI_INITIALIZED(FLAG, IERROR)"
+  ]
+ },
+ "mpi-win-call-errhandler-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-call-errhandler-function"
+  ],
+  "description": "MPI_WIN_CALL_ERRHANDLER(WIN, ERRORCODE, IERROR)\n调用在窗口对象上安装的错误处理程序。\nINTEGER WIN, ERRORCODE, IERROR\n\nwin\n带有错误处理程序的窗口。\nerrcode\n错误代码。\n",
+  "body": [
+   "MPI_WIN_CALL_ERRHANDLER(WIN, ERRORCODE, IERROR)"
+  ]
+ },
+ "mpi-win-create-errhandler-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-create-errhandler-function"
+  ],
+  "description": "MPI_WIN_CREATE_ERRHANDLER(WIN_ERRHANDLER_FN, ERRHANDLER, IERROR)\n创建用于 MPI 窗口对象的错误处理程序。\nEXTERNAL WIN_ERRHANDLER_FN\nINTEGER ERRHANDLER, IERROR\n\n函数 [in]\n用户定义的错误处理过程。\nerrhandler [out]\nMPI 错误处理程序。\n",
+  "body": [
+   "MPI_WIN_CREATE_ERRHANDLER(WIN_ERRHANDLER_FN, ERRHANDLER, IERROR)"
+  ]
+ },
+ "mpi-win-errhandler-fn-callback-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-errhandler-fn-callback-function"
+  ],
+  "description": "SUBROUTINE WIN_ERRHANDLER_FUNCTION(WIN, ERROR_CODE)\nNone\nINTEGER WIN, ERROR_CODE\n\nwin [in]\n正在使用的 MPI 窗口对象。\nerrcode [in， out]\n要返回的错误代码。\n",
+  "body": [
+   "SUBROUTINE WIN_ERRHANDLER_FUNCTION(WIN, ERROR_CODE)"
+  ]
+ },
+ "mpi-win-get-errhandler-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-get-errhandler-function"
+  ],
+  "description": "MPI_WIN_GET_ERRHANDLER(WIN, ERRHANDLER, IERROR)\n获取 MPI RMA 窗口的错误处理程序。\nINTEGER WIN, ERRHANDLER, IERROR\n\nwin\nWindow 对象。\nerrhandler [out]\n当前与窗口对象关联的错误处理程序。\n",
+  "body": [
+   "MPI_WIN_GET_ERRHANDLER(WIN, ERRHANDLER, IERROR)"
+  ]
+ },
+ "mpi-win-set-errhandler-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-set-errhandler-function"
+  ],
+  "description": "MPI_WIN_SET_ERRHANDLER(WIN, ERRHANDLER, IERROR)\n设置 MPI 窗口对象的错误处理程序。\nINTEGER WIN, ERRHANDLER, IERROR\n\nwin\nWindow 对象。\nerrhandler\n窗口对象的新错误处理程序。\n",
+  "body": [
+   "MPI_WIN_SET_ERRHANDLER(WIN, ERRHANDLER, IERROR)"
+  ]
+ },
+ "mpi-wtick-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-wtick-function"
+  ],
+  "description": "DOUBLE PRECISION MPI_WTICK()\n返回 \n\n",
+  "body": [
+   "DOUBLE PRECISION MPI_WTICK()"
+  ]
+ },
+ "mpi-wtime-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-wtime-function"
+  ],
+  "description": "DOUBLE PRECISION MPI_WTIME()\n返回调用处理器上的已用时间。\n\n",
+  "body": [
+   "DOUBLE PRECISION MPI_WTIME()"
+  ]
+ },
+ "mpi-info-create-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-info-create-function"
+  ],
+  "description": "MPI_INFO_CREATE(INFO, IERROR)\n创建新的信息对象。\nINTEGER INFO, IERROR\n\ninfo [out]\n创建的信息对象。",
+  "body": [
+   "MPI_INFO_CREATE(INFO, IERROR)"
+  ]
+ },
+ "mpi-info-delete-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-info-delete-function"
+  ],
+  "description": "MPI_INFO_DELETE(INFO, KEY, IERROR)\n从信息中删除 (键、值) 对。\nINTEGER INFO, IERROR\nCHARACTER*(*) KEY\n\ninfo\nInfo 对象。\n键 [in]\n要删除的键。\n",
+  "body": [
+   "MPI_INFO_DELETE(INFO, KEY, IERROR)"
+  ]
+ },
+ "mpi-info-dup-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-info-dup-function"
+  ],
+  "description": "MPI_INFO_DUP(INFO, NEWINFO, IERROR)\n返回信息对象的副本。\nINTEGER INFO, NEWINFO, IERROR\n\ninfo\nInfo 对象。\nnewinfo [out]\n信息对象的副本。\n",
+  "body": [
+   "MPI_INFO_DUP(INFO, NEWINFO, IERROR)"
+  ]
+ },
+ "mpi-info-free-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-info-free-function"
+  ],
+  "description": "MPI_INFO_FREE(INFO, IERROR)\n释放信息对象。\nINTEGER INFO, IERROR\n\ninfo [in， out]\n要释放的信息对象。",
+  "body": [
+   "MPI_INFO_FREE(INFO, IERROR)"
+  ]
+ },
+ "mpi-info-get-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-info-get-function"
+  ],
+  "description": "MPI_INFO_GET(INFO, KEY, VALUELEN, VALUE, FLAG, IERROR)\n检索与键关联的值。\nINTEGER INFO, VALUELEN, IERROR\nCHARACTER*(*) KEY, VALUE\nLOGICAL FLAG\n\ninfo\nInfo 对象。\n键 [in]\n键。\nvaluelen\n值参数的长度。\nvalue \nValue。\n标志 [out]\n如果定义了键，则为 True;否则为 false。\n",
+  "body": [
+   "MPI_INFO_GET(INFO, KEY, VALUELEN, VALUE, FLAG, IERROR)"
+  ]
+ },
+ "mpi-info-get-nkeys-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-info-get-nkeys-function"
+  ],
+  "description": "MPI_INFO_GET_NKEYS(INFO, NKEYS, IERROR)\n返回 info 对象中当前定义的键数。\nINTEGER INFO, NKEYS, IERROR\n\ninfo\nInfo 对象。\nnkeys [out]\n定义的键数。\n",
+  "body": [
+   "MPI_INFO_GET_NKEYS(INFO, NKEYS, IERROR)"
+  ]
+ },
+ "mpi-info-get-nthkey-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-info-get-nthkey-function"
+  ],
+  "description": "MPI_INFO_GET_NTHKEY(INFO, N, KEY, IERROR)\n返回 info 对象中第 n 个定义的键。\nINTEGER INFO, N, IERROR\nCHARACTER*(*) KEY\n\ninfo\nInfo 对象。\nn\n键号。\nkey \n键。 最大字符数 为MPI_MAX_INFO_KEY。\n",
+  "body": [
+   "MPI_INFO_GET_NTHKEY(INFO, N, KEY, IERROR)"
+  ]
+ },
+ "mpi-info-get-valuelen-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-info-get-valuelen-function"
+  ],
+  "description": "MPI_INFO_GET_VALUELEN(INFO, KEY, VALUELEN, FLAG, IERROR)\n检索与键关联的值的长度。\nINTEGER INFO, VALUELEN, IERROR\nLOGICAL FLAG\nCHARACTER*(*) KEY\n\ninfo\nInfo 对象。\n键 [in]\n键。\nvaluelen [out]\n值参数的长度。\n标志 [out]\n如果定义了键，则为 true;否则为 false。\n",
+  "body": [
+   "MPI_INFO_GET_VALUELEN(INFO, KEY, VALUELEN, FLAG, IERROR)"
+  ]
+ },
+ "mpi-info-set-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-info-set-function"
+  ],
+  "description": "MPI_INFO_SET(INFO, KEY, VALUE, IERROR)\n向信息对象添加 (键、值) 对。\nINTEGER INFO, IERROR\nCHARACTER*(*) KEY, VALUE\n\ninfo\nInfo 对象。\n键 [in]\n键。\nvalue [in]\nValue。\n",
+  "body": [
+   "MPI_INFO_SET(INFO, KEY, VALUE, IERROR)"
+  ]
+ },
+ "mpi-close-port-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-close-port-function"
+  ],
+  "description": "MPI_CLOSE_PORT(PORT_NAME, IERROR)\n关闭端口。\nCHARACTER*(*) PORT_NAME\nINTEGER IERROR\n\nport_name [in]\n端口名称。",
+  "body": [
+   "MPI_CLOSE_PORT(PORT_NAME, IERROR)"
+  ]
+ },
+ "mpi-comm-accept-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-accept-function"
+  ],
+  "description": "MPI_COMM_ACCEPT(PORT_NAME, INFO, ROOT, COMM, NEWCOMM, IERROR)\n接受一个请求，以形成新的通信器。\nCHARACTER*(*) PORT_NAME\nINTEGER INFO, ROOT, COMM, NEWCOMM, IERROR\n\nport_name [in]\n端口名称，仅用于 根目录。\ninfo\n依赖于实现的信息。\nroot\n在根节点的 comm 中排名。\n通讯\n调用是集体的内部通信器。\nnewcomm [out]\n将客户端作为远程组的通信器。\n",
+  "body": [
+   "MPI_COMM_ACCEPT(PORT_NAME, INFO, ROOT, COMM, NEWCOMM, IERROR)"
+  ]
+ },
+ "mpi-comm-connect-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-connect-function"
+  ],
+  "description": "MPI_COMM_CONNECT(PORT_NAME, INFO, ROOT, COMM, NEWCOMM, IERROR)\n发出一个请求，以形成一个新的交际程序。\nCHARACTER*(*) PORT_NAME\nINTEGER INFO, ROOT, COMM, NEWCOMM, IERROR\n\nport_name [in]\n网络地址，仅用于 根目录。\ninfo\n依赖于实现的信息。\nroot\n在根节点的 comm 中排名。\n通讯\n调用是集体的内部通信器。\nnewcomm [out]\n将服务器作为远程组的通信器。\n",
+  "body": [
+   "MPI_COMM_CONNECT(PORT_NAME, INFO, ROOT, COMM, NEWCOMM, IERROR)"
+  ]
+ },
+ "mpi-comm-disconnect-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-disconnect-function"
+  ],
+  "description": "MPI_COMM_DISCONNECT(COMM, IERROR)\n断开与通信器的连接。\nINTEGER COMM, IERROR\n\ncomm [in]\n沟通。",
+  "body": [
+   "MPI_COMM_DISCONNECT(COMM, IERROR)"
+  ]
+ },
+ "mpi-comm-get-parent-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-get-parent-function"
+  ],
+  "description": "MPI_COMM_GET_PARENT(PARENT, IERROR)\n返回此过程的父通信器。\nINTEGER PARENT, IERROR\n\n父 [out]\n父通信器。",
+  "body": [
+   "MPI_COMM_GET_PARENT(PARENT, IERROR)"
+  ]
+ },
+ "mpi-comm-join-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-join-function"
+  ],
+  "description": "MPI_COMM_JOIN(FD, INTERCOMM, IERROR)\n通过联接由套接字连接的两个进程来创建通信器。\nINTEGER FD, INTERCOMM, IERROR\n\n              fd\n套接字文件描述符。\nintercomm [out]\n新的互讲器。\n",
+  "body": [
+   "MPI_COMM_JOIN(FD, INTERCOMM, IERROR)"
+  ]
+ },
+ "mpi-comm-spawn-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-spawn-function"
+  ],
+  "description": "MPI_COMM_SPAWN(COMMAND, ARGV, MAXPROCS, INFO, ROOT, COMM, INTERCOMM, ARRAY_OF_ERRCODES, IERROR)\n生成最多单个 MPI 应用程序的 maxprocs 实例。\nCHARACTER*(*) COMMAND, ARGV(*)\nINTEGER INFO, MAXPROCS, ROOT, COMM, INTERCOMM, ARRAY_OF_ERRCODES(*), IERROR\n\n命令 [in]\n要生成的程序的名称。\nargv [in]\n命令的参数。\nmaxprocs\n要启动的最大进程数。\ninfo\n一组键值对告诉运行时系统在哪里以及如何启动进程。\nroot\n检查之前参数的进程排名。\n通讯\n包含一组生成进程的内部通信器。\nintercomm [out]\n原始组与新生成组之间的通信器。\narray_of_errcodes\n每个进程一个代码。\n",
+  "body": [
+   "MPI_COMM_SPAWN(COMMAND, ARGV, MAXPROCS, INFO, ROOT, COMM, INTERCOMM, ARRAY_OF_ERRCODES, IERROR)"
+  ]
+ },
+ "mpi-comm-spawn-multiple-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-spawn-multiple-function"
+  ],
+  "description": "MPI_COMM_SPAWN_MULTIPLE(COUNT, ARRAY_OF_COMMANDS, ARRAY_OF_ARGV, ARRAY_OF_MAXPROCS, ARRAY_OF_INFO, ROOT, COMM, INTERCOMM, ARRAY_OF_ERRCODES, IERROR)\n生成多个二进制文件或具有多个参数集的同一个二进制文件，并与它们建立通信，并将其置于同一 \nINTEGER COUNT, ARRAY_OF_INFO(*), ARRAY_OF_MAXPROCS(*), ROOT, COMM, INTERCOMM, ARRAY_OF_ERRCODES(*), IERROR\nCHARACTER*(*) ARRAY_OF_COMMANDS(*), ARRAY_OF_ARGV(COUNT, *)\n\n计数\n命令数。\narray_of_commands\n要执行的程序。\narray_of_argv\n命令的参数。\narray_of_maxprocs\n每个命令要启动的最大进程数。\narray_of_info\n信息对象，告知运行时系统在哪里以及如何启动进程。\nroot\n检查之前参数的进程排名。\n通讯\n包含一组生成进程的内部通信器。\nintercomm [out]\n原始组与新生成组之间的通信器。\narray_of_errcodes [out， 可选]\n每个进程一个错误代码。\n",
+  "body": [
+   "MPI_COMM_SPAWN_MULTIPLE(COUNT, ARRAY_OF_COMMANDS, ARRAY_OF_ARGV, ARRAY_OF_MAXPROCS, ARRAY_OF_INFO, ROOT, COMM, INTERCOMM, ARRAY_OF_ERRCODES, IERROR)"
+  ]
+ },
+ "mpi-lookup-name-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-lookup-name-function"
+  ],
+  "description": "MPI_LOOKUP_NAME(SERVICE_NAME, INFO, PORT_NAME, IERROR)\n查找给定服务名称的端口。\nCHARACTER*(*) SERVICE_NAME, PORT_NAME\nINTEGER INFO, IERROR\n\nservice_name\n服务名称。\ninfo\n特定于实现的信息。\nport_name\n端口名称。\n",
+  "body": [
+   "MPI_LOOKUP_NAME(SERVICE_NAME, INFO, PORT_NAME, IERROR)"
+  ]
+ },
+ "mpi-open-port-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-open-port-function"
+  ],
+  "description": "MPI_OPEN_PORT(INFO, PORT_NAME, IERROR)\n建立一个地址，该地址可用于在 MPI 进程组之间建立连接。\nCHARACTER*(*) PORT_NAME\nINTEGER INFO, IERROR\n\ninfo\n有关如何为 MPI_Comm_accept建立端口的特定于实现的信息。\nport_name\n新建立的端口。\nip_port - 值包含要建立端口的 IP 端口号。ip_address - 值包含要建立端口的 IP 地址。",
+  "body": [
+   "MPI_OPEN_PORT(INFO, PORT_NAME, IERROR)"
+  ]
+ },
+ "mpi-publish-name-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-publish-name-function"
+  ],
+  "description": "MPI_PUBLISH_NAME(SERVICE_NAME, INFO, PORT_NAME, IERROR)\n发布用于 \nINTEGER INFO, IERROR\nCHARACTER*(*) SERVICE_NAME, PORT_NAME\n\nservice_name [in]\n要与端口关联的服务名称。\ninfo\n特定于实现的信息。\nport_name [in]\n端口名称。\n",
+  "body": [
+   "MPI_PUBLISH_NAME(SERVICE_NAME, INFO, PORT_NAME, IERROR)"
+  ]
+ },
+ "mpi-unpublish-name-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-unpublish-name-function"
+  ],
+  "description": "MPI_UNPUBLISH_NAME(SERVICE_NAME, INFO, PORT_NAME, IERROR)\n取消发布使用 \nINTEGER INFO, IERROR\nCHARACTER*(*) SERVICE_NAME, PORT_NAME\n\nservice_name [in]\n服务名称字符串。\ninfo\n特定于实现的信息。\nport_name [in]\n端口名称字符串。\n",
+  "body": [
+   "MPI_UNPUBLISH_NAME(SERVICE_NAME, INFO, PORT_NAME, IERROR)"
+  ]
+ },
+ "mpi-accumulate-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-accumulate-function"
+  ],
+  "description": "MPI_ACCUMULATE(ORIGIN_ADDR, ORIGIN_COUNT, ORIGIN_DATATYPE, TARGET_RANK, TARGET_DISP, TARGET_COUNT, TARGET_DATATYPE, OP, WIN, IERROR)\n使用远程内存访问将数据累积到目标进程\n<type> ORIGIN_ADDR(*)\nINTEGER(KIND=MPI_ADDRESS_KIND) TARGET_DISP\nINTEGER ORIGIN_COUNT, ORIGIN_DATATYPE,TARGET_RANK, TARGET_COUNT, TARGET_DATATYPE, OP, WIN, IERROR\n\norigin_addr [in]\n缓冲区的初始地址\norigin_count\n缓冲区中的条目数\norigin_datatype\n每个缓冲区条目的数据类型\ntarget_rank\n目标排名\ntarget_disp\n从窗口开始到目标缓冲区开始的偏移量\ntarget_count\n目标缓冲区中的条目数\ndatatype\n目标缓冲区中每个条目的数据类型\n              op\n预定义的化简操作\nwin\nwindow 对象\n",
+  "body": [
+   "MPI_ACCUMULATE(ORIGIN_ADDR, ORIGIN_COUNT, ORIGIN_DATATYPE, TARGET_RANK, TARGET_DISP, TARGET_COUNT, TARGET_DATATYPE, OP, WIN, IERROR)"
+  ]
+ },
+ "mpi-compare-and-swap-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-compare-and-swap-function"
+  ],
+  "description": "MPI_COMPARE_AND_SWAP(ORIGIN_ADDR, COMPARE_ADDR, RESULT_ADDR, DATATYPE, TARGET_RANK, TARGET_DISP, WIN, IERROR)\n执行远程原子比较和交换操作。\n<type> ORIGIN_ADDR(*), COMPARE_ADDR(*), RESULT_ADDR(*)\nINTEGER(KIND=MPI_ADDRESS_KIND) TARGET_DISP\nINTEGER DATATYPE, TARGET_RANK, WIN, IERROR\n\norigin_addr [in]\n缓冲区的初始地址\ncompare_addr [in]\ncomparebuffer 的初始地址\nresult_addr [out]\n结果缓冲区的初始地址\ndatatype\n所有缓冲区中每个条目的数据类型\ntarget_rank\n目标排名\ntarget_disp\n从窗口开始到目标缓冲区开始的偏移量\nwin\nwindow 对象\n",
+  "body": [
+   "MPI_COMPARE_AND_SWAP(ORIGIN_ADDR, COMPARE_ADDR, RESULT_ADDR, DATATYPE, TARGET_RANK, TARGET_DISP, WIN, IERROR)"
+  ]
+ },
+ "mpi-fetch-and-op-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-fetch-and-op-function"
+  ],
+  "description": "MPI_FETCH_AND_OP(ORIGIN_ADDR, RESULT_ADDR, DATATYPE, TARGET_RANK, TARGET_DISP, OP, WIN, IERROR)\n对一个数据元素执行原子读写操作，并在累积操作之前返回数据元素。\n<type> ORIGIN_ADDR(*), RESULT_ADDR(*)\nINTEGER(KIND=MPI_ADDRESS_KIND) TARGET_DISP\nINTEGER DATATYPE, TARGET_RANK, OP, WIN, IERROR\n\norigin_addr [in]\n缓冲区的初始地址\nresult_addr [out]\n结果缓冲区的初始地址\ndatatype\n源、结果和目标缓冲区中每个条目的数据类型\ntarget_rank\n目标排名\ntarget_disp\n从窗口开始到目标缓冲区开头的偏移量\n              op\n化简操作\nwin\nwindow 对象\n",
+  "body": [
+   "MPI_FETCH_AND_OP(ORIGIN_ADDR, RESULT_ADDR, DATATYPE, TARGET_RANK, TARGET_DISP, OP, WIN, IERROR)"
+  ]
+ },
+ "mpi-get-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-get-function"
+  ],
+  "description": "MPI_GET(ORIGIN_ADDR, ORIGIN_COUNT, ORIGIN_DATATYPE, TARGET_RANK, TARGET_DISP, TARGET_COUNT, TARGET_DATATYPE, WIN, IERROR)\n从远程进程的内存窗口中获取数据。\n<type> ORIGIN_ADDR(*)\nINTEGER(KIND=MPI_ADDRESS_KIND) TARGET_DISP\n\norigin_addr [out]\n要在其中接收数据的缓冲区的地址。\norigin_count\n源缓冲区中的条目数。\norigin_datatype\n源缓冲区中每个条目的数据类型。\ntarget_rank\n目标排名。\ntarget_disp\n从窗口开始到目标缓冲区的开头的偏移量。\ntarget_count\n目标缓冲区中的条目数。\ndatatype\n目标缓冲区中每个条目的数据类型。\nwin\n用于通信的 Window 对象。\n",
+  "body": [
+   "MPI_GET(ORIGIN_ADDR, ORIGIN_COUNT, ORIGIN_DATATYPE, TARGET_RANK, TARGET_DISP, TARGET_COUNT, TARGET_DATATYPE, WIN, IERROR)"
+  ]
+ },
+ "mpi-get-accumulate-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-get-accumulate-function"
+  ],
+  "description": "MPI_GET_ACCUMULATE(ORIGIN_ADDR, ORIGIN_COUNT, ORIGIN_DATATYPE, RESULT_ADDR, RESULT_COUNT, RESULT_DATATYPE, TARGET_RANK, TARGET_DISP, TARGET_COUNT, TARGET_DATATYPE, OP, WIN, IERROR)\n执行原子读写操作，并在累积操作之前返回数据。\n<type> ORIGIN_ADDR(*), RESULT_ADDR(*)\nINTEGER(KIND=MPI_ADDRESS_KIND) TARGET_DISP\nINTEGER ORIGIN_COUNT, ORIGIN_DATATYPE, RESULT_COUNT, RESULT_DATATYPE, TARGET_RANK, TARGET_COUNT, TARGET_DATATYPE, OP, WIN, IERROR\n\norigin_addr [in]\n缓冲区的初始地址\norigin_count\n缓冲区中的条目数\norigin_datatype\n每个缓冲区项的数据类型\nresult_addr [out]\n结果缓冲区的初始地址\nresult_count\n结果缓冲区中的条目数\nresult_datatype\n结果缓冲区中每个条目的数据类型\ntarget_rank\n目标排名\ntarget_disp\n从窗口开始到目标缓冲区开头的偏移量\ntarget_count\n目标缓冲区中的条目数\ndatatype\n目标缓冲区中每个条目的数据类型\n              op\n预定义化简操作\nwin\nwindow 对象\n",
+  "body": [
+   "MPI_GET_ACCUMULATE(ORIGIN_ADDR, ORIGIN_COUNT, ORIGIN_DATATYPE, RESULT_ADDR, RESULT_COUNT, RESULT_DATATYPE, TARGET_RANK, TARGET_DISP, TARGET_COUNT, TARGET_DATATYPE, OP, WIN, IERROR)"
+  ]
+ },
+ "mpi-put-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-put-function"
+  ],
+  "description": "MPI_PUT(ORIGIN_ADDR, ORIGIN_COUNT, ORIGIN_DATATYPE, TARGET_RANK, TARGET_DISP, TARGET_COUNT, TARGET_DATATYPE, WIN, IERROR)\n将数据放入远程进程的内存窗口中。\n<type> ORIGIN_ADDR(*)\nINTEGER(KIND=MPI_ADDRESS_KIND) TARGET_DISP\nINTEGER ORIGIN_COUNT, ORIGIN_DATATYPE, TARGET_RANK, TARGET_COUNT, TARGET_DATATYPE, WIN, IERROR\n\norigin_addr [in]\n源缓冲区的初始地址。\norigin_count\n源缓冲区中的条目数。\norigin_datatype\n源缓冲区中每个条目的数据类型。\ntarget_rank\n目标排名。\ntarget_disp\n从窗口开始到目标缓冲区的偏移量。\ntarget_count\n目标缓冲区中的条目数。\ntarget_datatype\n目标缓冲区中每个条目的数据类型。\nwin\n用于通信的 Window 对象。\n",
+  "body": [
+   "MPI_PUT(ORIGIN_ADDR, ORIGIN_COUNT, ORIGIN_DATATYPE, TARGET_RANK, TARGET_DISP, TARGET_COUNT, TARGET_DATATYPE, WIN, IERROR)"
+  ]
+ },
+ "mpi-raccumulate-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-raccumulate-function"
+  ],
+  "description": "MPI_RACCUMULATE(ORIGIN_ADDR, ORIGIN_COUNT, ORIGIN_DATATYPE, TARGET_RANK, TARGET_DISP, TARGET_COUNT, TARGET_DATATYPE, OP, WIN, REQUEST, IERROR)\n基于请求的 RMA 累积操作。\n<type> ORIGIN_ADDR(*)\nINTEGER(KIND=MPI_ADDRESS_KIND) TARGET_DISP\nINTEGER ORIGIN_COUNT, ORIGIN_DATATYPE,TARGET_RANK, TARGET_COUNT, TARGET_DATATYPE, OP, WIN, REQUEST, IERROR\n\norigin_addr [in]\n缓冲区的初始地址\norigin_count\n缓冲区中的条目数\norigin_datatype\n每个缓冲区项的数据类型\ntarget_rank\n目标排名\ntarget_disp\n从窗口开始到目标缓冲区开头的偏移量\ntarget_count\n目标缓冲区中的条目数\ndatatype\n目标缓冲区中每个条目的数据类型\n              op\n预定义化简操作\nwin\nwindow 对象\n请求 [out]\nRMA 请求\n",
+  "body": [
+   "MPI_RACCUMULATE(ORIGIN_ADDR, ORIGIN_COUNT, ORIGIN_DATATYPE, TARGET_RANK, TARGET_DISP, TARGET_COUNT, TARGET_DATATYPE, OP, WIN, REQUEST, IERROR)"
+  ]
+ },
+ "mpi-rget-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-rget-function"
+  ],
+  "description": "MPI_RGET(ORIGIN_ADDR, ORIGIN_COUNT, ORIGIN_DATATYPE, TARGET_RANK, TARGET_DISP, TARGET_COUNT, TARGET_DATATYPE, WIN, REQUEST, IERROR)\n基于请求的 RMA 获取操作。\n<type> ORIGIN_ADDR(*)\nINTEGER(KIND=MPI_ADDRESS_KIND) TARGET_DISP\nINTEGER ORIGIN_COUNT, ORIGIN_DATATYPE, TARGET_RANK, TARGET_COUNT, TARGET_DATATYPE, WIN, REQUEST, IERROR\n\norigin_addr [out]\n要在其中接收数据的缓冲区的地址。\norigin_count\n源缓冲区中的条目数。\norigin_datatype\n源缓冲区中每个条目的数据类型。\ntarget_rank\n目标排名。\ntarget_disp\n从窗口开始到目标缓冲区的开头的偏移量。\ntarget_count\n目标缓冲区中的条目数。\ndatatype\n目标缓冲区中每个条目的数据类型。\nwin\n用于通信的 Window 对象。\n请求 [out]\nRMA 请求。\n",
+  "body": [
+   "MPI_RGET(ORIGIN_ADDR, ORIGIN_COUNT, ORIGIN_DATATYPE, TARGET_RANK, TARGET_DISP, TARGET_COUNT, TARGET_DATATYPE, WIN, REQUEST, IERROR)"
+  ]
+ },
+ "mpi-rget-accumulate-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-rget-accumulate-function"
+  ],
+  "description": "MPI_GET_RACCUMULATE(ORIGIN_ADDR, ORIGIN_COUNT, ORIGIN_DATATYPE, RESULT_ADDR, RESULT_COUNT, RESULT_DATATYPE, TARGET_RANK, TARGET_DISP, TARGET_COUNT, TARGET_DATATYPE, OP, WIN, REQUEST, IERROR)\n基于请求的 RMA 读-修改-写操作在累积操作之前返回数据。\n<type> ORIGIN_ADDR(*), RESULT_ADDR(*)\nINTEGER(KIND=MPI_ADDRESS_KIND) TARGET_DISP\nINTEGER ORIGIN_COUNT, ORIGIN_DATATYPE, RESULT_COUNT, RESULT_DATATYPE, TARGET_RANK, TARGET_COUNT, TARGET_DATATYPE, OP, WIN, REQUEST, IERROR\n\norigin_addr [in]\n缓冲区的初始地址\norigin_count\n缓冲区中的条目数\norigin_datatype\n每个缓冲区条目的数据类型\nresult_addr [out]\n结果缓冲区的初始地址\nresult_count\n结果缓冲区中的条目数\nresult_datatype\n结果缓冲区中每个条目的数据类型\ntarget_rank\n目标排名\ntarget_disp\n从窗口开始到目标缓冲区开始的偏移量\ntarget_count\n目标缓冲区中的条目数\ndatatype\n目标缓冲区中每个条目的数据类型\n              op\n预定义的化简操作\nwin\nwindow 对象\n请求 [out]\nRMA 请求\n",
+  "body": [
+   "MPI_GET_RACCUMULATE(ORIGIN_ADDR, ORIGIN_COUNT, ORIGIN_DATATYPE, RESULT_ADDR, RESULT_COUNT, RESULT_DATATYPE, TARGET_RANK, TARGET_DISP, TARGET_COUNT, TARGET_DATATYPE, OP, WIN, REQUEST, IERROR)"
+  ]
+ },
+ "mpi-rput-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-rput-function"
+  ],
+  "description": "MPI_RPUT(ORIGIN_ADDR, ORIGIN_COUNT, ORIGIN_DATATYPE, TARGET_RANK, TARGET_DISP, TARGET_COUNT, TARGET_DATATYPE, WIN, REQUEST, IERROR)\n基于请求的 RMA 放置操作。\n<type> ORIGIN_ADDR(*)\nINTEGER(KIND=MPI_ADDRESS_KIND) TARGET_DISP\nINTEGER ORIGIN_COUNT, ORIGIN_DATATYPE, TARGET_RANK, TARGET_COUNT, TARGET_DATATYPE, WIN, REQUEST, IERROR\n\norigin_addr [in]\n源缓冲区的初始地址。\norigin_count\n源缓冲区中的条目数。\norigin_datatype\n源缓冲区中每个条目的数据类型。\ntarget_rank\n目标排名。\ntarget_disp\n从窗口开始到目标缓冲区的偏移量。\ntarget_count\n目标缓冲区中的条目数。\ntarget_datatype\n目标缓冲区中每个条目的数据类型。\nwin\n用于通信的 Window 对象。\n请求 [out]\nRMA 请求。\n",
+  "body": [
+   "MPI_RPUT(ORIGIN_ADDR, ORIGIN_COUNT, ORIGIN_DATATYPE, TARGET_RANK, TARGET_DISP, TARGET_COUNT, TARGET_DATATYPE, WIN, REQUEST, IERROR)"
+  ]
+ },
+ "mpi-win-allocate-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-allocate-function"
+  ],
+  "description": "MPI_WIN_ALLOCATE(SIZE, DISP_UNIT, INFO, COMM, BASEPTR, WIN, IERROR)\n创建分配内存的 MPI Window 对象。\n<type> BASEPTR(*)\nINTEGER(KIND=MPI_ADDRESS_KIND) SIZE\nINTEGER DISP_UNIT, INFO, COMM, WIN, IERROR\n\n大小\n内存窗口的大小（以字节为单位）。\ndisp_unit\n位移的本地单位大小（以字节为单位）。\ninfo\n信息参数。\n通讯\n沟通。\nbaseptr [out]\n内存窗口的初始地址。\nwin [out]\n调用返回的 Window 对象。\n",
+  "body": [
+   "MPI_WIN_ALLOCATE(SIZE, DISP_UNIT, INFO, COMM, BASEPTR, WIN, IERROR)"
+  ]
+ },
+ "mpi-win-allocate-shared-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-allocate-shared-function"
+  ],
+  "description": "MPI_WIN_ALLOCATE_SHARED(SIZE, DISP_UNIT, INFO, COMM, BASEPTR, WIN, IERROR)\n创建一个 MPI Window 对象，该对象分配内存，可以通过直接加载/存储指令从窗口组中的所有进程访问分配的内存。\n<type> BASEPTR(*)\nINTEGER(KIND=MPI_ADDRESS_KIND) SIZE\nINTEGER DISP_UNIT, INFO, COMM, WIN, IERROR\n\n大小\n内存窗口的大小（以字节为单位）。\ndisp_unit\n位移的本地单位大小（以字节为单位）。\ninfo\n信息参数。\n通讯\n内部通信器。\nbaseptr [out]\n本地分配窗口段的地址。\nwin [out]\n调用返回的 Window 对象。\n",
+  "body": [
+   "MPI_WIN_ALLOCATE_SHARED(SIZE, DISP_UNIT, INFO, COMM, BASEPTR, WIN, IERROR)"
+  ]
+ },
+ "mpi-win-attach-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-attach-function"
+  ],
+  "description": "MPI_WIN_ATTACH(WIN, BASE, SIZE, IERROR)\n附加本地内存区域，以便在给定窗口中进行远程访问。\nINTEGER WIN, IERROR\n<type> BASE(*)\nINTEGER(KIND=MPI_ADDRESS_KIND) SIZE\n\nwin [in]\nWindow 对象。\nbase [in]\n要附加的内存的初始地址。\n大小 [in]\n要附加的内存大小（以字节为单位）。\n",
+  "body": [
+   "MPI_WIN_ATTACH(WIN, BASE, SIZE, IERROR)"
+  ]
+ },
+ "mpi-win-complete-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-complete-function"
+  ],
+  "description": "MPI_WIN_COMPLETE(WIN, IERROR)\n完成 \nINTEGER WIN, IERROR\n\nwin\nWindow 对象。",
+  "body": [
+   "MPI_WIN_COMPLETE(WIN, IERROR)"
+  ]
+ },
+ "mpi-win-create-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-create-function"
+  ],
+  "description": "MPI_WIN_CREATE(BASE, SIZE, DISP_UNIT, INFO, COMM, WIN, IERROR)\n为单面通信创建 MPI Window 对象。\n<type> BASE(*)\nINTEGER(KIND=MPI_ADDRESS_KIND) SIZE\nINTEGER DISP_UNIT, INFO, COMM, WIN, IERROR\n\nbase [in]\n内存窗口的初始地址。\n大小\n内存窗口的大小（以字节为单位）。\ndisp_unit\n位移的本地单位大小（以字节为单位）。\ninfo\n信息参数。\n通讯\n沟通。\nwin [out]\n调用返回的 Window 对象。\n",
+  "body": [
+   "MPI_WIN_CREATE(BASE, SIZE, DISP_UNIT, INFO, COMM, WIN, IERROR)"
+  ]
+ },
+ "mpi-win-create-dynamic-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-create-dynamic-function"
+  ],
+  "description": "MPI_WIN_CREATE_DYNAMIC(INFO, COMM, WIN, IERROR)\n创建一个窗口，允许用户动态控制窗口公开的内存。\nINTEGER INFO, COMM, WIN, IERROR\n\ninfo\n信息参数。\n通讯\n沟通。\nwin [out]\n调用返回的 Window 对象。\n",
+  "body": [
+   "MPI_WIN_CREATE_DYNAMIC(INFO, COMM, WIN, IERROR)"
+  ]
+ },
+ "mpi-win-detach-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-detach-function"
+  ],
+  "description": "MPI_WIN_DETACH(WIN, BASE, IERROR)\n分离以前附加的内存区域。\nINTEGER WIN, IERROR\n<type> BASE(*)\n\nwin [in]\nWindow 对象。\nbase [in]\n要分离的内存的初始地址。\n",
+  "body": [
+   "MPI_WIN_DETACH(WIN, BASE, IERROR)"
+  ]
+ },
+ "mpi-win-fence-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-fence-function"
+  ],
+  "description": "MPI_WIN_FENCE(ASSERT, WIN, IERROR)\n对 MPI 窗口执行 MPI 围栏同步。\nINTEGER ASSERT, WIN, IERROR\n\n断言\n程序断言。\nwin\nWindow 对象。\nMPI_MODE_NOSTORE - 自上次同步以来，本地存储 (或本地获取或接收呼叫) 未更新本地窗口。MPI_MODE_NOPUT - 在随后 (围栏) 同步之前，本地窗口不会在围栏调用后放置或累积调用来更新。MPI_MODE_NOPRECEDE - 围栏未完成任何本地颁发的 RMA 调用序列。 如果此断言由窗口组中的任何进程提供，则必须由组中的所有进程提供该断言。MPI_MODE_NOSUCCEED - 围栏不会启动任何本地颁发的 RMA 调用序列。 如果断言由窗口组中的任何进程提供，则必须由组中的所有进程提供该断言。",
+  "body": [
+   "MPI_WIN_FENCE(ASSERT, WIN, IERROR)"
+  ]
+ },
+ "mpi-win-flush-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-flush-function"
+  ],
+  "description": "MPI_WIN_FLUSH(RANK, WIN, IERROR)\n完成由调用进程启动的所有未完成的 RMA 操作，以达到指定窗口上的目标排名。 操作在源和目标处完成。\nINTEGER RANK, WIN, IERROR\n\nrank\n目标窗口的排名。\nwin\nWindow 对象。\n",
+  "body": [
+   "MPI_WIN_FLUSH(RANK, WIN, IERROR)"
+  ]
+ },
+ "mpi-win-flush-all-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-flush-all-function"
+  ],
+  "description": "MPI_WIN_FLUSH_ALL(WIN, IERROR)\n完成由调用进程发出的所有 RMA 操作，该操作在调用之前针对指定窗口的任何目标。 在指定的窗口中，当此调用返回时，操作将在源和目标上完成。\nINTEGER WIN, IERROR\n\nwin\nWindow 对象。",
+  "body": [
+   "MPI_WIN_FLUSH_ALL(WIN, IERROR)"
+  ]
+ },
+ "mpi-win-flush-local-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-flush-local-function"
+  ],
+  "description": "MPI_WIN_FLUSH_LOCAL(RANK, WIN, IERROR)\n本地会在源处完成所有由调用进程启动的未完成的 RMA 操作，这些操作由指定窗口的排名指定的目标进程。 例如，在此例程完成后，用户可以重复使用提供的任何缓冲区来放置、获取或累积操作。\nINTEGER RANK, WIN, IERROR\n\nrank\n目标窗口的排名。\nwin\nWindow 对象。\n",
+  "body": [
+   "MPI_WIN_FLUSH_LOCAL(RANK, WIN, IERROR)"
+  ]
+ },
+ "mpi-win-flush-local-all-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-flush-local-all-function"
+  ],
+  "description": "MPI_WIN_FLUSH_LOCAL_ALL(WIN, IERROR)\n在此窗口中此调用之前向任何目标发出的所有 RMA 操作都将在此调用返回时在源处完成。\nINTEGER WIN, IERROR\n\nwin\nWindow 对象。",
+  "body": [
+   "MPI_WIN_FLUSH_LOCAL_ALL(WIN, IERROR)"
+  ]
+ },
+ "mpi-win-free-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-free-function"
+  ],
+  "description": "MPI_WIN_FREE(WIN, IERROR)\n释放 MPI 窗口对象。\nINTEGER WIN, IERROR\n\nwin [in， out]\nWindow 对象。",
+  "body": [
+   "MPI_WIN_FREE(WIN, IERROR)"
+  ]
+ },
+ "mpi-win-get-group-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-get-group-function"
+  ],
+  "description": "MPI_WIN_GET_GROUP(WIN, GROUP, IERROR)\n获取窗口对象的 MPI 组。\nINTEGER WIN, GROUP, IERROR\n\nwin\nWindow 对象。\n组 [out]\n共享对窗口访问权限的进程组。\n",
+  "body": [
+   "MPI_WIN_GET_GROUP(WIN, GROUP, IERROR)"
+  ]
+ },
+ "mpi-win-lock-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-lock-function"
+  ],
+  "description": "MPI_WIN_LOCK(LOCK_TYPE, RANK, ASSERT, WIN, IERROR)\n在目标进程中开始 RMA 访问纪元。\nINTEGER LOCK_TYPE, RANK, ASSERT, WIN, IERROR\n\nlock_type\n指示如果MPI_LOCK_SHARED)  (MPI_LOCK_EXCLUSIVE) ，其他进程是否可以同时访问目标窗口 (。\nrank\n锁定窗口的排名。\n断言\n用于优化此调用;零可用作默认值。\nwin\nWindow 对象。\nMPI_MODE_NOCHECK - 没有其他进程保留，也不会尝试获取冲突锁，而调用方则保留窗口锁。 当通过其他方式实现相互排除时，这很有用，但仍需要附加到锁和解锁调用的一致性操作。",
+  "body": [
+   "MPI_WIN_LOCK(LOCK_TYPE, RANK, ASSERT, WIN, IERROR)"
+  ]
+ },
+ "mpi-win-lock-all-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-lock-all-function"
+  ],
+  "description": "MPI_WIN_LOCK_ALL(ASSERT, WIN, IERROR)\n启动对窗口对象中所有进程的 RMA 访问纪元，其锁类型 \nINTEGER ASSERT, WIN, IERROR\n\n断言\n用于优化此调用;零可用作默认值。\nwin\nWindow 对象。\n",
+  "body": [
+   "MPI_WIN_LOCK_ALL(ASSERT, WIN, IERROR)"
+  ]
+ },
+ "mpi-win-post-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-post-function"
+  ],
+  "description": "MPI_WIN_POST(GROUP, ASSERT, WIN, IERROR)\n启动 RMA 曝光时间。\nINTEGER GROUP, ASSERT, WIN, IERROR\n\ngroup\n源进程组。\n断言\n用于优化此调用;零可用作默认值。\nwin\nWindow 对象。\nMPI_MODE_NOCHECK - 对 MPI_Win_start 的匹配调用尚未发生在调用 MPI_Win_post 时的任何源进程。 如果每个匹配的开始调用指定了 nocheck 选项，则只能由帖子调用指定。MPI_MODE_NOSTORE - 自上次同步以来，本地存储 (或本地获取或接收呼叫) 未更新本地窗口。 这可以避免在调用后进行缓存同步。MPI_MODE_NOPUT - 在随后的 (等待) 同步之前，本地窗口不会通过发布或累积调用来更新。 这可以避免在等待调用时需要缓存同步。",
+  "body": [
+   "MPI_WIN_POST(GROUP, ASSERT, WIN, IERROR)"
+  ]
+ },
+ "mpi-win-shared-query-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-shared-query-function"
+  ],
+  "description": "MPI_WIN_SHARED_QUERY(WIN, RANK, SIZE, DISP_UNIT, BASEPTR, IERROR)\n查询使用 \nINTEGER WIN, RANK, DISP_UNIT, IERROR\nINTEGER (KIND=MPI_ADDRESS_KIND) SIZE, BASEPTR\n\nwin [in]\n共享内存窗口对象。\nrank\n在窗口组中排名 (非负整数) 或 MPI_PROC_NULL。\n大小 [out]\n窗口段的大小。\ndisp_unit [out]\n位移的本地单位大小（以字节为单位）。\nbaseptr [out]\n用于加载/存储对窗口段的访问的地址。\n",
+  "body": [
+   "MPI_WIN_SHARED_QUERY(WIN, RANK, SIZE, DISP_UNIT, BASEPTR, IERROR)"
+  ]
+ },
+ "mpi-win-start-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-start-function"
+  ],
+  "description": "MPI_WIN_START(GROUP, ASSERT, WIN, IERROR)\n启动 MPI 窗口的 RMA 访问纪元。\nINTEGER GROUP, ASSERT, WIN, IERROR\n\ngroup\n目标进程的组。\n断言\n用于优化此调用;零可用作默认值。\nwin\nWindow 对象。\nMPI_MODE_NOCHECK - 在调用MPI_Win_start时，对MPI_Win_post的匹配调用已在所有目标进程中完成。 如果在每次匹配的帖子调用中指定了 nocheck 选项，则可以在开始调用中指定 nocheck 选项。 这类似于在代码中隐式握手时可能保存握手的就绪发送的优化。 但是， (就绪发送与常规接收匹配，而启动和发布都必须指定 nocheck 选项。) ",
+  "body": [
+   "MPI_WIN_START(GROUP, ASSERT, WIN, IERROR)"
+  ]
+ },
+ "mpi-win-sync-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-sync-function"
+  ],
+  "description": "MPI_WIN_SYNC(WIN, IERROR)\n同步 win 的专用和公共窗口副本。\nINTEGER WIN, IERROR\n\nwin [in]\nWindow 对象。",
+  "body": [
+   "MPI_WIN_SYNC(WIN, IERROR)"
+  ]
+ },
+ "mpi-win-test-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-test-function"
+  ],
+  "description": "MPI_WIN_TEST(WIN, FLAG, IERROR)\n测试 RMA 曝光时期是否已完成。\nINTEGER WIN, IERROR\nLOGICAL FLAG\n\nwin\nWindow 对象。\n标志 [out]\n成功标志。\n",
+  "body": [
+   "MPI_WIN_TEST(WIN, FLAG, IERROR)"
+  ]
+ },
+ "mpi-win-unlock-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-unlock-function"
+  ],
+  "description": "MPI_WIN_UNLOCK(RANK, WIN, IERROR)\n在目标进程中完成 RMA 访问纪元。\nINTEGER RANK, WIN, IERROR\n\nrank\n目标排名。\nwin\nWindow 对象。\n",
+  "body": [
+   "MPI_WIN_UNLOCK(RANK, WIN, IERROR)"
+  ]
+ },
+ "mpi-win-unlock-all-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-unlock-all-function"
+  ],
+  "description": "MPI_WIN_UNLOCK_ALL(WIN, IERROR)\n完成通过调用窗口 \nINTEGER WIN, IERROR\n\nwin\nWindow 对象。",
+  "body": [
+   "MPI_WIN_UNLOCK_ALL(WIN, IERROR)"
+  ]
+ },
+ "mpi-win-wait-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-wait-function"
+  ],
+  "description": "MPI_WIN_WAIT(WIN, IERROR)\n完成从 \nINTEGER WIN, IERROR\n\nwin\nWindow 对象。",
+  "body": [
+   "MPI_WIN_WAIT(WIN, IERROR)"
+  ]
+ },
+ "mpi-grequest-cancel-function-callback-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-grequest-cancel-function-callback-function"
+  ],
+  "description": "SUBROUTINE GREQUEST_CANCEL_FUNCTION(EXTRA_STATE, COMPLETE, IERROR)\nNone\nINTEGER IERROR\nINTEGER(KIND=MPI_ADDRESS_KIND) EXTRA_STATE\nLOGICAL COMPLETE\n\nextra_state [in， 可选]\n额外状态。\n完成\n如果请求上已调用 MPI_Grequest_complete，则 MPI 会将 complete=true 传递给回调函数，否则为 complete=false。\n",
+  "body": [
+   "SUBROUTINE GREQUEST_CANCEL_FUNCTION(EXTRA_STATE, COMPLETE, IERROR)"
+  ]
+ },
+ "mpi-grequest-complete-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-grequest-complete-function"
+  ],
+  "description": "MPI_GREQUEST_COMPLETE(REQUEST, IERROR)\n调用通知 MPI 通用化请求表示的操作已完成。\nINTEGER REQUEST, IERROR\n\n请求\n通用化请求。",
+  "body": [
+   "MPI_GREQUEST_COMPLETE(REQUEST, IERROR)"
+  ]
+ },
+ "mpi-grequest-free-function-callback-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-grequest-free-function-callback-function"
+  ],
+  "description": "SUBROUTINE GREQUEST_FREE_FUNCTION(EXTRA_STATE, IERROR)\nNone\nINTEGER IERROR\nINTEGER(KIND=MPI_ADDRESS_KIND) EXTRA_STATE\n\nextra_state [in， 可选]\n额外状态。",
+  "body": [
+   "SUBROUTINE GREQUEST_FREE_FUNCTION(EXTRA_STATE, IERROR)"
+  ]
+ },
+ "mpi-grequest-query-function-callback-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-grequest-query-function-callback-function"
+  ],
+  "description": "SUBROUTINE GREQUEST_QUERY_FUNCTION(EXTRA_STATE, STATUS, IERROR)\nNone\nINTEGER STATUS(MPI_STATUS_SIZE), IERROR\nINTEGER(KIND=MPI_ADDRESS_KIND) EXTRA_STATE\n\nextra_state [in， 可选]\n额外状态。\nstatus [out]\nMPI 状态对象。\n",
+  "body": [
+   "SUBROUTINE GREQUEST_QUERY_FUNCTION(EXTRA_STATE, STATUS, IERROR)"
+  ]
+ },
+ "mpi-grequest-start-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-grequest-start-function"
+  ],
+  "description": "MPI_GREQUEST_START(QUERY_FN, FREE_FN, CANCEL_FN, EXTRA_STATE, REQUEST, IERROR)\n创建并返回用户定义的请求。\nINTEGER REQUEST, IERROR\nEXTERNAL QUERY_FN, FREE_FN, CANCEL_FN\nINTEGER (KIND=MPI_ADDRESS_KIND) EXTRA_STATE\n\nquery_fn [in]\n查询请求状态时调用的回调函数。\nfree_fn [in]\n释放请求时调用的回调函数。\ncancel_fn [in]\n取消请求时调用的回调函数。\nextra_state [in， 可选]\n传递给上述函数的额外状态。\n请求 [out]\n通用化请求。\n",
+  "body": [
+   "MPI_GREQUEST_START(QUERY_FN, FREE_FN, CANCEL_FN, EXTRA_STATE, REQUEST, IERROR)"
+  ]
+ },
+ "mpi-init-thread-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-init-thread-function"
+  ],
+  "description": "MPI_INIT_THREAD(REQUIRED, PROVIDED, IERROR)\n初始化调用 MPI 进程的执行环境进行线程执行。\nINTEGER REQUIRED, PROVIDED, IERROR\n\nargc [in， 可选]\n指向程序参数数的指针。 此值可以为 NULL。\nargv [可选]\n指向程序的参数列表的指针。 此值可以为 NULL。\n必需 [in]\n所需的线程支持级别。 同一作业中的多个 MPI 进程可能使用不同的值。\n\n\n\nMPI_THREAD_SINGLE\n程序中只有一个线程才会执行。\n\n\nMPI_THREAD_FUNNELED\n进程可能包含多个线程，但调用 MPI_Init_thread 的线程是唯一调用 MPI 函数的线程。\n\n\nMPI_THREAD_SERIALIZED\n进程可能包含多个线程，所有这些线程都可以进行 MPI 函数调用，但一次只能调用一个线程。\n\n\nMPI_THREAD_MULTIPLE\n多个应用程序线程可以调用没有限制的 MPI 函数。 目前仅在在 Windows Server 2012、Windows Server 2012 R2、Windows 8 和 Windows 8.1 上运行的 MS-MPI V6 支持此值。\n\n\n\n \n提供的 [out]\n提供的线程支持级别。 返回的值将来自上面的表。\n \n",
+  "body": [
+   "MPI_INIT_THREAD(REQUIRED, PROVIDED, IERROR)"
+  ]
+ },
+ "mpi-is-thread-main-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-is-thread-main-function"
+  ],
+  "description": "MPI_IS_THREAD_MAIN(FLAG, IERROR)\n返回一个标志，指示此线程\nLOGICAL FLAG\nINTEGER IERROR\n\n标志 [out]\n如果此线程已调用 MPI_Init 或 MPI_Init_thread ，则标志为 true;否则为 false。",
+  "body": [
+   "MPI_IS_THREAD_MAIN(FLAG, IERROR)"
+  ]
+ },
+ "mpi-query-thread-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-query-thread-function"
+  ],
+  "description": "MPI_QUERY_THREAD(PROVIDED, IERROR)\n返回 MPI 库提供的线程支持级别。\nINTEGER PROVIDED, IERROR\n\n提供的 [out]\n提供的线程支持级别。  此值与在MPI_Init_thread中提供的自变量中返回的值相同。",
+  "body": [
+   "MPI_QUERY_THREAD(PROVIDED, IERROR)"
+  ]
+ },
+ "mpi-file-close-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-close-function"
+  ],
+  "description": "MPI_FILE_CLOSE(FH, IERROR)\n关闭文件。\nINTEGER FH, IERROR\n\n文件 [in]\n文件句柄。",
+  "body": [
+   "MPI_FILE_CLOSE(FH, IERROR)"
+  ]
+ },
+ "mpi-file-delete-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-delete-function"
+  ],
+  "description": "MPI_FILE_DELETE(FILENAME, INFO, IERROR)\n删除文件。\nCHARACTER*(*) FILENAME\nINTEGER INFO, IERROR\n\nfilename [in]\n要删除的文件的名称。\ninfo\nInfo 对象。\n",
+  "body": [
+   "MPI_FILE_DELETE(FILENAME, INFO, IERROR)"
+  ]
+ },
+ "mpi-file-get-amode-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-get-amode-function"
+  ],
+  "description": "MPI_FILE_GET_AMODE(FH, AMODE, IERROR)\n返回文件访问模式。\nINTEGER FH, AMODE, IERROR\n\nfile\n文件句柄。\namode [out]\n访问模式。\n",
+  "body": [
+   "MPI_FILE_GET_AMODE(FH, AMODE, IERROR)"
+  ]
+ },
+ "mpi-file-get-atomicity-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-get-atomicity-function"
+  ],
+  "description": "MPI_FILE_GET_ATOMICITY(FH, FLAG, IERROR)\n返回原子模式。\nINTEGER FH, IERROR\nLOGICAL FLAG\n\nfile\n文件句柄。\n标志 [out]\n如果原子模式为 True，则为 false（如果非原子模式）。\n",
+  "body": [
+   "MPI_FILE_GET_ATOMICITY(FH, FLAG, IERROR)"
+  ]
+ },
+ "mpi-file-get-byte-offset-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-get-byte-offset-function"
+  ],
+  "description": "MPI_FILE_GET_BYTE_OFFSET(FH, OFFSET, DISP, IERROR)\n返回对应于相对于当前视图的“offset”etype 的文件中的绝对字节位置。\nINTEGER FH, IERROR\nINTEGER(KIND=MPI_OFFSET_KIND) OFFSET, DISP\n\nfile\n文件句柄。\noffset\n偏移量。\ndisp [out]\n偏移量的绝对字节位置。\n",
+  "body": [
+   "MPI_FILE_GET_BYTE_OFFSET(FH, OFFSET, DISP, IERROR)"
+  ]
+ },
+ "mpi-file-get-group-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-get-group-function"
+  ],
+  "description": "MPI_FILE_GET_GROUP(FH, GROUP, IERROR)\n返回打开文件的进程组。\nINTEGER FH, GROUP, IERROR\n\nfile\n文件句柄。\n组 [out]\n打开文件的组。\n",
+  "body": [
+   "MPI_FILE_GET_GROUP(FH, GROUP, IERROR)"
+  ]
+ },
+ "mpi-file-get-info-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-get-info-function"
+  ],
+  "description": "MPI_FILE_GET_INFO(FH, INFO_USED, IERROR)\n返回 MPI 实际使用的文件的提示。\nINTEGER FH, INFO_USED, IERROR\n\nfile\n文件句柄。\ninfo [out]\nInfo 对象。\n",
+  "body": [
+   "MPI_FILE_GET_INFO(FH, INFO_USED, IERROR)"
+  ]
+ },
+ "mpi-file-get-position-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-get-position-function"
+  ],
+  "description": "MPI_FILE_GET_POSITION(FH, OFFSET, IERROR)\n返回相对于当前视图的 etype 单位中单个文件指针的当前位置。\nINTEGER FH, IERROR\nINTEGER(KIND=MPI_OFFSET_KIND) OFFSET\n\nfile\n文件句柄。\noffset [out]\n单个文件指针的偏移量。\n",
+  "body": [
+   "MPI_FILE_GET_POSITION(FH, OFFSET, IERROR)"
+  ]
+ },
+ "mpi-file-get-position-shared-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-get-position-shared-function"
+  ],
+  "description": "MPI_FILE_GET_POSITION_SHARED(FH, OFFSET, IERROR)\n返回相对于当前视图的 etype 单位中共享文件指针的当前位置。\nINTEGER FH, IERROR\nINTEGER(KIND=MPI_OFFSET_KIND) OFFSET\n\nfile\n文件句柄。\noffset [out]\n共享文件指针的偏移量。\n",
+  "body": [
+   "MPI_FILE_GET_POSITION_SHARED(FH, OFFSET, IERROR)"
+  ]
+ },
+ "mpi-file-get-size-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-get-size-function"
+  ],
+  "description": "MPI_FILE_GET_SIZE(FH, SIZE, IERROR)\n返回文件大小。\nINTEGER FH, IERROR\n\nfile\n文件句柄。\n大小 [out]\n文件的大小（以字节为单位）。\n",
+  "body": [
+   "MPI_FILE_GET_SIZE(FH, SIZE, IERROR)"
+  ]
+ },
+ "mpi-file-get-type-extent-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-get-type-extent-function"
+  ],
+  "description": "MPI_FILE_GET_TYPE_EXTENT(FH, DATATYPE, EXTENT, IERROR)\n返回文件中数据类型的范围。\nINTEGER FH, DATATYPE, IERROR\nINTEGER(KIND=MPI_ADDRESS_KIND) EXTENT\n\nfile\n文件句柄。\ndatatype\n数据类型。\n盘区 [out]\n数据类型的范围。\n",
+  "body": [
+   "MPI_FILE_GET_TYPE_EXTENT(FH, DATATYPE, EXTENT, IERROR)"
+  ]
+ },
+ "mpi-file-get-view-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-get-view-function"
+  ],
+  "description": "MPI_FILE_GET_VIEW(FH, DISP, ETYPE, FILETYPE, DATAREP, IERROR)\n返回文件视图。\nINTEGER FH, ETYPE, FILETYPE, IERROR\nCHARACTER*(*) DATAREP\nINTEGER(KIND=MPI_OFFSET_KIND) DISP\n\nfile\n文件句柄。\ndisp [out]\n位移。\netype [out]\n基本数据类型。\nfiletype [out]\nFiletype。\ndatarep\n数据表示形式。\n",
+  "body": [
+   "MPI_FILE_GET_VIEW(FH, DISP, ETYPE, FILETYPE, DATAREP, IERROR)"
+  ]
+ },
+ "mpi-file-iread-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-iread-function"
+  ],
+  "description": "MPI_FILE_IREAD(FH, BUF, COUNT, DATATYPE, REQUEST, IERROR)\n使用单个文件指针进行非阻止读取。\n<type> BUF(*)\nINTEGER FH, COUNT, DATATYPE, REQUEST, IERROR\n\nfile\n文件句柄。\nbuf [out]\n缓冲区的初始地址。\n计数\n缓冲区中的元素数。\ndatatype\n每个缓冲区元素的数据类型。\n请求 [out]\n请求对象。\n",
+  "body": [
+   "MPI_FILE_IREAD(FH, BUF, COUNT, DATATYPE, REQUEST, IERROR)"
+  ]
+ },
+ "mpi-file-iread-at-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-iread-at-function"
+  ],
+  "description": "MPI_FILE_IREAD_AT(FH, OFFSET, BUF, COUNT, DATATYPE, REQUEST, IERROR)\n使用显式偏移量进行非阻止读取。\n<type> BUF(*)\nINTEGER FH, COUNT, DATATYPE, REQUEST, IERROR\nINTEGER(KIND=MPI_OFFSET_KIND) OFFSET\n\nfile\n文件句柄。\noffset\n文件偏移量。\nbuf [out]\n缓冲区的初始地址。\n计数\n缓冲区中的元素数。\ndatatype\n每个缓冲区元素的数据类型。\n请求 [out]\n请求对象。\n",
+  "body": [
+   "MPI_FILE_IREAD_AT(FH, OFFSET, BUF, COUNT, DATATYPE, REQUEST, IERROR)"
+  ]
+ },
+ "mpi-file-iread-shared-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-iread-shared-function"
+  ],
+  "description": "MPI_FILE_IREAD_SHARED(FH, BUF, COUNT, DATATYPE, REQUEST, IERROR)\n使用共享文件指针进行非阻止读取。\n<type> BUF(*)\nINTEGER FH, COUNT, DATATYPE, REQUEST, IERROR\n\nfile\n文件句柄。\nbuf [out]\n缓冲区的初始地址。\n计数\n缓冲区中的元素数。\ndatatype\n每个缓冲区元素的数据类型。\n请求 [out]\n请求对象。\n",
+  "body": [
+   "MPI_FILE_IREAD_SHARED(FH, BUF, COUNT, DATATYPE, REQUEST, IERROR)"
+  ]
+ },
+ "mpi-file-iwrite-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-iwrite-function"
+  ],
+  "description": "MPI_FILE_IWRITE(FH, BUF, COUNT, DATATYPE, REQUEST, IERROR)\n使用单个文件指针进行非阻止写入。\n<type> BUF(*)\nINTEGER FH, COUNT, DATATYPE, REQUEST, IERROR\n\nfile\n文件句柄。\nbuf [in]\n缓冲区的初始地址。\n计数\n缓冲区中的元素数。\ndatatype\n每个缓冲区元素的数据类型。\n请求 [out]\n请求对象。\n",
+  "body": [
+   "MPI_FILE_IWRITE(FH, BUF, COUNT, DATATYPE, REQUEST, IERROR)"
+  ]
+ },
+ "mpi-file-iwrite-at-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-iwrite-at-function"
+  ],
+  "description": "MPI_FILE_IWRITE_AT(FH, OFFSET, BUF, COUNT, DATATYPE, REQUEST, IERROR)\n使用 explict 偏移量进行非阻止写入。\n<type> BUF(*)\nINTEGER FH, COUNT, DATATYPE, REQUEST, IERROR\nINTEGER(KIND=MPI_OFFSET_KIND) OFFSET\n\nfile\n文件句柄。\noffset\n文件偏移量。\nbuf [in]\n缓冲区的初始地址。\n计数\n缓冲区中的元素数。\ndatatype\n每个缓冲区元素的数据类型。\n请求 [out]\n请求对象。\n",
+  "body": [
+   "MPI_FILE_IWRITE_AT(FH, OFFSET, BUF, COUNT, DATATYPE, REQUEST, IERROR)"
+  ]
+ },
+ "mpi-file-iwrite-shared-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-iwrite-shared-function"
+  ],
+  "description": "MPI_FILE_IWRITE_SHARED(FH, BUF, COUNT, DATATYPE, REQUEST, IERROR)\n使用共享文件指针进行非阻止写入。\n<type> BUF(*)\nINTEGER FH, COUNT, DATATYPE, REQUEST, IERROR\n\nfile\n文件句柄。\nbuf [in]\n缓冲区的初始地址。\n计数\n缓冲区中的元素数。\ndatatype\n每个缓冲区元素的数据类型。\n请求 [out]\n请求对象。\n",
+  "body": [
+   "MPI_FILE_IWRITE_SHARED(FH, BUF, COUNT, DATATYPE, REQUEST, IERROR)"
+  ]
+ },
+ "mpi-file-open-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-open-function"
+  ],
+  "description": "MPI_FILE_OPEN(COMM, FILENAME, AMODE, INFO, FH, IERROR)\n打开文件。\nCHARACTER*(*) FILENAME\nINTEGER COMM, AMODE, INFO, FH, IERROR\n\n通讯\n沟通。\nfilename [in]\n要打开的文件的名称。\namode\n文件访问模式。\ninfo\nInfo 对象。\nnewfile [out]\n文件句柄。\n",
+  "body": [
+   "MPI_FILE_OPEN(COMM, FILENAME, AMODE, INFO, FH, IERROR)"
+  ]
+ },
+ "mpi-file-preallocate-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-preallocate-function"
+  ],
+  "description": "MPI_FILE_PREALLOCATE(FH, SIZE, IERROR)\n预分配文件的存储空间。\nINTEGER FH, IERROR\nINTEGER(KIND=MPI_OFFSET_KIND) SIZE\n\nfile\n文件句柄。\n大小\n要预分配的大小。\n",
+  "body": [
+   "MPI_FILE_PREALLOCATE(FH, SIZE, IERROR)"
+  ]
+ },
+ "mpi-file-read-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-read-function"
+  ],
+  "description": "MPI_FILE_READ(FH, BUF, COUNT, DATATYPE, STATUS, IERROR)\n使用单个文件指针读取。\n<type> BUF(*)\nINTEGER FH, COUNT, DATATYPE, STATUS(MPI_STATUS_SIZE), IERROR\n\nfile\n文件句柄。\nbuf [out]\n缓冲区的初始地址。\n计数\n缓冲区中的元素数。\ndatatype\n每个缓冲区元素的数据类型。\n状态 [out]\nStatus 对象。\n",
+  "body": [
+   "MPI_FILE_READ(FH, BUF, COUNT, DATATYPE, STATUS, IERROR)"
+  ]
+ },
+ "mpi-file-read-all-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-read-all-function"
+  ],
+  "description": "MPI_FILE_READ_ALL(FH, BUF, COUNT, DATATYPE, STATUS, IERROR)\n使用单个文件指针进行集体读取。\n<type> BUF(*)\nINTEGER FH, COUNT, DATATYPE, STATUS(MPI_STATUS_SIZE), IERROR\n\nfile\n文件句柄。\nbuf [out]\n缓冲区的初始地址。\n计数\n缓冲区中的元素数。\ndatatype\n每个缓冲区元素的数据类型。\nstatus [out]\nStatus 对象。\n",
+  "body": [
+   "MPI_FILE_READ_ALL(FH, BUF, COUNT, DATATYPE, STATUS, IERROR)"
+  ]
+ },
+ "mpi-file-read-all-begin-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-read-all-begin-function"
+  ],
+  "description": "MPI_FILE_READ_ALL_BEGIN(FH, BUF, COUNT, DATATYPE, IERROR)\n使用单个文件指针开始拆分集体读取。\n<type> BUF(*)\nINTEGER FH, COUNT, DATATYPE, IERROR\n\nfile\n文件句柄。\nbuf [out]\n缓冲区的初始地址。\n计数\n缓冲区中的元素数。\ndatatype\n每个缓冲区元素的数据类型。\n",
+  "body": [
+   "MPI_FILE_READ_ALL_BEGIN(FH, BUF, COUNT, DATATYPE, IERROR)"
+  ]
+ },
+ "mpi-file-read-all-end-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-read-all-end-function"
+  ],
+  "description": "MPI_FILE_READ_ALL_END(FH, BUF, STATUS, IERROR)\n使用单个文件指针完成拆分集体读取。\n<type> BUF(*)\nINTEGER FH, STATUS(MPI_STATUS_SIZE), IERROR\n\nfile\n文件句柄。\nbuf [out]\n缓冲区的初始地址。\nstatus [out]\nStatus 对象。\n",
+  "body": [
+   "MPI_FILE_READ_ALL_END(FH, BUF, STATUS, IERROR)"
+  ]
+ },
+ "mpi-file-read-at-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-read-at-function"
+  ],
+  "description": "MPI_FILE_READ_AT(FH, OFFSET, BUF, COUNT, DATATYPE, STATUS, IERROR)\n使用 explict 偏移量读取。\n<type> BUF(*)\nINTEGER FH, COUNT, DATATYPE, STATUS(MPI_STATUS_SIZE), IERROR\nINTEGER(KIND=MPI_OFFSET_KIND) OFFSET\n\nfile\n文件句柄。\noffset\n文件偏移量。\nbuf [out]\n缓冲区的初始地址。\n计数\n缓冲区中的元素数。\ndatatype\n每个缓冲区元素的数据类型。\nstatus [out]\nStatus 对象。\n",
+  "body": [
+   "MPI_FILE_READ_AT(FH, OFFSET, BUF, COUNT, DATATYPE, STATUS, IERROR)"
+  ]
+ },
+ "mpi-file-read-at-all-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-read-at-all-function"
+  ],
+  "description": "MPI_FILE_READ_AT_ALL(FH, OFFSET, BUF, COUNT, DATATYPE, STATUS, IERROR)\n使用 explict offset 进行集体读取。\n<type> BUF(*)\nINTEGER FH, COUNT, DATATYPE, STATUS(MPI_STATUS_SIZE), IERROR\nINTEGER(KIND=MPI_OFFSET_KIND) OFFSET\n\nfile\n文件句柄。\noffset\n文件偏移量。\nbuf [out]\n缓冲区的初始地址。\n计数\n缓冲区中的元素数。\ndatatype\n每个缓冲区元素的数据类型。\n状态 [out]\nStatus 对象。\n",
+  "body": [
+   "MPI_FILE_READ_AT_ALL(FH, OFFSET, BUF, COUNT, DATATYPE, STATUS, IERROR)"
+  ]
+ },
+ "mpi-file-read-at-all-begin-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-read-at-all-begin-function"
+  ],
+  "description": "MPI_FILE_READ_AT_ALL_BEGIN(FH, OFFSET, BUF, COUNT, DATATYPE, IERROR)\n使用 explict offset 开始拆分集体读取。\n<type> BUF(*)\nINTEGER FH, COUNT, DATATYPE, IERROR\nINTEGER(KIND=MPI_OFFSET_KIND) OFFSET\n\nfile\n文件句柄。\noffset\n文件偏移量。\nbuf [out]\n缓冲区的初始地址。\n计数\n缓冲区中的元素数。\ndatatype\n每个缓冲区元素的数据类型。\n",
+  "body": [
+   "MPI_FILE_READ_AT_ALL_BEGIN(FH, OFFSET, BUF, COUNT, DATATYPE, IERROR)"
+  ]
+ },
+ "mpi-file-read-at-all-end-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-read-at-all-end-function"
+  ],
+  "description": "MPI_FILE_READ_AT_ALL_END(FH, BUF, STATUS, IERROR)\n使用 explict offset 完成拆分集体读取。\n<type> BUF(*)\nINTEGER FH, STATUS(MPI_STATUS_SIZE), IERROR\n\nfile\n文件句柄。\nbuf [out]\n缓冲区的初始地址。\n状态 [out]\nStatus 对象。\n",
+  "body": [
+   "MPI_FILE_READ_AT_ALL_END(FH, BUF, STATUS, IERROR)"
+  ]
+ },
+ "mpi-file-read-ordered-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-read-ordered-function"
+  ],
+  "description": "MPI_FILE_READ_ORDERED(FH, BUF, COUNT, DATATYPE, STATUS, IERROR)\n使用共享文件指针进行集体读取。\n<type> BUF(*)\nINTEGER FH, COUNT, DATATYPE, STATUS(MPI_STATUS_SIZE), IERROR\n\nfile\n文件句柄。\nbuf [out]\n缓冲区的初始地址。\n计数\n缓冲区中的元素数。\ndatatype\n每个缓冲区元素的数据类型。\nstatus [out]\nStatus 对象。\n",
+  "body": [
+   "MPI_FILE_READ_ORDERED(FH, BUF, COUNT, DATATYPE, STATUS, IERROR)"
+  ]
+ },
+ "mpi-file-read-ordered-begin-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-read-ordered-begin-function"
+  ],
+  "description": "MPI_FILE_READ_ORDERED_BEGIN(FH, BUF, COUNT, DATATYPE, IERROR)\n使用共享文件指针开始拆分集体读取。\n<type> BUF(*)\nINTEGER FH, COUNT, DATATYPE, IERROR\n\nfile\n文件句柄。\nbuf [out]\n缓冲区的初始地址。\n计数\n缓冲区中的元素数。\ndatatype\n每个缓冲区元素的数据类型。\n",
+  "body": [
+   "MPI_FILE_READ_ORDERED_BEGIN(FH, BUF, COUNT, DATATYPE, IERROR)"
+  ]
+ },
+ "mpi-file-read-ordered-end-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-read-ordered-end-function"
+  ],
+  "description": "MPI_FILE_READ_ORDERED_END(FH, BUF, STATUS, IERROR)\n使用共享文件指针完成拆分集体读取。\n<type> BUF(*)\nINTEGER FH, STATUS(MPI_STATUS_SIZE), IERROR\n\nfile\n文件句柄。\nbuf [out]\n缓冲区的初始地址。\nstatus [out]\nStatus 对象。\n",
+  "body": [
+   "MPI_FILE_READ_ORDERED_END(FH, BUF, STATUS, IERROR)"
+  ]
+ },
+ "mpi-file-read-shared-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-read-shared-function"
+  ],
+  "description": "MPI_FILE_READ_SHARED(FH, BUF, COUNT, DATATYPE, STATUS, IERROR)\n使用共享文件指针读取。\n<type> BUF(*)\nINTEGER FH, COUNT, DATATYPE, STATUS(MPI_STATUS_SIZE), IERROR\n\nfile\n文件句柄。\nbuf [out]\n缓冲区的初始地址。\n计数\n缓冲区中的元素数。\ndatatype\n每个缓冲区元素的数据类型。\nstatus [out]\nStatus 对象。\n",
+  "body": [
+   "MPI_FILE_READ_SHARED(FH, BUF, COUNT, DATATYPE, STATUS, IERROR)"
+  ]
+ },
+ "mpi-file-seek-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-seek-function"
+  ],
+  "description": "MPI_FILE_SEEK(FH, OFFSET, WHENCE, IERROR)\n汇报单个文件指针。\nINTEGER FH, WHENCE, IERROR\nINTEGER(KIND=MPI_OFFSET_KIND) OFFSET\n\nfile\n文件句柄。\noffset\n文件偏移量。\n何处\n更新模式。\n",
+  "body": [
+   "MPI_FILE_SEEK(FH, OFFSET, WHENCE, IERROR)"
+  ]
+ },
+ "mpi-file-seek-shared-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-seek-shared-function"
+  ],
+  "description": "MPI_FILE_SEEK_SHARED(FH, OFFSET, WHENCE, IERROR)\n汇报共享文件指针。\nINTEGER FH, WHENCE, IERROR\nINTEGER(KIND=MPI_OFFSET_KIND) OFFSET\n\nfile\n文件句柄。\noffset\n文件偏移量。\n何处\n更新模式。\n",
+  "body": [
+   "MPI_FILE_SEEK_SHARED(FH, OFFSET, WHENCE, IERROR)"
+  ]
+ },
+ "mpi-file-set-atomicity-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-set-atomicity-function"
+  ],
+  "description": "MPI_FILE_SET_ATOMICITY(FH, FLAG, IERROR)\n设置原子性模式。\nINTEGER FH, IERROR\nLOGICAL FLAG\n\nfile\n文件句柄。\nflag \n若要设置原子模式，则为 false 以设置非原子模式。\n",
+  "body": [
+   "MPI_FILE_SET_ATOMICITY(FH, FLAG, IERROR)"
+  ]
+ },
+ "mpi-file-set-info-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-set-info-function"
+  ],
+  "description": "MPI_FILE_SET_INFO(FH, INFO, IERROR)\n为与文件关联的提示设置新值。\nINTEGER FH, INFO, IERROR\n\nfile\n文件句柄。\ninfo\nInfo 对象。\n",
+  "body": [
+   "MPI_FILE_SET_INFO(FH, INFO, IERROR)"
+  ]
+ },
+ "mpi-file-set-size-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-set-size-function"
+  ],
+  "description": "MPI_FILE_SET_SIZE(FH, SIZE, IERROR)\n设置文件大小。\nINTEGER FH, IERROR\nINTEGER(KIND=MPI_OFFSET_KIND) SIZE\n\nfile\n文件句柄。\n大小\n要截断或展开文件的大小。\n",
+  "body": [
+   "MPI_FILE_SET_SIZE(FH, SIZE, IERROR)"
+  ]
+ },
+ "mpi-file-set-view-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-set-view-function"
+  ],
+  "description": "MPI_FILE_SET_VIEW(FH, DISP, ETYPE, FILETYPE, DATAREP, INFO, IERROR)\n设置文件视图。\nINTEGER FH, ETYPE, FILETYPE, INFO, IERROR\nCHARACTER*(*) DATAREP\nINTEGER(KIND=MPI_OFFSET_KIND) DISP\n\nfile\n文件句柄。\ndisp\n位移。\netype\n基本数据类型。\nfiletype\nFiletype。\ndatarep [in]\n数据表示形式。\ninfo\nInfo 对象。\n",
+  "body": [
+   "MPI_FILE_SET_VIEW(FH, DISP, ETYPE, FILETYPE, DATAREP, INFO, IERROR)"
+  ]
+ },
+ "mpi-file-sync-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-sync-function"
+  ],
+  "description": "MPI_FILE_SYNC(FH, IERROR)\n导致以前的所有写入都传输到存储设备。\nINTEGER FH, IERROR\n\nfile\n文件句柄。",
+  "body": [
+   "MPI_FILE_SYNC(FH, IERROR)"
+  ]
+ },
+ "mpi-file-write-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-write-function"
+  ],
+  "description": "MPI_FILE_WRITE(FH, BUF, COUNT, DATATYPE, STATUS, IERROR)\n使用单个文件指针进行写入。\n<type> BUF(*)\nINTEGER FH, COUNT, DATATYPE, STATUS(MPI_STATUS_SIZE), IERROR\n\nfile\n文件句柄。\nbuf [in]\n缓冲区的初始地址。\n计数\n缓冲区中的元素数。\ndatatype\n每个缓冲区元素的数据类型。\n状态 [out]\nStatus 对象。\n",
+  "body": [
+   "MPI_FILE_WRITE(FH, BUF, COUNT, DATATYPE, STATUS, IERROR)"
+  ]
+ },
+ "mpi-file-write-all-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-write-all-function"
+  ],
+  "description": "MPI_FILE_WRITE_ALL(FH, BUF, COUNT, DATATYPE, STATUS, IERROR)\n使用单个文件指针进行集体写入。\n<type> BUF(*)\nINTEGER FH, COUNT, DATATYPE, STATUS(MPI_STATUS_SIZE), IERROR\n\nfile\n文件句柄。\nbuf [in]\n缓冲区的初始地址。\n计数\n缓冲区中的元素数。\ndatatype\n每个缓冲区元素的数据类型。\n状态 [out]\nStatus 对象。\n",
+  "body": [
+   "MPI_FILE_WRITE_ALL(FH, BUF, COUNT, DATATYPE, STATUS, IERROR)"
+  ]
+ },
+ "mpi-file-write-all-begin-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-write-all-begin-function"
+  ],
+  "description": "MPI_FILE_WRITE_ALL_BEGIN(FH, BUF, COUNT, DATATYPE, IERROR)\n使用单个文件指针开始拆分集体写入。\n<type> BUF(*)\nINTEGER FH, COUNT, DATATYPE, IERROR\n\nfile\n文件句柄。\nbuf [in]\n缓冲区的初始地址。\n计数\n缓冲区中的元素数。\ndatatype\n每个缓冲区元素的数据类型。\n",
+  "body": [
+   "MPI_FILE_WRITE_ALL_BEGIN(FH, BUF, COUNT, DATATYPE, IERROR)"
+  ]
+ },
+ "mpi-file-write-all-end-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-write-all-end-function"
+  ],
+  "description": "MPI_FILE_WRITE_ALL_END(FH, BUF, STATUS, IERROR)\n使用单个文件指针完成拆分集体写入。\n<type> BUF(*)\nINTEGER FH, STATUS(MPI_STATUS_SIZE), IERROR\n\nfile\n文件句柄。\nbuf [in]\n缓冲区的初始地址。\n状态 [out]\nStatus 对象。\n",
+  "body": [
+   "MPI_FILE_WRITE_ALL_END(FH, BUF, STATUS, IERROR)"
+  ]
+ },
+ "mpi-file-write-at-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-write-at-function"
+  ],
+  "description": "MPI_FILE_WRITE_AT(FH, OFFSET, BUF, COUNT, DATATYPE, STATUS, IERROR)\n使用 explict offset 进行写入。\n<type> BUF(*)\nINTEGER FH, COUNT, DATATYPE, STATUS(MPI_STATUS_SIZE), IERROR\nINTEGER(KIND=MPI_OFFSET_KIND) OFFSET\n\nfile\n文件句柄。\noffset\n文件偏移量。\nbuf [in]\n缓冲区的初始地址。\n计数\n缓冲区中的元素数。\ndatatype\n每个缓冲区元素的数据类型。\nstatus [out]\nStatus 对象。\n",
+  "body": [
+   "MPI_FILE_WRITE_AT(FH, OFFSET, BUF, COUNT, DATATYPE, STATUS, IERROR)"
+  ]
+ },
+ "mpi-file-write-at-all-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-write-at-all-function"
+  ],
+  "description": "MPI_FILE_WRITE_AT_ALL(FH, OFFSET, BUF, COUNT, DATATYPE, STATUS, IERROR)\n使用 explict offset 进行集体写入。\n<type> BUF(*)\nINTEGER FH, COUNT, DATATYPE, STATUS(MPI_STATUS_SIZE), IERROR\nINTEGER(KIND=MPI_OFFSET_KIND) OFFSET\n\nfile\n文件句柄。\noffset\n文件偏移量。\nbuf [in]\n缓冲区的初始地址。\n计数\n缓冲区中的元素数。\ndatatype\n每个缓冲区元素的数据类型。\nstatus [out]\nStatus 对象。\n",
+  "body": [
+   "MPI_FILE_WRITE_AT_ALL(FH, OFFSET, BUF, COUNT, DATATYPE, STATUS, IERROR)"
+  ]
+ },
+ "mpi-file-write-at-all-begin-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-write-at-all-begin-function"
+  ],
+  "description": "MPI_FILE_WRITE_AT_ALL_BEGIN(FH, OFFSET, BUF, COUNT, DATATYPE, IERROR)\n使用 explict offset 开始拆分集体写入。\n<type> BUF(*)\nINTEGER FH, COUNT, DATATYPE, IERROR\nINTEGER(KIND=MPI_OFFSET_KIND) OFFSET\n\nfile\n文件句柄。\noffset\n文件偏移量。\nbuf [in]\n缓冲区的初始地址。\n计数\n缓冲区中的元素数。\ndatatype\n每个缓冲区元素的数据类型。\n",
+  "body": [
+   "MPI_FILE_WRITE_AT_ALL_BEGIN(FH, OFFSET, BUF, COUNT, DATATYPE, IERROR)"
+  ]
+ },
+ "mpi-file-write-at-all-end-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-write-at-all-end-function"
+  ],
+  "description": "MPI_FILE_WRITE_AT_ALL_END(FH, BUF, STATUS, IERROR)\n使用 explict offset 完成拆分集体写入。\n<type> BUF(*)\nINTEGER FH, STATUS(MPI_STATUS_SIZE), IERROR\n\nfile\n文件句柄。\nbuf [in]\n缓冲区的初始地址。\nstatus [out]\nStatus 对象。\n",
+  "body": [
+   "MPI_FILE_WRITE_AT_ALL_END(FH, BUF, STATUS, IERROR)"
+  ]
+ },
+ "mpi-file-write-ordered-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-write-ordered-function"
+  ],
+  "description": "MPI_FILE_WRITE_ORDERED(FH, BUF, COUNT, DATATYPE, STATUS, IERROR)\n使用共享文件指针进行集体写入。\n<type> BUF(*)\nINTEGER FH, COUNT, DATATYPE, STATUS(MPI_STATUS_SIZE), IERROR\n\n文件 [in]\n文件句柄。\nbuf [in]\n缓冲区的初始地址。\n计数\n缓冲区中的元素数。\ndatatype\n每个缓冲区元素的数据类型。\nstatus [out]\nStatus 对象。\n",
+  "body": [
+   "MPI_FILE_WRITE_ORDERED(FH, BUF, COUNT, DATATYPE, STATUS, IERROR)"
+  ]
+ },
+ "mpi-file-write-ordered-begin-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-write-ordered-begin-function"
+  ],
+  "description": "MPI_FILE_WRITE_ORDERED_BEGIN(FH, BUF, COUNT, DATATYPE, IERROR)\n使用共享文件指针开始拆分集体写入。\n<type> BUF(*)\nINTEGER FH, COUNT, DATATYPE, IERROR\n\nfile\n文件句柄。\nbuf [in]\n缓冲区的初始地址。\n计数\n缓冲区中的元素数。\ndatatype\n每个缓冲区元素的数据类型。\n",
+  "body": [
+   "MPI_FILE_WRITE_ORDERED_BEGIN(FH, BUF, COUNT, DATATYPE, IERROR)"
+  ]
+ },
+ "mpi-file-write-ordered-end-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-write-ordered-end-function"
+  ],
+  "description": "MPI_FILE_WRITE_ORDERED_END(FH, BUF, STATUS, IERROR)\n使用共享文件指针完成拆分集体写入。\n<type> BUF(*)\nINTEGER FH, STATUS(MPI_STATUS_SIZE), IERROR\n\nfile\n文件句柄。\nbuf [in]\n缓冲区的初始地址。\nstatus [out]\nStatus 对象。\n",
+  "body": [
+   "MPI_FILE_WRITE_ORDERED_END(FH, BUF, STATUS, IERROR)"
+  ]
+ },
+ "mpi-file-write-shared-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-file-write-shared-function"
+  ],
+  "description": "MPI_FILE_WRITE_ORDERED(FH, BUF, COUNT, DATATYPE, STATUS, IERROR)\n使用共享文件指针进行写入。\n<type> BUF(*)\nINTEGER FH, COUNT, DATATYPE, STATUS(MPI_STATUS_SIZE), IERROR\n\nfile\n文件句柄。\nbuf [in]\n缓冲区的初始地址。\n计数\n缓冲区中的元素数。\ndatatype\n每个缓冲区元素的数据类型。\n状态 [out]\nStatus 对象。\n",
+  "body": [
+   "MPI_FILE_WRITE_ORDERED(FH, BUF, COUNT, DATATYPE, STATUS, IERROR)"
+  ]
+ },
+ "mpi-register-datarep-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-register-datarep-function"
+  ],
+  "description": "MPI_REGISTER_DATAREP(DATAREP, READ_CONVERSION_FN, WRITE_CONVERSION_FN, DTYPE_FILE_EXTENT_FN, EXTRA_STATE, IERROR)\n注册一组用户提供的数据转换函数。\nCHARACTER*(*) DATAREP\nEXTERNAL READ_CONVERSION_FN, WRITE_CONVERSION_FN, DTYPE_FILE_EXTENT_FN\nINTEGER(KIND=MPI_ADDRESS_KIND) EXTRA_STATE\nINTEGER IERROR\n\ndatarep [in]\n数据表示标识符。\nread_conversion_fn [in， 可选]\n调用函数以从文件表示形式转换为本机表示形式。\nwrite_conversion_fn [in， 可选]\n调用函数以从本机表示形式转换为文件表示形式。\ndtype_file_extent_fn [in]\n调用函数以获取文件中所表示的数据类型的范围。\nextra_state [in， 可选]\n传递给转换函数的额外状态。\n",
+  "body": [
+   "MPI_REGISTER_DATAREP(DATAREP, READ_CONVERSION_FN, WRITE_CONVERSION_FN, DTYPE_FILE_EXTENT_FN, EXTRA_STATE, IERROR)"
+  ]
+ },
+ "mpi-datarep-conversion-function-callback-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-datarep-conversion-function-callback-function"
+  ],
+  "description": "SUBROUTINE DATAREP_CONVERSION_FUNCTION(USERBUF, DATATYPE, COUNT, FILEBUF, POSITION, EXTRA_STATE, IERROR)\n此函数是用户定义函数的一个位置持有者，用于从文件数据表示形式转换为本机表示形式，反之亦然。\n<TYPE> USERBUF(*), FILEBUF(*)\nINTEGER COUNT, DATATYPE, IERROR\nINTEGER(KIND=MPI_OFFSET_KIND) POSITION\nINTEGER(KIND=MPI_ADDRESS_KIND) EXTRA_STATE\n\nuserbuf\n本机缓冲区。\ndatatype\n元素的数据类型。\n计数\n元素数量。\nfilebuf\n文件缓冲区。\nposition\n在读取缓冲区中的位置。\nextra_state [in]\n额外状态。\n",
+  "body": [
+   "SUBROUTINE DATAREP_CONVERSION_FUNCTION(USERBUF, DATATYPE, COUNT, FILEBUF, POSITION, EXTRA_STATE, IERROR)"
+  ]
+ },
+ "mpi-datarep-extent-function-callback-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-datarep-extent-function-callback-function"
+  ],
+  "description": "SUBROUTINE DATAREP_EXTENT_FUNCTION(DATATYPE, EXTENT, EXTRA_STATE, IERROR)\n此函数是用户定义的盘区回调函数的占位符。\nINTEGER DATATYPE, IERROR\nINTEGER(KIND=MPI_ADDRESS_KIND) EXTENT, EXTRA_STATE\n\ndatatype\n数据类型。\nfile_extent [out]\n在文件表示形式中存储 数据类型 所需的字节数。\nextra_state [in]\n传递给 MPI_Register_datarep 调用的相同参数。\n",
+  "body": [
+   "SUBROUTINE DATAREP_EXTENT_FUNCTION(DATATYPE, EXTENT, EXTRA_STATE, IERROR)"
+  ]
+ },
+ "mpi-buffer-attach-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-buffer-attach-function"
+  ],
+  "description": "MPI_BUFFER_ATTACH(BUFFER, SIZE, IERROR)\n附加用户提供的用于发送的缓冲区\n<type> BUFFER(*)\nINTEGER SIZE, IERROR\n\nbuffer [in]\n初始缓冲区地址。\n大小\n缓冲区大小（以字节为单位）。\n",
+  "body": [
+   "MPI_BUFFER_ATTACH(BUFFER, SIZE, IERROR)"
+  ]
+ },
+ "mpi-buffer-detach-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-buffer-detach-function"
+  ],
+  "description": "MPI_BUFFER_DETACH(BUFFER_ADDR, SIZE, IERROR)\n删除现有缓冲区。\n<type> BUFFER_ADDR(*)\nINTEGER SIZE, IERROR\n\nbuffer_addr [out]\n初始缓冲区地址。\n大小 [out]\n缓冲区大小（以字节为单位）。\n",
+  "body": [
+   "MPI_BUFFER_DETACH(BUFFER_ADDR, SIZE, IERROR)"
+  ]
+ },
+ "mpi-comm-get-name-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-get-name-function"
+  ],
+  "description": "MPI_COMM_GET_NAME(COMM, COMM_NAME, RESULTLEN, IERROR)\n从 communicator 返回打印名称。\nINTEGER COMM, RESULTLEN, IERROR\nCHARACTER*(*) COMM_NAME\n\n通讯\n要获取其名称的 Communicator。\ncomm_name\n在输出中，包含 communicator 的名称。 它必须是至少 MPI_MAX_OBJECT_NAME大小的数组。\nresultlen [out]\n名称中的字符数。\n",
+  "body": [
+   "MPI_COMM_GET_NAME(COMM, COMM_NAME, RESULTLEN, IERROR)"
+  ]
+ },
+ "mpi-comm-set-name-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-comm-set-name-function"
+  ],
+  "description": "MPI_COMM_SET_NAME(COMM, COMM_NAME, IERROR)\n设置 communicator 的打印名称。\nINTEGER COMM, IERROR\nCHARACTER*(*) COMM_NAME\n\n通讯\n要命名的 Communicator。\ncomm_name\ncommunicator 的名称。\n",
+  "body": [
+   "MPI_COMM_SET_NAME(COMM, COMM_NAME, IERROR)"
+  ]
+ },
+ "mpi-pcontrol-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-pcontrol-function"
+  ],
+  "description": "MPI_PCONTROL(LEVEL)\n控制分析。\nINTEGER LEVEL\n\nlevel\n分析级别。\n...\n其他参数 (请参阅备注) 。\n",
+  "body": [
+   "MPI_PCONTROL(LEVEL)"
+  ]
+ },
+ "mpi-type-create-f90-complex-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-create-f90-complex-function"
+  ],
+  "description": "MPI_TYPE_CREATE_F90_COMPLEX(P, R, NEWTYPE, IERROR)\n返回与指定范围匹配的预定义类型。\nINTEGER P, R, NEWTYPE, IERROR\n\np\nr\n所需的十进制范围。\nnewtype [out]\n与范围匹配的预定义 MPI 数据类型。\n",
+  "body": [
+   "MPI_TYPE_CREATE_F90_COMPLEX(P, R, NEWTYPE, IERROR)"
+  ]
+ },
+ "mpi-type-create-f90-integer-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-create-f90-integer-function"
+  ],
+  "description": "MPI_TYPE_CREATE_F90_INTEGER(R, NEWTYPE, IERROR)\n返回与指定范围匹配的预定义类型。\nINTEGER R, NEWTYPE, IERROR\n\nr\n十进制范围 (所需) 数字数。\nnewtype [out]\n与范围匹配的预定义 MPI 数据类型。\n",
+  "body": [
+   "MPI_TYPE_CREATE_F90_INTEGER(R, NEWTYPE, IERROR)"
+  ]
+ },
+ "mpi-type-create-f90-real-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-create-f90-real-function"
+  ],
+  "description": "MPI_TYPE_CREATE_F90_REAL(P, R, NEWTYPE, IERROR)\n返回与指定范围匹配的预定义类型。\nINTEGER P, R, NEWTYPE, IERROR\n\np\nmantissa 中的十进制数字数。\nr\n所需的十进制指数范围。\nnewtype [out]\n与范围匹配的预定义 MPI 数据类型。\n",
+  "body": [
+   "MPI_TYPE_CREATE_F90_REAL(P, R, NEWTYPE, IERROR)"
+  ]
+ },
+ "mpi-type-get-name-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-get-name-function"
+  ],
+  "description": "MPI_TYPE_GET_NAME(DATATYPE, TYPE_NAME, RESULTLEN, IERROR)\n获取数据类型的打印名称。\nINTEGER DATATYPE, RESULTLEN, IERROR\nCHARACTER*(*) TYPE_NAME\n\ntype\n要返回其名称的数据类型。\ntype_name\n以前存储在数据类型上的名称;如果没有此类名称，则为空字符串。\nresultlen [out]\n返回名称的长度。\n",
+  "body": [
+   "MPI_TYPE_GET_NAME(DATATYPE, TYPE_NAME, RESULTLEN, IERROR)"
+  ]
+ },
+ "mpi-type-match-size-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-match-size-function"
+  ],
+  "description": "MPI_TYPE_MATCH_SIZE(TYPECLASS, SIZE, DATATYPE, IERROR)\n查找与指定大小匹配的 MPI 数据类型。\nINTEGER TYPECLASS, SIZE, DATATYPE, IERROR\n\ntypeclass\n泛型类型说明符。\n大小\n以字节为单位表示形式的大小。\n类型 [out]\n数据类型正确，大小正确。\n",
+  "body": [
+   "MPI_TYPE_MATCH_SIZE(TYPECLASS, SIZE, DATATYPE, IERROR)"
+  ]
+ },
+ "mpi-type-set-name-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-type-set-name-function"
+  ],
+  "description": "MPI_TYPE_SET_NAME(DATATYPE, TYPE_NAME, IERROR)\n设置数据类型名称。\nINTEGER DATATYPE, IERROR\nCHARACTER*(*) TYPE_NAME\n\ntype\n要设置其标识符的数据类型。\ntype_name\n设置为名称的字符串。\n",
+  "body": [
+   "MPI_TYPE_SET_NAME(DATATYPE, TYPE_NAME, IERROR)"
+  ]
+ },
+ "mpi-win-get-name-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-get-name-function"
+  ],
+  "description": "MPI_WIN_GET_NAME(WIN, WIN_NAME, RESULTLEN, IERROR)\n获取与 MPI 窗口对象关联的打印名称。\nINTEGER WIN, RESULTLEN, IERROR\nCHARACTER*(*) WIN_NAME\n\nwin\n要返回其名称的窗口。\nwin_name\n以前存储在窗口中的名称，如果没有此类名称，则为空字符串。\nresultlen [out]\n返回名称的长度。\n",
+  "body": [
+   "MPI_WIN_GET_NAME(WIN, WIN_NAME, RESULTLEN, IERROR)"
+  ]
+ },
+ "mpi-win-set-name-function": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "mpi-win-set-name-function"
+  ],
+  "description": "MPI_WIN_SET_NAME(WIN, WIN_NAME, IERROR)\n设置 MPI 窗口对象的打印名称。\nINTEGER WIN, IERROR\nCHARACTER*(*) WIN_NAME\n\nwin\n要设置其标识符的窗口。\nwin_name [in]\n被记住为名称的字符串。\n",
+  "body": [
+   "MPI_WIN_SET_NAME(WIN, WIN_NAME, IERROR)"
+  ]
+ },
+ 	"Main() MPI" : {
+		"scope" : "FortranFreeForm",
+		"prefix" : ["mainmpi", "mpimain", "mpi-main" ],
+		"description": "Generate a basic MPI program",
+		"body" : [
+			"program main",
+			"use mpi",
+			"implicit none",
+			"integer*4::ierr,my_id,num_procs",
+			"call MPI_INIT ( ierr )",
+			"call MPI_COMM_RANK (MPI_COMM_WORLD, my_id, ierr)",
+			"call MPI_COMM_SIZE (MPI_COMM_WORLD, num_procs, ierr)" ,
+			"write(*,'(1x,i2,a,i2)')my_id,'/',num_procs",
+			"call MPI_FINALIZE ( ierr )",
+		"end program"
+	]},
+	
+	"Comm Self": {
+		"scope" : "FortranFreeForm",
+		"prefix": ["cself", "CS"],
+		"description": "Expand to MPI_COMM_SELF",
+		"body" : "MPI_COMM_SELF"
+	},
+	
+	"Comm World": {
+		"scope" : "FortranFreeForm",
+		"prefix": ["cworld", "CW"],
+		"description": "Expand to MPI_COMM_WORLD",
+		"body" : "MPI_COMM_WORLD"
+	}
+}
