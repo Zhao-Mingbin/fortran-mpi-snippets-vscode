@@ -1,0 +1,172 @@
+{
+ "MPI_COMM_NULL": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "MPI_COMM_NULL"
+  ],
+  "description": "MPI type MPI_COMM_NULL",
+  "body": [
+   "MPI_COMM_NULL"
+  ]
+ },
+ "MPI_COMM_WORLD": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "MPI_COMM_WORLD"
+  ],
+  "description": "MPI type MPI_COMM_WORLD",
+  "body": [
+   "MPI_COMM_WORLD"
+  ]
+ },
+ "MPI_COMM_SELF": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "MPI_COMM_SELF"
+  ],
+  "description": "MPI type MPI_COMM_SELF",
+  "body": [
+   "MPI_COMM_SELF"
+  ]
+ },
+ "MPI_OP_NULL": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "MPI_OP_NULL"
+  ],
+  "description": "MPI type MPI_OP_NULL",
+  "body": [
+   "MPI_OP_NULL"
+  ]
+ },
+ "MPI_MAX": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "MPI_MAX"
+  ],
+  "description": "MPI type MPI_MAX",
+  "body": [
+   "MPI_MAX"
+  ]
+ },
+ "MPI_MIN": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "MPI_MIN"
+  ],
+  "description": "MPI type MPI_MIN",
+  "body": [
+   "MPI_MIN"
+  ]
+ },
+ "MPI_SUM": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "MPI_SUM"
+  ],
+  "description": "MPI type MPI_SUM",
+  "body": [
+   "MPI_SUM"
+  ]
+ },
+ "MPI_PROD": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "MPI_PROD"
+  ],
+  "description": "MPI type MPI_PROD",
+  "body": [
+   "MPI_PROD"
+  ]
+ },
+ "MPI_LAND": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "MPI_LAND"
+  ],
+  "description": "MPI type MPI_LAND",
+  "body": [
+   "MPI_LAND"
+  ]
+ },
+ "MPI_BAND": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "MPI_BAND"
+  ],
+  "description": "MPI type MPI_BAND",
+  "body": [
+   "MPI_BAND"
+  ]
+ },
+ "MPI_LOR": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "MPI_LOR"
+  ],
+  "description": "MPI type MPI_LOR",
+  "body": [
+   "MPI_LOR"
+  ]
+ },
+ "MPI_BOR": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "MPI_BOR"
+  ],
+  "description": "MPI type MPI_BOR",
+  "body": [
+   "MPI_BOR"
+  ]
+ },
+ "MPI_LXOR": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "MPI_LXOR"
+  ],
+  "description": "MPI type MPI_LXOR",
+  "body": [
+   "MPI_LXOR"
+  ]
+ },
+ "MPI_BXOR": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "MPI_BXOR"
+  ],
+  "description": "MPI type MPI_BXOR",
+  "body": [
+   "MPI_BXOR"
+  ]
+ },
+ "MPI_MINLOC": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "MPI_MINLOC"
+  ],
+  "description": "MPI type MPI_MINLOC",
+  "body": [
+   "MPI_MINLOC"
+  ]
+ },
+ "MPI_MAXLOC": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "MPI_MAXLOC"
+  ],
+  "description": "MPI type MPI_MAXLOC",
+  "body": [
+   "MPI_MAXLOC"
+  ]
+ },
+ "MPI_REPLACE": {
+  "scope": "FortranFreeForm",
+  "prefix": [
+   "MPI_REPLACE"
+  ],
+  "description": "MPI type MPI_REPLACE",
+  "body": [
+   "MPI_REPLACE"
+  ]
+ }
+}
